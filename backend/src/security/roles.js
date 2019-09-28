@@ -1,0 +1,25 @@
+class Roles {
+  static get values() {
+    return {
+      owner: 'owner',
+      editor: 'editor',
+      viewer: 'viewer',
+      auditLogViewer: 'auditLogViewer',
+      iamSecurityReviewer: 'iamSecurityReviewer',
+      entityEditor: 'entityEditor',
+      entityViewer: 'entityViewer',
+      customerEditor: 'customerEditor',
+      customerViewer: 'customerViewer',
+      productEditor: 'productEditor',
+      productViewer: 'productViewer',
+      orderEditor: 'orderEditor',
+      orderViewer: 'orderViewer',
+      serviceEditor: 'serviceEditor',
+      serviceViewer: 'serviceViewer',
+      spendingEditor: 'spendingEditor',
+      spendingViewer: 'spendingViewer',
+    };
+  }
+}
+
+module.exports = Roles;
