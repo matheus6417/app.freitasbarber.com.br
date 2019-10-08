@@ -1,12 +1,16 @@
 <template>
   <div class="app-page-toolbar">
     <router-link :to="{ path: '/order/new' }" v-if="hasPermissionToCreate">
-      <el-button icon="el-icon-fa-plus" type="primary">
+      <el-button icon="el-icon-fa-plus" type="text">
         <app-i18n code="common.new"></app-i18n>
       </el-button>
     </router-link>
 
-    <router-link :to="{ path: '/order/import' }" v-if="hasPermissionToImport">
+    <router-link
+      :to="{ path: '/order/import' }"
+      class="hidden sm:flex"
+      v-if="hasPermissionToImport"
+    >
       <el-button icon="el-icon-fa-upload" type="primary">
         <app-i18n code="common.import"></app-i18n>
       </el-button>
@@ -22,7 +26,7 @@
           :disabled="destroyButtonDisabled"
           @click="doDestroyAllSelected"
           icon="el-icon-fa-trash"
-          type="primary"
+          type="text"
         >
           <app-i18n code="common.destroy"></app-i18n>
         </el-button>
@@ -31,6 +35,7 @@
 
     <router-link
       :to="{ path: '/audit-logs', query: { entityNames: 'order' } }"
+      class="hidden sm:flex"
       v-if="hasPermissionToAuditLogs"
     >
       <el-button icon="el-icon-fa-history">
@@ -38,7 +43,11 @@
       </el-button>
     </router-link>
 
-    <el-tooltip :content="exportButtonTooltip" :disabled="!exportButtonTooltip">
+    <el-tooltip
+      :content="exportButtonTooltip"
+      :disabled="!exportButtonTooltip"
+      class="hidden sm:flex"
+    >
       <span>
         <el-button
           :disabled="exportButtonDisabled"
@@ -88,8 +97,7 @@ export default {
     },
 
     hasPermissionToDestroy() {
-      return new OrderPermissions(this.currentUser)
-        .destroy;
+      return new OrderPermissions(this.currentUser).destroy;
     },
 
     exportButtonDisabled() {
@@ -154,12 +162,10 @@ export default {
   methods: {
     ...mapActions({
       doExport: 'order/list/doExport',
-      doRemoveAllSelected:
-        'order/list/doRemoveAllSelected',
+      doRemoveAllSelected: 'order/list/doRemoveAllSelected',
       doDisableAllSelected:
         'order/list/doDisableAllSelected',
-      doEnableAllSelected:
-        'order/list/doEnableAllSelected',
+      doEnableAllSelected: 'order/list/doEnableAllSelected',
       doDestroyAll: 'order/destroy/doDestroyAll',
     }),
 

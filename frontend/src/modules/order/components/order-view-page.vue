@@ -1,17 +1,5 @@
 <template>
   <div>
-    <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item :to="{ path: '/' }">
-        <app-i18n code="home.menu"></app-i18n>
-      </el-breadcrumb-item>
-      <el-breadcrumb-item :to="{ path: '/order' }">
-        <app-i18n code="entities.order.menu"></app-i18n>
-      </el-breadcrumb-item>
-      <el-breadcrumb-item>
-        <app-i18n code="entities.order.view.title"></app-i18n>
-      </el-breadcrumb-item>
-    </el-breadcrumb>
-
     <div class="app-content-page">
       <h1 class="app-content-title">
         <app-i18n code="entities.order.view.title"></app-i18n>
@@ -53,7 +41,10 @@
 
         <app-view-item-text :label="fields.delivered.label" :value="presenter(record, 'delivered')"></app-view-item-text>
 
-        <app-view-item-file :label="fields.attachments.label" :value="presenter(record, 'attachments')"></app-view-item-file>
+        <app-view-item-file
+          :label="fields.attachments.label"
+          :value="presenter(record, 'attachments')"
+        ></app-view-item-file>
 
         <app-view-item-relation-to-many
           :label="fields.services.label"
@@ -66,7 +57,10 @@
 
         <app-view-item-image :label="fields.photos.label" :value="presenter(record, 'photos')"></app-view-item-image>
 
-        <app-view-item-text :label="fields.description.label" :value="presenter(record, 'description')"></app-view-item-text>
+        <app-view-item-text
+          :label="fields.description.label"
+          :value="presenter(record, 'description')"
+        ></app-view-item-text>
 
         <app-view-item-text :label="fields.total.label" :value="presenter(record, 'total')"></app-view-item-text>
 

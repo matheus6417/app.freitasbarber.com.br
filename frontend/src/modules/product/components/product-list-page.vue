@@ -1,19 +1,9 @@
 <template>
   <div>
-    <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item :to="{ path: '/' }">
-        <app-i18n code="home.menu"></app-i18n>
-      </el-breadcrumb-item>
-      <el-breadcrumb-item>
-        <app-i18n code="entities.product.menu"></app-i18n>
-      </el-breadcrumb-item>
-    </el-breadcrumb>
-
+    <h1 class="app-content-title">
+      <app-i18n code="entities.product.list.title"></app-i18n>
+    </h1>
     <div class="app-content-page">
-      <h1 class="app-content-title">
-        <app-i18n code="entities.product.list.title"></app-i18n>
-      </h1>
-
       <app-product-list-filter></app-product-list-filter>
       <app-product-list-table></app-product-list-table>
       <app-product-list-toolbar></app-product-list-toolbar>

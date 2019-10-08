@@ -1,13 +1,17 @@
 <template>
   <div class="app-page-toolbar">
     <router-link :to="{ path: '/customer/new' }" v-if="hasPermissionToCreate">
-      <el-button icon="el-icon-fa-plus" type="primary">
+      <el-button icon="el-icon-fa-plus" type="text">
         <app-i18n code="common.new"></app-i18n>
       </el-button>
     </router-link>
 
-    <router-link :to="{ path: '/customer/import' }" v-if="hasPermissionToImport">
-      <el-button icon="el-icon-fa-upload" type="primary">
+    <router-link
+      :to="{ path: '/customer/import' }"
+      class="hidden sm:flex"
+      v-if="hasPermissionToImport"
+    >
+      <el-button icon="el-icon-fa-upload" type="text">
         <app-i18n code="common.import"></app-i18n>
       </el-button>
     </router-link>
@@ -22,7 +26,7 @@
           :disabled="destroyButtonDisabled"
           @click="doDestroyAllSelected"
           icon="el-icon-fa-trash"
-          type="primary"
+          type="text"
         >
           <app-i18n code="common.destroy"></app-i18n>
         </el-button>
@@ -31,6 +35,7 @@
 
     <router-link
       :to="{ path: '/audit-logs', query: { entityNames: 'customer' } }"
+      class="hidden sm:flex"
       v-if="hasPermissionToAuditLogs"
     >
       <el-button icon="el-icon-fa-history">
@@ -38,7 +43,11 @@
       </el-button>
     </router-link>
 
-    <el-tooltip :content="exportButtonTooltip" :disabled="!exportButtonTooltip">
+    <el-tooltip
+      :content="exportButtonTooltip"
+      :disabled="!exportButtonTooltip"
+      class="hidden sm:flex"
+    >
       <span>
         <el-button
           :disabled="exportButtonDisabled"
@@ -76,7 +85,8 @@ export default {
     },
 
     hasPermissionToCreate() {
-      return new CustomerPermissions(this.currentUser).create;
+      return new CustomerPermissions(this.currentUser)
+        .create;
     },
 
     hasPermissionToEdit() {
@@ -84,7 +94,8 @@ export default {
     },
 
     hasPermissionToImport() {
-      return new CustomerPermissions(this.currentUser).import;
+      return new CustomerPermissions(this.currentUser)
+        .import;
     },
 
     hasPermissionToDestroy() {

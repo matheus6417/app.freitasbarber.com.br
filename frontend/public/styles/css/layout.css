@@ -104,14 +104,15 @@ a {
 .app-page-toolbar {
   position: fixed;
   bottom: 0;
-  background: gray;
+  background: #ffffff;
   left: 0;
-  right: auto;
-  padding: 20px;
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
-}
+  right: 0;
+  padding: 8px;
+  z-index: 9;
+  padding-bottom: 50px;
+  }
 
+.app-page-toolbar:after{position: absolute;right: 0;left:0;bottom: 87%;content: '';height: 100%;z-index: -1;width: 100%;background: linear-gradient(to top, white, transparent);}
 .app-page-toolbar > * {
   margin-right: 8px !important;
   margin-bottom: 8px !important;

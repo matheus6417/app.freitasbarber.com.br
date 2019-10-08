@@ -1,18 +1,5 @@
 <template>
   <div>
-    <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item :to="{ path: '/' }">
-        <app-i18n code="home.menu"></app-i18n>
-      </el-breadcrumb-item>
-      <el-breadcrumb-item :to="{ path: '/product' }">
-        <app-i18n code="entities.product.menu"></app-i18n>
-      </el-breadcrumb-item>
-      <el-breadcrumb-item>
-        <app-i18n code="entities.product.edit.title" v-if="isEditing"></app-i18n>
-        <app-i18n code="entities.product.new.title" v-if="!isEditing"></app-i18n>
-      </el-breadcrumb-item>
-    </el-breadcrumb>
-
     <div class="app-content-page">
       <h1 class="app-content-title">
         <app-i18n code="entities.product.edit.title" v-if="isEditing"></app-i18n>
@@ -20,7 +7,7 @@
       </h1>
 
       <div class="app-page-spinner" v-if="findLoading" v-loading="findLoading"></div>
-      
+
       <app-product-form
         :isEditing="isEditing"
         :record="record"

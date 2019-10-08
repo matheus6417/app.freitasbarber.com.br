@@ -1,17 +1,5 @@
 <template>
   <div>
-    <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item :to="{ path: '/' }">
-        <app-i18n code="home.menu"></app-i18n>
-      </el-breadcrumb-item>
-      <el-breadcrumb-item :to="{ path: '/product' }">
-        <app-i18n code="entities.product.menu"></app-i18n>
-      </el-breadcrumb-item>
-      <el-breadcrumb-item>
-        <app-i18n code="entities.product.view.title"></app-i18n>
-      </el-breadcrumb-item>
-    </el-breadcrumb>
-
     <div class="app-content-page">
       <h1 class="app-content-title">
         <app-i18n code="entities.product.view.title"></app-i18n>
@@ -32,7 +20,10 @@
 
         <app-view-item-text :label="fields.name.label" :value="presenter(record, 'name')"></app-view-item-text>
 
-        <app-view-item-text :label="fields.description.label" :value="presenter(record, 'description')"></app-view-item-text>
+        <app-view-item-text
+          :label="fields.description.label"
+          :value="presenter(record, 'description')"
+        ></app-view-item-text>
 
         <app-view-item-text :label="fields.unitPrice.label" :value="presenter(record, 'unitPrice')"></app-view-item-text>
 

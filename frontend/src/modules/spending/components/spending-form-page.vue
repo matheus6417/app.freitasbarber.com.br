@@ -1,18 +1,5 @@
 <template>
   <div>
-    <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item :to="{ path: '/' }">
-        <app-i18n code="home.menu"></app-i18n>
-      </el-breadcrumb-item>
-      <el-breadcrumb-item :to="{ path: '/spending' }">
-        <app-i18n code="entities.spending.menu"></app-i18n>
-      </el-breadcrumb-item>
-      <el-breadcrumb-item>
-        <app-i18n code="entities.spending.edit.title" v-if="isEditing"></app-i18n>
-        <app-i18n code="entities.spending.new.title" v-if="!isEditing"></app-i18n>
-      </el-breadcrumb-item>
-    </el-breadcrumb>
-
     <div class="app-content-page">
       <h1 class="app-content-title">
         <app-i18n code="entities.spending.edit.title" v-if="isEditing"></app-i18n>
@@ -20,7 +7,7 @@
       </h1>
 
       <div class="app-page-spinner" v-if="findLoading" v-loading="findLoading"></div>
-      
+
       <app-spending-form
         :isEditing="isEditing"
         :record="record"
