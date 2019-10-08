@@ -2,9 +2,8 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC',
-    'Hiragino Sans GB', 'Microsoft YaHei', SimSun,
-    sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', SimSun, sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
@@ -44,11 +43,6 @@ a {
   min-height: 100vh;
 }
 
-.el-menu {
-  border-right: 0px !important;
-  height: calc(100% - 60px);
-}
-
 .el-header .el-dropdown-link-body {
   cursor: pointer;
   height: 60px;
@@ -58,16 +52,8 @@ a {
   align-items: center;
 }
 
-.el-main {
-  background-color: #f0f2f5;
-}
-
 .el-header .i18n-select {
   margin-right: 24px;
-}
-
-.el-aside {
-  flex-shrink: 0;
 }
 
 .el-menu-side-nav {
@@ -80,7 +66,7 @@ a {
 
 .el-menu-item.active {
   background-color: var(--color-primary-light-9);
-  border-right: 2px var(--color-primary-light-2) solid;
+  /* border-right: 2px var(--color-primary-light-2) solid; */
   color: var(--color-primary-light-2);
   outline: none;
   font-weight: bold;
@@ -100,15 +86,6 @@ a {
   }
 }
 
-.app-content-page {
-  margin-top: 16px;
-  padding: 24px;
-  background: #fff;
-  overflow-y: hidden;
-  border-radius: 5px;
-  border: 1px rgb(233, 233, 233) solid;
-}
-
 .app-content-title {
   margin-top: 0;
   margin-bottom: 36px;
@@ -125,7 +102,14 @@ a {
 }
 
 .app-page-toolbar {
-  margin-bottom: 24px;
+  position: fixed;
+  bottom: 0;
+  background: gray;
+  left: 0;
+  right: auto;
+  padding: 20px;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
 }
 
 .app-page-toolbar > * {

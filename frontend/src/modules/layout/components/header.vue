@@ -1,6 +1,6 @@
 <template>
   <el-row>
-    <el-col :span="4">
+    <!-- <el-col :span="4">
       <h1>
         <i
           @click="toggleMenu"
@@ -8,14 +8,14 @@
           style="cursor: pointer; margin-right: 35px"
         ></i>
       </h1>
-    </el-col>
+    </el-col>-->
     <el-col :span="20" style="text-align: right">
       <div class="header-actions">
         <el-dropdown @command="handleDropdownCommand">
           <span class="el-dropdown-link">
             <div class="el-dropdown-link-body">
               <div class="app-avatar" style="margin-right: 8px;">
-                <img :src="currentUserAvatar" v-if="currentUserAvatar">
+                <img :src="currentUserAvatar" v-if="currentUserAvatar" />
               </div>
               <span v-if="!isMobile">{{ currentUserNameOrEmailPrefix }}</span>
               <i class="el-icon-arrow-down el-icon--right"></i>

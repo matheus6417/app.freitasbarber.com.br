@@ -14,9 +14,9 @@
         <app-i18n code="entities.customer.list.title"></app-i18n>
       </h1>
 
-      <app-customer-list-toolbar></app-customer-list-toolbar>
       <app-customer-list-filter></app-customer-list-filter>
       <app-customer-list-table></app-customer-list-table>
+      <app-customer-list-toolbar></app-customer-list-toolbar>
     </div>
   </div>
 </template>

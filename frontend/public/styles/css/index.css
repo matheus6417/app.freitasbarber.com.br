@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import './font-awesome.custom.css';
 @import './layout.css';
+@import './menu.css';
 @import './auth.css';
 @import './form.css';
 @import './filter.css';

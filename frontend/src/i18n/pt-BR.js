@@ -1,811 +1,787 @@
 const ptBR = {
   common: {
-    or: 'ou',
-    cancel: 'Cancelar',
-    reset: 'Limpar',
-    save: 'Salvar',
-    search: 'Buscar',
-    edit: 'Editar',
-    remove: 'Remover',
-    new: 'Novo',
-    export: 'Exportar para Excel',
-    noDataToExport: 'Não há dados para exportar',
-    import: 'Importar',
-    discard: 'Descartar',
-    yes: 'Sim',
-    no: 'Não',
-    pause: 'Pausar',
-    areYouSure: 'Tem certeza?',
-    view: 'Visualizar',
-    destroy: 'Deletar',
-    mustSelectARow: 'Selecine uma linha',
-    confirm: 'Confirmar',
+    or: "ou",
+    cancel: "Cancelar",
+    reset: "Limpar",
+    save: "Salvar",
+    search: "Buscar",
+    edit: "Editar",
+    remove: "Remover",
+    new: "Novo",
+    export: "Exportar para Excel",
+    noDataToExport: "Não há dados para exportar",
+    import: "Importar",
+    discard: "Descartar",
+    yes: "Sim",
+    no: "Não",
+    pause: "Pausar",
+    areYouSure: "Tem certeza?",
+    view: "Visualizar",
+    destroy: "Deletar",
+    mustSelectARow: "Selecine uma linha",
+    confirm: "Confirmar"
   },
 
   app: {
-    title: 'Aplicação',
+    title: "Aplicação"
   },
 
   entities: {
     customer: {
-      name: 'Customer',
-      label: 'Customers',
-      menu: 'Customers',
-      exporterFileName: 'Customer_exportados',
+      name: "Cliente",
+      label: "Clientes",
+      menu: "CLIEN",
+      exporterFileName: "Cliente_exportados",
       list: {
-        menu: 'Customers',
-        title: 'Customers',
+        menu: "Clientes",
+        title: "Clientes"
       },
       create: {
-        success: 'Customer salvo com sucesso',
+        success: "Cliente salvo com sucesso"
       },
       update: {
-        success: 'Customer salvo com sucesso',
+        success: "Cliente salvo com sucesso"
       },
       destroy: {
-        success: 'Customer deletado com sucesso',
+        success: "Cliente deletado com sucesso"
       },
       destroyAll: {
-        success: 'Customer(s) deletado com sucesso',
+        success: "Cliente(s) deletado com sucesso"
       },
       edit: {
-        title: 'Editar Customer',
+        title: "Editar Cliente"
       },
       fields: {
-        id: 'Id',
-        'name': 'Name',
-        'birthdateRange': 'Birthdate',
-        'birthdate': 'Birthdate',
-        'gender': 'Gender',
-        'adress': 'Adress',
-        'phone1': 'Phone1',
-        'phone2': 'Phone2',
-        'relation': 'Relation',
-        'relationDescription': 'RelationDescription',
-        'e1': 'E1',
-        'e2Range': 'E2',
-        'e2': 'E2',
-        'e3Range': 'E3',
-        'e3': 'E3',
-        'e4Range': 'E4',
-        'e4': 'E4',
-        'e5Range': 'E5',
-        'e5': 'E5',
-        'e6': 'E6',
-        'active': 'Active',
-        'e7': 'E7',
-        'e8': 'E8',
-        'e9': 'E9',
-        createdAt: 'Criado em',
-        updatedAt: 'Atualizado em',
-        createdAtRange: 'Criado em',
+        id: "Id",
+        name: "Nome",
+        birthdateRange: "Nascimento",
+        birthdate: "Nascimento",
+        gender: "Gênero",
+        adress: "Endereço",
+        phone1: "Telefone/Whats",
+        phone2: "Telefone 2",
+        relation: "Relação",
+        relationDescription: "Tipo",
+        e1: "E1",
+        e2Range: "E2",
+        e2: "E2",
+        e3Range: "E3",
+        e3: "E3",
+        e4Range: "E4",
+        e4: "E4",
+        e5Range: "E5",
+        e5: "E5",
+        e6: "E6",
+        active: "Ativo",
+        e7: "E7",
+        e8: "E8",
+        e9: "E9",
+        createdAt: "Criado em",
+        updatedAt: "Atualizado em",
+        createdAtRange: "Criado em"
       },
       enumerators: {
-        'gender': {
-          'male': 'Male',
-          'female': 'Female',
+        gender: {
+          male: "Male",
+          female: "Female"
         },
-        'e7': {
-          'a': 'A',
-          'b': 'B',
-          'c': 'C',
-        },
+        e7: {
+          a: "A",
+          b: "B",
+          c: "C"
+        }
       },
       new: {
-        title: 'Novo Customer',
+        title: "Novo Cliente"
       },
       view: {
-        title: 'Visualizar Customer',
+        title: "Visualizar Cliente"
       },
       importer: {
-        title: 'Importar Customers',
-        fileName: 'customer_template_importacao',
+        title: "Importar Clientes",
+        fileName: "customer_template_importacao",
         hint:
-          'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
-      },
+          "Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço."
+      }
     },
 
     product: {
-      name: 'Product',
-      label: 'Products',
-      menu: 'Products',
-      exporterFileName: 'Product_exportados',
+      name: "Produto",
+      label: "Produtos",
+      menu: "PROD",
+      exporterFileName: "Produto_exportados",
       list: {
-        menu: 'Products',
-        title: 'Products',
+        menu: "Produtos",
+        title: "Produtos"
       },
       create: {
-        success: 'Product salvo com sucesso',
+        success: "Produto salvo com sucesso"
       },
       update: {
-        success: 'Product salvo com sucesso',
+        success: "Produto salvo com sucesso"
       },
       destroy: {
-        success: 'Product deletado com sucesso',
+        success: "Produto deletado com sucesso"
       },
       destroyAll: {
-        success: 'Product(s) deletado com sucesso',
+        success: "Produto(s) deletado com sucesso"
       },
       edit: {
-        title: 'Editar Product',
+        title: "Editar Produto"
       },
       fields: {
-        id: 'Id',
-        'name': 'Name',
-        'description': 'Description',
-        'unitPriceRange': 'Unit Price',
-        'unitPrice': 'Unit Price',
-        'photo': 'Photo',
-        'costPriceRange': 'CostPrice',
-        'costPrice': 'CostPrice',
-        'category': 'Category',
-        'e1': 'E1',
-        'e2Range': 'E2',
-        'e2': 'E2',
-        'e3Range': 'E3',
-        'e3': 'E3',
-        'e4Range': 'E4',
-        'e4': 'E4',
-        'e5Range': 'E5',
-        'e5': 'E5',
-        'e6': 'E6',
-        'dateCheckRange': 'DateCheck',
-        'dateCheck': 'DateCheck',
-        'e7': 'E7',
-        'e8': 'E8',
-        'e9': 'E9',
-        'active': 'Active',
-        createdAt: 'Criado em',
-        updatedAt: 'Atualizado em',
-        createdAtRange: 'Criado em',
+        id: "Id",
+        name: "Nome",
+        description: "Descrição",
+        unitPriceRange: "Preço",
+        unitPrice: "Preço",
+        photo: "Imagem",
+        costPriceRange: "Custo",
+        costPrice: "Custo",
+        category: "Categoria",
+        e1: "E1",
+        e2Range: "E2",
+        e2: "E2",
+        e3Range: "E3",
+        e3: "E3",
+        e4Range: "E4",
+        e4: "E4",
+        e5Range: "E5",
+        e5: "E5",
+        e6: "E6",
+        dateCheckRange: "Data Compra",
+        dateCheck: "Data Compra",
+        e7: "E7",
+        e8: "E8",
+        e9: "E9",
+        active: "Ativo",
+        createdAt: "Criado em",
+        updatedAt: "Atualizado em",
+        createdAtRange: "Criado em"
       },
       enumerators: {
-        'e7': {
-          'a': 'A',
-          'b': 'B',
-          'c': 'C',
-        },
+        e7: {
+          a: "A",
+          b: "B",
+          c: "C"
+        }
       },
       new: {
-        title: 'Novo Product',
+        title: "Novo Produto"
       },
       view: {
-        title: 'Visualizar Product',
+        title: "Visualizar Produto"
       },
       importer: {
-        title: 'Importar Products',
-        fileName: 'product_template_importacao',
+        title: "Importar Produtos",
+        fileName: "product_template_importacao",
         hint:
-          'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
-      },
+          "Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço."
+      }
     },
 
     order: {
-      name: 'Order',
-      label: 'Orders',
-      menu: 'Orders',
-      exporterFileName: 'Order_exportados',
+      name: "Atendimento",
+      label: "Atendimentos",
+      menu: "ATEND",
+      exporterFileName: "Atendimento_exportados",
       list: {
-        menu: 'Orders',
-        title: 'Orders',
+        menu: "Atendimentos",
+        title: "Atendimentos"
       },
       create: {
-        success: 'Order salvo com sucesso',
+        success: "Atendimento salvo com sucesso"
       },
       update: {
-        success: 'Order salvo com sucesso',
+        success: "Atendimento salvo com sucesso"
       },
       destroy: {
-        success: 'Order deletado com sucesso',
+        success: "Atendimento deletado com sucesso"
       },
       destroyAll: {
-        success: 'Order(s) deletado com sucesso',
+        success: "Atendimento(s) deletado com sucesso"
       },
       edit: {
-        title: 'Editar Order',
+        title: "Editar Atendimento"
       },
       fields: {
-        id: 'Id',
-        'customer': 'Customer',
-        'products': 'Products',
-        'employee': 'Employee',
-        'delivered': 'Delivered',
-        'attachments': 'Attachments',
-        'services': 'Services',
-        'dateRange': 'Date',
-        'date': 'Date',
-        'photos': 'Photos',
-        'description': 'Description',
-        'totalRange': 'Total',
-        'total': 'Total',
-        'valueAltRange': 'ValueAlt',
-        'valueAlt': 'ValueAlt',
-        'e1': 'E1',
-        'e2Range': 'E2',
-        'e2': 'E2',
-        'e3Range': 'E3',
-        'e3': 'E3',
-        'e4Range': 'E4',
-        'e4': 'E4',
-        'e5Range': 'E5',
-        'e5': 'E5',
-        'e6': 'E6',
-        'e7': 'E7',
-        'e8': 'E8',
-        'e9': 'E9',
-        createdAt: 'Criado em',
-        updatedAt: 'Atualizado em',
-        createdAtRange: 'Criado em',
+        id: "Id",
+        customer: "Cliente",
+        products: "Produtos",
+        employee: "Barbeiro",
+        delivered: "Feito",
+        attachments: "Anexos",
+        services: "Serviços",
+        dateRange: "Date",
+        date: "Date",
+        photos: "Photos",
+        description: "Descrição",
+        totalRange: "Total",
+        total: "Total",
+        valueAltRange: "ValueAlt",
+        valueAlt: "ValueAlt",
+        e1: "E1",
+        e2Range: "E2",
+        e2: "E2",
+        e3Range: "E3",
+        e3: "E3",
+        e4Range: "E4",
+        e4: "E4",
+        e5Range: "E5",
+        e5: "E5",
+        e6: "E6",
+        e7: "E7",
+        e8: "E8",
+        e9: "E9",
+        createdAt: "Criado em",
+        updatedAt: "Atualizado em",
+        createdAtRange: "Criado em"
       },
       enumerators: {
-        'e7': {
-          'a': 'A',
-          'b': 'B',
-          'c': 'C',
-        },
+        e7: {
+          a: "A",
+          b: "B",
+          c: "C"
+        }
       },
       new: {
-        title: 'Novo Order',
+        title: "Novo Atendimento"
       },
       view: {
-        title: 'Visualizar Order',
+        title: "Visualizar Atendimento"
       },
       importer: {
-        title: 'Importar Orders',
-        fileName: 'order_template_importacao',
+        title: "Importar Atendimentos",
+        fileName: "order_template_importacao",
         hint:
-          'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
-      },
+          "Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço."
+      }
     },
 
     service: {
-      name: 'Service',
-      label: 'Services',
-      menu: 'Services',
-      exporterFileName: 'Service_exportados',
+      name: "Serviço",
+      label: "Serviços",
+      menu: "SERV",
+      exporterFileName: "Serviço_exportados",
       list: {
-        menu: 'Services',
-        title: 'Services',
+        menu: "Serviços",
+        title: "Serviços"
       },
       create: {
-        success: 'Service salvo com sucesso',
+        success: "Serviço salvo com sucesso"
       },
       update: {
-        success: 'Service salvo com sucesso',
+        success: "Serviço salvo com sucesso"
       },
       destroy: {
-        success: 'Service deletado com sucesso',
+        success: "Serviço deletado com sucesso"
       },
       destroyAll: {
-        success: 'Service(s) deletado com sucesso',
+        success: "Serviço(s) deletado com sucesso"
       },
       edit: {
-        title: 'Editar Service',
+        title: "Editar Serviço"
       },
       fields: {
-        id: 'Id',
-        'name': 'Name',
-        'unitPriceRange': 'UnitPrice',
-        'unitPrice': 'UnitPrice',
-        'description': 'Description',
-        'e1': 'E1',
-        'e2Range': 'E2',
-        'e2': 'E2',
-        'e3Range': 'E3',
-        'e3': 'E3',
-        'e4Range': 'E4',
-        'e4': 'E4',
-        'e5Range': 'E5',
-        'e5': 'E5',
-        'e6': 'E6',
-        'isActive': 'IsActive',
-        'e7': 'E7',
-        'e8': 'E8',
-        'e9': 'E9',
-        'image': 'Image',
-        createdAt: 'Criado em',
-        updatedAt: 'Atualizado em',
-        createdAtRange: 'Criado em',
+        id: "Id",
+        name: "Nome",
+        unitPriceRange: "UnitPrice",
+        unitPrice: "UnitPrice",
+        description: "Descrição",
+        e1: "E1",
+        e2Range: "E2",
+        e2: "E2",
+        e3Range: "E3",
+        e3: "E3",
+        e4Range: "E4",
+        e4: "E4",
+        e5Range: "E5",
+        e5: "E5",
+        e6: "E6",
+        isActive: "IsActive",
+        e7: "E7",
+        e8: "E8",
+        e9: "E9",
+        image: "Image",
+        createdAt: "Criado em",
+        updatedAt: "Atualizado em",
+        createdAtRange: "Criado em"
       },
       enumerators: {
-        'e7': {
-          'a': 'A',
-          'b': 'B',
-          'c': 'C',
-        },
+        e7: {
+          a: "A",
+          b: "B",
+          c: "C"
+        }
       },
       new: {
-        title: 'Novo Service',
+        title: "Novo Serviço"
       },
       view: {
-        title: 'Visualizar Service',
+        title: "Visualizar Serviço"
       },
       importer: {
-        title: 'Importar Services',
-        fileName: 'service_template_importacao',
+        title: "Importar Serviços",
+        fileName: "service_template_importacao",
         hint:
-          'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
-      },
+          "Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço."
+      }
     },
 
     spending: {
-      name: 'Spending',
-      label: 'Spendings',
-      menu: 'Spendings',
-      exporterFileName: 'Spending_exportados',
+      name: "Despesa",
+      label: "Despesas",
+      menu: "DESP",
+      exporterFileName: "Despesa_exportados",
       list: {
-        menu: 'Spendings',
-        title: 'Spendings',
+        menu: "Despesas",
+        title: "Despesas"
       },
       create: {
-        success: 'Spending salvo com sucesso',
+        success: "Despesa salvo com sucesso"
       },
       update: {
-        success: 'Spending salvo com sucesso',
+        success: "Despesa salvo com sucesso"
       },
       destroy: {
-        success: 'Spending deletado com sucesso',
+        success: "Despesa deletado com sucesso"
       },
       destroyAll: {
-        success: 'Spending(s) deletado com sucesso',
+        success: "Despesa(s) deletado com sucesso"
       },
       edit: {
-        title: 'Editar Spending',
+        title: "Editar Despesa"
       },
       fields: {
-        id: 'Id',
-        'name': 'Name',
-        'dateRange': 'Date',
-        'date': 'Date',
-        'valueRange': 'Value',
-        'value': 'Value',
-        'e1': 'E1',
-        'e2Range': 'E2',
-        'e2': 'E2',
-        'e3Range': 'E3',
-        'e3': 'E3',
-        'e4Range': 'E4',
-        'e4': 'E4',
-        'e5Range': 'E5',
-        'e5': 'E5',
-        'e6': 'E6',
-        'e7': 'E7',
-        'e8': 'E8',
-        'e9': 'E9',
-        createdAt: 'Criado em',
-        updatedAt: 'Atualizado em',
-        createdAtRange: 'Criado em',
+        id: "Id",
+        name: "Nome",
+        dateRange: "Date",
+        date: "Date",
+        valueRange: "Value",
+        value: "Value",
+        e1: "E1",
+        e2Range: "E2",
+        e2: "E2",
+        e3Range: "E3",
+        e3: "E3",
+        e4Range: "E4",
+        e4: "E4",
+        e5Range: "E5",
+        e5: "E5",
+        e6: "E6",
+        e7: "E7",
+        e8: "E8",
+        e9: "E9",
+        createdAt: "Criado em",
+        updatedAt: "Atualizado em",
+        createdAtRange: "Criado em"
       },
       enumerators: {
-        'e7': {
-          'a': 'A',
-          'b': 'B',
-          'c': 'C',
-        },
+        e7: {
+          a: "A",
+          b: "B",
+          c: "C"
+        }
       },
       new: {
-        title: 'Novo Spending',
+        title: "Novo Despesa"
       },
       view: {
-        title: 'Visualizar Spending',
+        title: "Visualizar Despesa"
       },
       importer: {
-        title: 'Importar Spendings',
-        fileName: 'spending_template_importacao',
+        title: "Importar Despesas",
+        fileName: "spending_template_importacao",
         hint:
-          'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
-      },
-    },
+          "Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço."
+      }
+    }
   },
 
   auth: {
     profile: {
-      title: 'Editar Perfil',
-      success: 'Perfil atualizado com sucesso',
+      title: "Editar Perfil",
+      success: "Perfil atualizado com sucesso"
     },
-    createAnAccount: 'Criar uma conta',
-    rememberMe: 'Lembrar-me',
-    forgotPassword: 'Esqueci minha senha',
-    signin: 'Entrar',
-    signup: 'Registrar',
-    signout: 'Sair',
-    alreadyHaveAnAccount: 'Já possui uma conta? Entre.',
-    signinWithAnotherAccount: 'Entrar com outra conta',
+    createAnAccount: "Criar uma conta",
+    rememberMe: "Lembrar-me",
+    forgotPassword: "Esqueci minha senha",
+    signin: "Entrar",
+    signup: "Registrar",
+    signout: "Sair",
+    alreadyHaveAnAccount: "Já possui uma conta? Entre.",
+    signinWithAnotherAccount: "Entrar com outra conta",
     emailUnverified: {
       message: `Por favor, confirme seu email em <strong>{0}</strong> para continuar.`,
-      submit: `Reenviar confirmação por email`,
+      submit: `Reenviar confirmação por email`
     },
     emptyPermissions: {
-      message: `Você ainda não possui permissões. Aguarde o administrador conceder seus privilégios.`,
+      message: `Você ainda não possui permissões. Aguarde o administrador conceder seus privilégios.`
     },
     passwordResetEmail: {
-      message: 'Enviar email de redefinição de senha',
-      error: `Email não encontrado`,
+      message: "Enviar email de redefinição de senha",
+      error: `Email não encontrado`
     },
     passwordReset: {
-      message: 'Alterar senha',
+      message: "Alterar senha"
     },
     emailAddressVerificationEmail: {
-      error: `Email não encontrado`,
+      error: `Email não encontrado`
     },
     verificationEmailSuccess: `Verificação de email enviada com sucesso`,
     passwordResetEmailSuccess: `Email de redefinição de senha enviado com sucesso`,
     passwordResetSuccess: `Senha alterada com sucesso`,
     verifyEmail: {
-      success: 'Email verificado com sucesso',
-      message:
-        'Aguarde um momento, seu email está sendo verificado...',
-    },
+      success: "Email verificado com sucesso",
+      message: "Aguarde um momento, seu email está sendo verificado..."
+    }
   },
 
   roles: {
     owner: {
-      label: 'Proprietário',
-      description: 'Acesso completo a todos os recursos',
+      label: "Proprietário",
+      description: "Acesso completo a todos os recursos"
     },
     editor: {
-      label: 'Editor',
-      description: 'Acesso para edição a todos os recursos',
+      label: "Editor",
+      description: "Acesso para edição a todos os recursos"
     },
     viewer: {
-      label: 'Visualizador',
-      description:
-        'Acesso de visualização a todos os recursos',
+      label: "Visualizador",
+      description: "Acesso de visualização a todos os recursos"
     },
     auditLogViewer: {
-      label: 'Visualizador de Registros de Autoria',
-      description:
-        'Acesso de visualização dos registros de autoria',
+      label: "Visualizador de Registros de Autoria",
+      description: "Acesso de visualização dos registros de autoria"
     },
     iamSecurityReviewer: {
-      label: 'Revisor de segurança',
-      description: `Acesso total para gerenciar as funções do usuário`,
+      label: "Revisor de segurança",
+      description: `Acesso total para gerenciar as funções do usuário`
     },
     entityEditor: {
-      label: 'Editor de Entidades',
-      description: 'Acesso de edição a todas as entidades',
+      label: "Editor de Entidades",
+      description: "Acesso de edição a todas as entidades"
     },
     entityViewer: {
-      label: 'Visualizador de Entidades',
-      description:
-        'Acesso de visualização a todas as entidades',
+      label: "Visualizador de Entidades",
+      description: "Acesso de visualização a todas as entidades"
     },
     customerEditor: {
-      label: 'Editor de Customers',
-      description: 'Acesso de edição aos Customers',
+      label: "Editor de Clientes",
+      description: "Acesso de edição aos Clientes"
     },
     customerViewer: {
-      label: 'Visualizador de Customers',
-      description: 'Acesso de visualização aos Customers',
+      label: "Visualizador de Clientes",
+      description: "Acesso de visualização aos Clientes"
     },
     productEditor: {
-      label: 'Editor de Products',
-      description: 'Acesso de edição aos Products',
+      label: "Editor de Produtos",
+      description: "Acesso de edição aos Produtos"
     },
     productViewer: {
-      label: 'Visualizador de Products',
-      description: 'Acesso de visualização aos Products',
+      label: "Visualizador de Produtos",
+      description: "Acesso de visualização aos Produtos"
     },
     orderEditor: {
-      label: 'Editor de Orders',
-      description: 'Acesso de edição aos Orders',
+      label: "Editor de Atendimentos",
+      description: "Acesso de edição aos Atendimentos"
     },
     orderViewer: {
-      label: 'Visualizador de Orders',
-      description: 'Acesso de visualização aos Orders',
+      label: "Visualizador de Atendimentos",
+      description: "Acesso de visualização aos Atendimentos"
     },
     serviceEditor: {
-      label: 'Editor de Services',
-      description: 'Acesso de edição aos Services',
+      label: "Editor de Serviços",
+      description: "Acesso de edição aos Serviços"
     },
     serviceViewer: {
-      label: 'Visualizador de Services',
-      description: 'Acesso de visualização aos Services',
+      label: "Visualizador de Serviços",
+      description: "Acesso de visualização aos Serviços"
     },
     spendingEditor: {
-      label: 'Editor de Spendings',
-      description: 'Acesso de edição aos Spendings',
+      label: "Editor de Despesas",
+      description: "Acesso de edição aos Despesas"
     },
     spendingViewer: {
-      label: 'Visualizador de Spendings',
-      description: 'Acesso de visualização aos Spendings',
-    },
+      label: "Visualizador de Despesas",
+      description: "Acesso de visualização aos Despesas"
+    }
   },
 
   iam: {
-    title: 'Gerenciamento de usuários e permissões',
-    menu: 'IAM',
-    disable: 'Desabilitar',
-    disabled: 'Desabilitado',
-    enabled: 'Habilitado',
-    enable: 'Habilitar',
-    doEnableSuccess: 'Usuário habilitado com sucesso',
-    doDisableSuccess: 'Usuário desabilitado com sucesso',
-    doDisableAllSuccess:
-      'Usuário(s) desabilitado(s) com sucesso',
-    doEnableAllSuccess:
-      'Usuário(s) habilidatos com sucesso',
-    doAddSuccess: 'Usuário(s) salvos com sucesso',
-    doUpdateSuccess: 'Usuário salvo com sucesso',
-    viewBy: 'Visualizar por',
+    title: "Gerenciamento de usuários e permissões",
+    menu: "IAM",
+    disable: "Desabilitar",
+    disabled: "Desabilitado",
+    enabled: "Habilitado",
+    enable: "Habilitar",
+    doEnableSuccess: "Usuário habilitado com sucesso",
+    doDisableSuccess: "Usuário desabilitado com sucesso",
+    doDisableAllSuccess: "Usuário(s) desabilitado(s) com sucesso",
+    doEnableAllSuccess: "Usuário(s) habilidatos com sucesso",
+    doAddSuccess: "Usuário(s) salvos com sucesso",
+    doUpdateSuccess: "Usuário salvo com sucesso",
+    viewBy: "Visualizar por",
     users: {
-      name: 'users',
-      label: 'Usuários',
-      exporterFileName: 'usuarios_exportados',
-      doRemoveAllSelectedSuccess:
-        'Permissões removidas com sucesso',
+      name: "users",
+      label: "Usuários",
+      exporterFileName: "usuarios_exportados",
+      doRemoveAllSelectedSuccess: "Permissões removidas com sucesso"
     },
     roles: {
-      label: 'Perfis',
-      doRemoveAllSelectedSuccess:
-        'Permissões removidas com sucesso',
+      label: "Perfis",
+      doRemoveAllSelectedSuccess: "Permissões removidas com sucesso"
     },
     edit: {
-      title: 'Editar usuário',
+      title: "Editar usuário"
     },
     new: {
-      title: 'Novo(s) Usuário(s)',
-      titleModal: 'Novo Usuário',
-      emailsHint:
-        'Separe múltiplos endereços de e-mail usando a vírgula.',
+      title: "Novo(s) Usuário(s)",
+      titleModal: "Novo Usuário",
+      emailsHint: "Separe múltiplos endereços de e-mail usando a vírgula."
     },
     view: {
-      title: 'Visualizar Usuário',
-      activity: 'Atividades',
+      title: "Visualizar Usuário",
+      activity: "Atividades"
     },
     importer: {
-      title: 'Importar Usuários',
-      fileName: 'usuarios_template_importacao',
+      title: "Importar Usuários",
+      fileName: "usuarios_template_importacao",
       hint:
-        'Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço.',
+        "Arquivos/Imagens devem ser as URLs dos arquivos, separados por espaço. Relacionamentos devem ser os IDs separados por espaço."
     },
     errors: {
-      userAlreadyExists: 'Usuário com este email já existe',
-      userNotFound: 'Usuário não encontrado',
+      userAlreadyExists: "Usuário com este email já existe",
+      userNotFound: "Usuário não encontrado",
       disablingHimself: `Você não pode desativar-se`,
-      revokingOwnPermission: `Você não pode revogar sua própria permissão de proprietário`,
-    },
+      revokingOwnPermission: `Você não pode revogar sua própria permissão de proprietário`
+    }
   },
 
   user: {
     fields: {
-      id: 'Id',
-      authenticationUid: 'Id de autenticação',
-      avatars: 'Avatar',
-      email: 'Email',
-      emails: 'Email(s)',
-      fullName: 'Nome',
-      firstName: 'Nome',
-      lastName: 'Sobrenome',
-      status: 'Estado',
-      disabled: 'Desativado',
-      phoneNumber: 'Telefone',
-      role: 'Perfil',
-      createdAt: 'Criado em',
-      updatedAt: 'Atualizado em',
-      roleUser: 'Perfil/Usuário',
-      roles: 'Perfis',
-      createdAtRange: 'Criado em',
-      password: 'Senha',
-      rememberMe: 'Lembrar-me',
+      id: "Id",
+      authenticationUid: "Id de autenticação",
+      avatars: "Avatar",
+      email: "Email",
+      emails: "Email(s)",
+      fullName: "Nome",
+      firstName: "Nome",
+      lastName: "Sobrenome",
+      status: "Estado",
+      disabled: "Desativado",
+      phoneNumber: "Telefone",
+      role: "Perfil",
+      createdAt: "Criado em",
+      updatedAt: "Atualizado em",
+      roleUser: "Perfil/Usuário",
+      roles: "Perfis",
+      createdAtRange: "Criado em",
+      password: "Senha",
+      rememberMe: "Lembrar-me"
     },
-    enabled: 'Habilitado',
-    disabled: 'Desabilitado',
+    enabled: "Habilitado",
+    disabled: "Desabilitado",
     validations: {
       // eslint-disable-next-line
-      email: 'Email ${value} é inválido',
-    },
+      email: "Email ${value} é inválido"
+    }
   },
 
   auditLog: {
-    menu: 'Registros de Auditoria',
-    title: 'Registros de Auditoria',
-    exporterFileName: 'registros_autoria_exportados',
-    entityNamesHint:
-      'Separe múltiplas entidades por vírgula',
+    menu: "Registros de Auditoria",
+    title: "Registros de Auditoria",
+    exporterFileName: "registros_autoria_exportados",
+    entityNamesHint: "Separe múltiplas entidades por vírgula",
     fields: {
-      id: 'Id',
-      timestampRange: 'Período',
-      entityName: 'Entidade',
-      entityNames: 'Entidades',
-      entityId: 'ID da Entidade',
-      action: 'Ação',
-      values: 'Valores',
-      timestamp: 'Data',
-      createdByEmail: 'Email do Usuário',
-    },
+      id: "Id",
+      timestampRange: "Período",
+      entityName: "Entidade",
+      entityNames: "Entidades",
+      entityId: "ID da Entidade",
+      action: "Ação",
+      values: "Valores",
+      timestamp: "Data",
+      createdByEmail: "Email do Usuário"
+    }
   },
   settings: {
-    title: 'Configurações',
-    menu: 'Configurações',
+    title: "Configurações",
+    menu: "Configurações",
     save: {
       success:
-        'Configurações salvas com sucesso. A página irá recarregar em {0} para que as alterações tenham efeito.',
+        "Configurações salvas com sucesso. A página irá recarregar em {0} para que as alterações tenham efeito."
     },
     fields: {
-      theme: 'Tema',
+      theme: "Tema"
     },
     colors: {
-      default: 'Padrão',
-      cyan: 'Ciano',
-      'geek-blue': 'Azul escuro',
-      gold: 'Ouro',
-      lime: 'Limão',
-      magenta: 'Magenta',
-      orange: 'Laranja',
-      'polar-green': 'Verde polar',
-      purple: 'Roxo',
-      red: 'Vermelho',
-      volcano: 'Vúlcão',
-      yellow: 'Amarelo',
-    },
+      default: "Padrão",
+      cyan: "Ciano",
+      "geek-blue": "Azul escuro",
+      gold: "Ouro",
+      lime: "Limão",
+      magenta: "Magenta",
+      orange: "Laranja",
+      "polar-green": "Verde polar",
+      purple: "Roxo",
+      red: "Vermelho",
+      volcano: "Vúlcão",
+      yellow: "Amarelo"
+    }
   },
   home: {
-    menu: 'Inicial',
+    menu: "INIC",
     message: `Esta página usa dados falsos apenas para fins de demonstração. Você pode editá-la em frontend/src/modules/home/components/home-page.vue.`,
     charts: {
-      day: 'Dia',
-      red: 'Vermelho',
-      green: 'Verde',
-      yellow: 'Amarelho',
-      grey: 'Cinza',
-      blue: 'Azul',
-      orange: 'Laranja',
+      day: "Dia",
+      red: "Vermelho",
+      green: "Verde",
+      yellow: "Amarelho",
+      grey: "Cinza",
+      blue: "Azul",
+      orange: "Laranja",
       months: {
-        1: 'Janeiro',
-        2: 'Fevereiro',
-        3: 'Março',
-        4: 'Abril',
-        5: 'Maio',
-        6: 'Junho',
-        7: 'Julho',
+        1: "Janeiro",
+        2: "Fevereiro",
+        3: "Março",
+        4: "Abril",
+        5: "Maio",
+        6: "Junho",
+        7: "Julho"
       },
-      eating: 'Comendo',
-      drinking: 'Bebendo',
-      sleeping: 'Dormindo',
-      designing: 'Projetando',
-      coding: 'Codificando',
-      cycling: 'Pedalando',
-      running: 'Correndo',
-      customer: 'Cliente',
-    },
+      eating: "Comendo",
+      drinking: "Bebendo",
+      sleeping: "Dormindo",
+      designing: "Projetando",
+      coding: "Codificando",
+      cycling: "Pedalando",
+      running: "Correndo",
+      customer: "Cliente"
+    }
   },
   errors: {
-    backToHome: 'Voltar a página inicial',
+    backToHome: "Voltar a página inicial",
     403: `Desculpe, você não tem acesso a esta página`,
-    404: 'Desculpe, a página que você visitou não existe',
-    500: 'Desculpe, o servidor está relatando um erro',
+    404: "Desculpe, a página que você visitou não existe",
+    500: "Desculpe, o servidor está relatando um erro",
     forbidden: {
-      message: 'Acesso negado',
+      message: "Acesso negado"
     },
     validation: {
-      message: 'Ocorreu um erro',
+      message: "Ocorreu um erro"
     },
-    defaultErrorMessage: 'Ops, ocorreu um erro',
+    defaultErrorMessage: "Ops, ocorreu um erro"
   },
   // See https://github.com/jquense/yup#using-a-custom-locale-dictionary
   /* eslint-disable */
   validation: {
     mixed: {
-      default: '${path} é inválido',
-      required: '${path} é obrigatório',
-      oneOf:
-        '${path} deve ser um dos seguintes valores: ${values}',
-      notOneOf:
-        '${path} não deve ser um dos seguintes valores: ${values}',
+      default: "${path} é inválido",
+      required: "${path} é obrigatório",
+      oneOf: "${path} deve ser um dos seguintes valores: ${values}",
+      notOneOf: "${path} não deve ser um dos seguintes valores: ${values}",
       notType: ({ path, type, value, originalValue }) => {
         return `${path} deve ser um ${type}`;
-      },
+      }
     },
     string: {
-      length: '${path} deve possuir ${length} caracteres',
-      min:
-        '${path} deve possuir ao menos ${min} caracteres',
-      max:
-        '${path} deve possui no máximo ${max} caracteres',
-      matches:
-        '${path} deve respeitar o padrão: "${regex}"',
-      email: '${path} deve ser um email válido',
-      url: '${path} deve ser uma URL válida',
-      trim:
-        '${path} deve ser uma palavra sem espaços em branco',
-      lowercase: '${path} deve ser minúsculo',
-      uppercase: '${path} deve ser maiúsculo',
-      selected: '${path} deve ser selecionado',
+      length: "${path} deve possuir ${length} caracteres",
+      min: "${path} deve possuir ao menos ${min} caracteres",
+      max: "${path} deve possui no máximo ${max} caracteres",
+      matches: '${path} deve respeitar o padrão: "${regex}"',
+      email: "${path} deve ser um email válido",
+      url: "${path} deve ser uma URL válida",
+      trim: "${path} deve ser uma palavra sem espaços em branco",
+      lowercase: "${path} deve ser minúsculo",
+      uppercase: "${path} deve ser maiúsculo",
+      selected: "${path} deve ser selecionado"
     },
     number: {
-      min: '${path} deve ser maior ou igual a ${min}',
-      max: '${path} deve ser menor ou igual a ${max}',
-      lessThan: '${path} deve ser menor que ${less}',
-      moreThan: '${path} deve ser maior que ${more}',
-      notEqual: '${path} não deve ser igual a ${notEqual}',
-      positive: '${path} deve ser um número positivo',
-      negative: '${path} deve ser um número negativo',
-      integer: '${path} deve ser um inteiro',
-      invalid: '${path} deve ser um número',
+      min: "${path} deve ser maior ou igual a ${min}",
+      max: "${path} deve ser menor ou igual a ${max}",
+      lessThan: "${path} deve ser menor que ${less}",
+      moreThan: "${path} deve ser maior que ${more}",
+      notEqual: "${path} não deve ser igual a ${notEqual}",
+      positive: "${path} deve ser um número positivo",
+      negative: "${path} deve ser um número negativo",
+      integer: "${path} deve ser um inteiro",
+      invalid: "${path} deve ser um número"
     },
     date: {
-      min: '${path} deve ser posterior a ${min}',
-      max: '${path} deve ser mais cedo do que ${max}',
+      min: "${path} deve ser posterior a ${min}",
+      max: "${path} deve ser mais cedo do que ${max}"
     },
     boolean: {},
     object: {
       noUnknown:
-        '${path} não pode ter atributos não especificados no formato do objeto',
+        "${path} não pode ter atributos não especificados no formato do objeto"
     },
     array: {
-      min: '${path} deve possuir ao menos ${min} itens',
-      max: '${path} deve possuir no máximo ${max} itens',
-    },
+      min: "${path} deve possuir ao menos ${min} itens",
+      max: "${path} deve possuir no máximo ${max} itens"
+    }
   },
   /* eslint-disable */
   fileUploader: {
-    upload: 'Upload',
-    image: 'Você deve fazer upload de uma imagem',
-    size:
-      'O arquivo é muito grande. O tamanho máximo permitido é {0}',
-    formats: `Formato inválido. Deve ser: '{0}'.`,
+    upload: "Upload",
+    image: "Você deve fazer upload de uma imagem",
+    size: "O arquivo é muito grande. O tamanho máximo permitido é {0}",
+    formats: `Formato inválido. Deve ser: '{0}'.`
   },
   importer: {
-    line: 'Linha',
-    status: 'Estado',
-    pending: 'Pendente',
-    imported: 'Importado',
-    error: 'Erro',
+    line: "Linha",
+    status: "Estado",
+    pending: "Pendente",
+    imported: "Importado",
+    error: "Erro",
     total: `{0} importado, {1} pendente e {2} com erro`,
     importedMessage: `Processados {0} de {1}.`,
     noNavigateAwayMessage:
-      'Não saia desta página ou a importação será interrompida.',
+      "Não saia desta página ou a importação será interrompida.",
     completed: {
       success:
-        'Importação concluída. Todas as linhas foram importadas com sucesso.',
+        "Importação concluída. Todas as linhas foram importadas com sucesso.",
       someErrors:
-        'O processamento foi concluído, mas algumas linhas não puderam ser importadas.',
-      allErrors:
-        'Importação falhou. Não há linhas válidas.',
+        "O processamento foi concluído, mas algumas linhas não puderam ser importadas.",
+      allErrors: "Importação falhou. Não há linhas válidas."
     },
     form: {
-      downloadTemplate: 'Baixe o modelo',
-      hint:
-        'Clique ou arraste o arquivo para esta área para continuar.',
+      downloadTemplate: "Baixe o modelo",
+      hint: "Clique ou arraste o arquivo para esta área para continuar."
     },
     list: {
-      discardConfirm:
-        'Você tem certeza? Dados não importados serão perdidos.',
+      discardConfirm: "Você tem certeza? Dados não importados serão perdidos."
     },
     errors: {
-      invalidFileEmpty: 'O arquivo está vazio',
-      invalidFileExcel:
-        'Apenas arquivos Excel (.xlsx) são permitidos',
+      invalidFileEmpty: "O arquivo está vazio",
+      invalidFileExcel: "Apenas arquivos Excel (.xlsx) são permitidos",
       invalidFileUpload:
-        'Arquivo inválido. Verifique se você está usando a última versão do modelo.',
-      importHashRequired: 'Hash de importação é necessário',
-      importHashExistent: 'Dados já foram importados',
-    },
+        "Arquivo inválido. Verifique se você está usando a última versão do modelo.",
+      importHashRequired: "Hash de importação é necessário",
+      importHashExistent: "Dados já foram importados"
+    }
   },
 
   autocomplete: {
-    loading: 'Carregando...',
+    loading: "Carregando..."
   },
 
   imagesViewer: {
-    noImage: 'Sem imagem',
+    noImage: "Sem imagem"
   },
 
   firebaseErrors: {
-    'auth/user-disabled': 'Sua conta está desativada',
-    'auth/user-not-found': `Desculpe, não reconhecemos suas credenciais`,
-    'auth/wrong-password': `Desculpe, não reconhecemos suas credenciais`,
-    'auth/weak-password': 'Esta senha é muito fraca',
-    'auth/email-already-in-use':
-      'O email já está sendo usado',
-    'auth/invalid-email':
-      'Por favor forneça um email válido',
-    'auth/account-exists-with-different-credential':
-      'O email já está em uso para um método de autenticação diferente.',
-    'auth/credential-already-in-use':
-      'Credenciais já estão em uso',
-  },
+    "auth/user-disabled": "Sua conta está desativada",
+    "auth/user-not-found": `Desculpe, não reconhecemos suas credenciais`,
+    "auth/wrong-password": `Desculpe, não reconhecemos suas credenciais`,
+    "auth/weak-password": "Esta senha é muito fraca",
+    "auth/email-already-in-use": "O email já está sendo usado",
+    "auth/invalid-email": "Por favor forneça um email válido",
+    "auth/account-exists-with-different-credential":
+      "O email já está em uso para um método de autenticação diferente.",
+    "auth/credential-already-in-use": "Credenciais já estão em uso"
+  }
 };
 
 export default ptBR;

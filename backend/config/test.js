@@ -11,5 +11,5 @@ module.exports = {
 
   clientUrl: '<insert client url here>',
 
-  defaultUser: '<insert your email here>',
+  defaultUser: 'matheus6417@gmail.com',
 };

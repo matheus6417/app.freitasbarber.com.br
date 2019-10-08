@@ -1,29 +1,52 @@
 <template>
-  <el-aside :width="asideWidth">
+  <!-- <el-aside :width="asideWidth">
     <h1 class="logo">
       <router-link to="/">
-        <app-i18n code="app.title"></app-i18n>
+        <app-i18n class="menu-title" code="app.title"></app-i18n>
       </router-link>
-    </h1>
-
+  </h1>-->
+  <aside class="bottom-0 fixed h-12 w-full z-50 sm:left-0 sm:h-full sm:w-24">
+    <!-- :class="{
+  'el-menu-side-nav': true,
+  collapsed: collapsed,
+  }"
+  :collapse="collapsed"
+    :collapse-transition="false"-->
     <el-menu
-      :class="{
-        'el-menu-side-nav': true,
-        collapsed: collapsed,
-      }"
-      :collapse="collapsed"
-      :collapse-transition="false"
+      class="flex sm:flex-col w-full justify-between align-middle sm:flex-col-reverse sm:pt-24 h-full sm:justify-end"
       :router="true"
       @select="collapseMenuIfMobile()"
     >
-      <el-menu-item :class="classFor('/', true)" :route="{ path: '/' }" index="/">
-        <i class="el-icon-fa-home"></i>
-        <span slot="title">
-          <app-i18n code="home.menu"></app-i18n>
-        </span>
-      </el-menu-item>
-
       <el-menu-item
+        :class="classFor('/product')"
+        :route="{ path: '/product' }"
+        index="/product"
+        v-if="hasPermissionToProduct"
+      >
+        <template slot="title">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="menu-icon feather feather-package"
+          >
+            <line x1="16.5" y1="9.4" x2="7.5" y2="4.21" />
+            <path
+              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+            />
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+            <line x1="12" y1="22.08" x2="12" y2="12" />
+          </svg>
+          <app-i18n class="menu-title" code="entities.product.menu"></app-i18n>
+        </template>
+      </el-menu-item>
+      <!-- <el-menu-item
         :class="classFor('/iam')"
         :route="{ path: '/iam' }"
         index="/iam"
@@ -31,97 +54,169 @@
       >
         <i class="el-icon-fa-user-plus"></i>
         <span slot="title">
-          <app-i18n code="iam.menu"></app-i18n>
+          <app-i18n class="menu-title" code="iam.menu"></app-i18n>
         </span>
-      </el-menu-item>
-
-      <el-menu-item
-        :class="classFor('/audit-logs')"
-        :route="{ path: '/audit-logs' }"
-        index="/audit-logs"
-        v-if="hasPermissionToAuditLog"
-      >
-        <i class="el-icon-fa-history"></i>
-        <span slot="title">
-          <app-i18n code="auditLog.menu"></app-i18n>
-        </span>
-      </el-menu-item>
-
-      <el-menu-item
-        :class="classFor('/settings')"
-        :route="{ path: '/settings' }"
-        index="/settings"
-        v-if="hasPermissionToSettings"
-      >
-        <i class="el-icon-fa-cog"></i>
-        <span slot="title">
-          <app-i18n code="settings.menu"></app-i18n>
-        </span>
-      </el-menu-item>
-
+      </el-menu-item>-->
       <el-menu-item
         :class="classFor('/customer')"
         :route="{ path: '/customer' }"
         index="/customer"
         v-if="hasPermissionToCustomer"
       >
-        <i class="el-icon-fa-chevron-right"></i>
-        <span slot="title">
-          <app-i18n code="entities.customer.menu"></app-i18n>
-        </span>
+        <template slot="title">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="menu-icon feather feather-users"
+          >
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          <app-i18n class="menu-title" code="entities.customer.menu"></app-i18n>
+        </template>
       </el-menu-item>
-
-      <el-menu-item
-        :class="classFor('/product')"
-        :route="{ path: '/product' }"
-        index="/product"
-        v-if="hasPermissionToProduct"
-      >
-        <i class="el-icon-fa-chevron-right"></i>
-        <span slot="title">
-          <app-i18n code="entities.product.menu"></app-i18n>
-        </span>
-      </el-menu-item>
-
-      <el-menu-item
-        :class="classFor('/order')"
-        :route="{ path: '/order' }"
-        index="/order"
-        v-if="hasPermissionToOrder"
-      >
-        <i class="el-icon-fa-chevron-right"></i>
-        <span slot="title">
-          <app-i18n code="entities.order.menu"></app-i18n>
-        </span>
-      </el-menu-item>
-
       <el-menu-item
         :class="classFor('/service')"
         :route="{ path: '/service' }"
         index="/service"
         v-if="hasPermissionToService"
       >
-        <i class="el-icon-fa-chevron-right"></i>
-        <span slot="title">
-          <app-i18n code="entities.service.menu"></app-i18n>
-        </span>
+        <template slot="title">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="menu-icon feather feather-scissors"
+          >
+            <circle cx="6" cy="6" r="3" />
+            <circle cx="6" cy="18" r="3" />
+            <line x1="20" y1="4" x2="8.12" y2="15.88" />
+            <line x1="14.47" y1="14.48" x2="20" y2="20" />
+            <line x1="8.12" y1="8.12" x2="12" y2="12" />
+          </svg>
+          <app-i18n class="menu-title" code="entities.service.menu"></app-i18n>
+        </template>
       </el-menu-item>
-
+      <el-menu-item
+        :route="{ path: '/order/new' }"
+        class="sm:order-last bg-transparent hover:bg-transparent"
+        index="/order/new"
+        style="background-color:transparent!important;width:48px"
+        v-if="hasPermissionToOrder"
+      >
+        <template slot="title" class="menu-fab text-white">
+          <span
+            style="background-color: #faad14;"
+            class="p-3 shadow-md rounded-full mb-5 block relative theme-primary-200 theme-on-primary"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="menu-icon text-white feather feather-plus"
+            >
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+          </span>
+        </template>
+      </el-menu-item>
+      <el-menu-item
+        :class="classFor('/order')"
+        :route="{ path: '/order' }"
+        index="/order"
+        v-if="hasPermissionToOrder"
+      >
+        <template slot="title">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="menu-icon feather feather-calendar"
+          >
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+          <app-i18n class="menu-title" code="entities.order.menu"></app-i18n>
+        </template>
+      </el-menu-item>
       <el-menu-item
         :class="classFor('/spending')"
         :route="{ path: '/spending' }"
         index="/spending"
         v-if="hasPermissionToSpending"
       >
-        <i class="el-icon-fa-chevron-right"></i>
-        <span slot="title">
-          <app-i18n code="entities.spending.menu"></app-i18n>
-        </span>
+        <template slot="title">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="menu-icon feather feather-dollar-sign"
+          >
+            <line x1="12" y1="1" x2="12" y2="23" />
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+          </svg>
+          <app-i18n class="menu-title" code="entities.spending.menu"></app-i18n>
+        </template>
+      </el-menu-item>
+      <el-menu-item :class="classFor('/', true)" :route="{ path: '/' }" index="/">
+        <template slot="title">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="menu-icon feather feather-activity"
+          >
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+          </svg>
+          <app-i18n class="menu-title" code="home.menu"></app-i18n>
+        </template>
       </el-menu-item>
     </el-menu>
-  </el-aside>
+  </aside>
+  <!-- </el-aside> -->
 </template>
-
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import { SettingsPermissions } from '@/modules/settings/settings-permissions';
@@ -205,9 +300,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.el-menu.collapsed span {
-  visibility: hidden;
-}
-</style>

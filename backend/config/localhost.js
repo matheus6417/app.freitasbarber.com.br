@@ -3,7 +3,7 @@ module.exports = {
 
   email: {
     comment: 'See https://nodemailer.com',
-    from: '<insert your email here>',
+    from: 'matheus6417@gmail.com',
     host: null,
     auth: {
       user: null,
@@ -15,5 +15,5 @@ module.exports = {
 
   clientUrl: '<insert client url here>',
 
-  defaultUser: '<insert your email here>',
+  defaultUser: 'matheus6417@gmail.com',
 };

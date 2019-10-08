@@ -3,7 +3,7 @@ module.exports = {
 
   email: {
     comment: 'See https://nodemailer.com',
-    from: '<insert your email here>',
+    from: 'matheus6417@gmail.com',
     host: null,
     auth: {
       user: null,
@@ -14,7 +14,7 @@ module.exports = {
   graphiql: false,
 
   clientUrl:
-      'https://<insert project id here>.firebaseapp.com',
+      'https://meunoovapp.firebaseapp.com',
 
   defaultUser: null,
 };
