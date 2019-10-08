@@ -14,9 +14,9 @@
         <app-i18n code="iam.title"></app-i18n>
       </h1>
 
-      <app-iam-list-toolbar></app-iam-list-toolbar>
       <app-iam-list-filter></app-iam-list-filter>
       <app-iam-list-table></app-iam-list-table>
+      <app-iam-list-toolbar></app-iam-list-toolbar>
     </div>
   </div>
 </template>

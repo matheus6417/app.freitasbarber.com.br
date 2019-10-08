@@ -14,9 +14,9 @@
         <app-i18n code="entities.order.list.title"></app-i18n>
       </h1>
 
-      <app-order-list-toolbar></app-order-list-toolbar>
       <app-order-list-filter></app-order-list-filter>
       <app-order-list-table></app-order-list-table>
+      <app-order-list-toolbar></app-order-list-toolbar>
     </div>
   </div>
 </template>

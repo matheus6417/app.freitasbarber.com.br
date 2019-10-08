@@ -14,9 +14,9 @@
         <app-i18n code="entities.service.list.title"></app-i18n>
       </h1>
 
-      <app-service-list-toolbar></app-service-list-toolbar>
       <app-service-list-filter></app-service-list-filter>
       <app-service-list-table></app-service-list-table>
+      <app-service-list-toolbar></app-service-list-toolbar>
     </div>
   </div>
 </template>

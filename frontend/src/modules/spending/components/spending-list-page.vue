@@ -14,9 +14,9 @@
         <app-i18n code="entities.spending.list.title"></app-i18n>
       </h1>
 
-      <app-spending-list-toolbar></app-spending-list-toolbar>
       <app-spending-list-filter></app-spending-list-filter>
       <app-spending-list-table></app-spending-list-table>
+      <app-spending-list-toolbar></app-spending-list-toolbar>
     </div>
   </div>
 </template>

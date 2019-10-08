@@ -14,9 +14,9 @@
         <app-i18n code="entities.product.list.title"></app-i18n>
       </h1>
 
-      <app-product-list-toolbar></app-product-list-toolbar>
       <app-product-list-filter></app-product-list-filter>
       <app-product-list-table></app-product-list-table>
+      <app-product-list-toolbar></app-product-list-toolbar>
     </div>
   </div>
 </template>
