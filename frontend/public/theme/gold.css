@@ -1363,6 +1363,7 @@
 .el-select {
   display: inline-block;
   position: relative;
+  width: 100%;
 }
 .el-select .el-select__tags > span {
   display: contents;
@@ -4392,14 +4393,15 @@
 .el-input-number__increase {
   position: absolute;
   z-index: 1;
+  border: none!important;
   top: 1px;
-  height: 50px;
+  height: 70px;
   width: 50px;
   text-align: center;
   background: inherit;
-  color: #606266;
+  color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  font-size: 16px;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9431,23 +9433,24 @@
   display: inline-block;
   width: 100%;
   vertical-align: bottom;
-  font-size: 18px;
+  font-size: 24px;
 }
 .el-textarea__inner {
   display: block;
   resize: vertical;
-  padding: 5px 15px;
+  padding: 15px;
   line-height: 1.5;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: transparent;
   background-image: none;
   border-radius: 6px;
   width: 100%;
   font-size: inherit;
-  color: #606266;
+  border-bottom: 1px solid #0000001c;
+  color: rgba(0, 0, 0, 0.87);
   background-image: none;
-  border-radius: 6px;
+  border-radius: 0;
   -webkit-transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
   transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
 }
@@ -9484,7 +9487,7 @@
 }
 .el-input {
   position: relative;
-  font-size: 18px;
+  font-size: 22px;
   display: inline-block;
   width: 100%;
 }
@@ -9530,17 +9533,18 @@
 }
 .el-input__inner {
   -webkit-appearance: none;
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: rgba(255, 255, 255, 0);
   background-image: none;
-  border-radius: 6px;
+  border-radius: 0;
   border: NONE;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  color: #606266;
+  border-bottom: 1px solid #0000001c;
+  color: rgba(0, 0, 0, 0.87);
   display: inline-block;
   font-size: inherit;
-  height: 50px;
-  line-height: 60px;
+  height: 70px;
+  line-height: 35px;
   outline: 0;
   padding: 0 15px;
   -webkit-transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
@@ -10807,7 +10811,7 @@
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
   box-sizing: border-box;
-  padding: 20px;
+  /* padding: 20px; */
 }
 :root {
   --color-primary: #faad14;

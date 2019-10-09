@@ -2,9 +2,9 @@
   <div>
     <el-container>
       <el-container>
-        <el-header>
+        <!-- <el-header>
           <app-header />
-        </el-header>
+        </el-header>-->
 
         <el-main>
           <router-view></router-view>
