@@ -59,11 +59,7 @@
           ></el-date-picker>
         </el-col>
       </el-form-item>
-      <el-form-item
-        :label="fields.photo.label"
-        :prop="fields.photo.name"
-        :required="fields.photo.required"
-      >
+      <el-form-item :prop="fields.photo.name" :required="fields.photo.required">
         <el-col :lg="11" :md="16" :sm="24">
           <app-image-upload
             :max="fields.photo.max"

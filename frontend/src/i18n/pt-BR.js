@@ -206,20 +206,20 @@ const ptBR = {
       },
       fields: {
         id: "Id",
-        customer: "Cliente",
+        customer: "Clientes",
         products: "Produtos",
         employee: "Barbeiro",
         delivered: "Feito",
         attachments: "Anexos",
         services: "Serviços",
-        dateRange: "Date",
-        date: "Date",
-        photos: "Photos",
+        dateRange: "Data",
+        date: "Data",
+        photos: "Fotos",
         description: "Descrição",
         totalRange: "Total",
         total: "Total",
-        valueAltRange: "ValueAlt",
-        valueAlt: "ValueAlt",
+        valueAltRange: "Diferenciação",
+        valueAlt: "Diferenciação",
         e1: "E1",
         e2Range: "E2",
         e2: "E2",
@@ -285,8 +285,8 @@ const ptBR = {
       fields: {
         id: "Id",
         name: "Nome",
-        unitPriceRange: "UnitPrice",
-        unitPrice: "UnitPrice",
+        unitPriceRange: "Preço",
+        unitPrice: "Preço",
         description: "Descrição",
         e1: "E1",
         e2Range: "E2",
@@ -298,11 +298,11 @@ const ptBR = {
         e5Range: "E5",
         e5: "E5",
         e6: "E6",
-        isActive: "IsActive",
+        isActive: "Ativo",
         e7: "E7",
         e8: "E8",
         e9: "E9",
-        image: "Image",
+        image: "Imagem",
         createdAt: "Criado em",
         updatedAt: "Atualizado em",
         createdAtRange: "Criado em"
@@ -355,10 +355,10 @@ const ptBR = {
       fields: {
         id: "Id",
         name: "Nome",
-        dateRange: "Date",
-        date: "Date",
-        valueRange: "Value",
-        value: "Value",
+        dateRange: "Data",
+        date: "Data",
+        valueRange: "Valor",
+        value: "Valor",
         e1: "E1",
         e2Range: "E2",
         e2: "E2",
@@ -384,7 +384,7 @@ const ptBR = {
         }
       },
       new: {
-        title: "Novo Despesa"
+        title: "Nova Despesa"
       },
       view: {
         title: "Visualizar Despesa"

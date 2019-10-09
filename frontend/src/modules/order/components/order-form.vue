@@ -48,47 +48,6 @@
       </el-form-item>
 
       <el-form-item
-        :label="fields.employee.label"
-        :prop="fields.employee.name"
-        :required="fields.employee.required"
-      >
-        <el-col :lg="11" :md="16" :sm="24">
-          <app-iam-user-autocomplete-input
-            :fetchFn="fields.employee.fetchFn"
-            :mapperFn="fields.employee.mapperFn"
-            :showCreate="!modal"
-            mode="single"
-            v-model="model[fields.employee.name]"
-          ></app-iam-user-autocomplete-input>
-        </el-col>
-      </el-form-item>
-
-      <el-form-item
-        :label="fields.delivered.label"
-        :prop="fields.delivered.name"
-        :required="fields.delivered.required"
-      >
-        <el-col :lg="11" :md="16" :sm="24">
-          <el-switch v-model="model[fields.delivered.name]"></el-switch>
-        </el-col>
-      </el-form-item>
-
-      <el-form-item
-        :label="fields.attachments.label"
-        :prop="fields.attachments.name"
-        :required="fields.attachments.required"
-      >
-        <el-col :lg="11" :md="16" :sm="24">
-          <app-file-upload
-            :max="fields.attachments.max"
-            :path="fields.attachments.path"
-            :schema="fields.attachments.fileSchema"
-            v-model="model[fields.attachments.name]"
-          ></app-file-upload>
-        </el-col>
-      </el-form-item>
-
-      <el-form-item
         :label="fields.services.label"
         :prop="fields.services.name"
         :required="fields.services.required"
@@ -104,21 +63,17 @@
         </el-col>
       </el-form-item>
 
-      <el-form-item
-        :label="fields.date.label"
-        :prop="fields.date.name"
-        :required="fields.date.required"
-      >
+      <el-form-item :prop="fields.date.name" :required="fields.date.required">
         <el-col :lg="11" :md="16" :sm="24">
-          <el-date-picker placeholder type="datetime" v-model="model[fields.date.name]"></el-date-picker>
+          <el-date-picker
+            :placeholder="fields.date.label"
+            type="datetime"
+            v-model="model[fields.date.name]"
+          ></el-date-picker>
         </el-col>
       </el-form-item>
 
-      <el-form-item
-        :label="fields.photos.label"
-        :prop="fields.photos.name"
-        :required="fields.photos.required"
-      >
+      <el-form-item :prop="fields.photos.name" :required="fields.photos.required">
         <el-col :lg="11" :md="16" :sm="24">
           <app-image-upload
             :max="fields.photos.max"
@@ -129,44 +84,88 @@
         </el-col>
       </el-form-item>
 
-      <el-form-item
-        :label="fields.description.label"
-        :prop="fields.description.name"
-        :required="fields.description.required"
-      >
+      <el-form-item :prop="fields.description.name" :required="fields.description.required">
         <el-col :lg="11" :md="16" :sm="24">
-          <el-input :rows="4" type="textarea" v-model="model[fields.description.name]" />
+          <el-input
+            :placeholder="fields.description.label"
+            :rows="4"
+            type="textarea"
+            v-model="model[fields.description.name]"
+          />
         </el-col>
       </el-form-item>
 
-      <el-form-item
-        :label="fields.total.label"
-        :prop="fields.total.name"
-        :required="fields.total.required"
+      <div class="flex">
+        <el-form-item
+          :label="fields.total.label"
+          :prop="fields.total.name"
+          :required="fields.total.required"
+        >
+          <el-col :lg="11" :md="16" :sm="24">
+            <el-input-number
+              :precision="fields.total.scale"
+              :step="0.1"
+              v-model="model[fields.total.name]"
+            ></el-input-number>
+          </el-col>
+        </el-form-item>
+
+        <el-form-item
+          :label="fields.valueAlt.label"
+          :prop="fields.valueAlt.name"
+          :required="fields.valueAlt.required"
+        >
+          <el-col :lg="11" :md="16" :sm="24">
+            <el-input-number
+              :precision="fields.valueAlt.scale"
+              :step="0.1"
+              v-model="model[fields.valueAlt.name]"
+            ></el-input-number>
+          </el-col>
+        </el-form-item>
+      </div>
+
+      <!-- <el-form-item
+        :label="fields.attachments.label"
+        :prop="fields.attachments.name"
+        :required="fields.attachments.required"
       >
         <el-col :lg="11" :md="16" :sm="24">
-          <el-input-number
-            :precision="fields.total.scale"
-            :step="0.1"
-            v-model="model[fields.total.name]"
-          ></el-input-number>
+          <app-file-upload
+            :max="fields.attachments.max"
+            :path="fields.attachments.path"
+            :schema="fields.attachments.fileSchema"
+            v-model="model[fields.attachments.name]"
+          ></app-file-upload>
         </el-col>
-      </el-form-item>
-
-      <el-form-item
-        :label="fields.valueAlt.label"
-        :prop="fields.valueAlt.name"
-        :required="fields.valueAlt.required"
+      </el-form-item>-->
+      <!-- <el-form-item
+        :label="fields.employee.label"
+        :prop="fields.employee.name"
+        :required="fields.employee.required"
       >
         <el-col :lg="11" :md="16" :sm="24">
-          <el-input-number
-            :precision="fields.valueAlt.scale"
-            :step="0.1"
-            v-model="model[fields.valueAlt.name]"
-          ></el-input-number>
+          <app-iam-user-autocomplete-input
+            :fetchFn="fields.employee.fetchFn"
+            :mapperFn="fields.employee.mapperFn"
+            :showCreate="!modal"
+            mode="single"
+            v-model="model[fields.employee.name]"
+          ></app-iam-user-autocomplete-input>
         </el-col>
-      </el-form-item>
+      </el-form-item>-->
 
+      <!-- <el-form-item
+        :label="fields.delivered.label"
+        :prop="fields.delivered.name"
+        :required="fields.delivered.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-switch v-model="model[fields.delivered.name]"></el-switch>
+        </el-col>
+      </el-form-item>-->
+
+      <!-- 
       <el-form-item :label="fields.e1.label" :prop="fields.e1.name" :required="fields.e1.required">
         <el-col :lg="11" :md="16" :sm="24">
           <el-input v-model="model[fields.e1.name]" />
@@ -237,7 +236,7 @@
             v-model="model[fields.e9.name]"
           ></app-image-upload>
         </el-col>
-      </el-form-item>
+      </el-form-item>-->
       <el-form-item>
         <div class="form-buttons">
           <el-button

@@ -10,46 +10,49 @@
       ref="form"
       v-if="model"
     >
-      <el-form-item :label="fields.id.label" :prop="fields.id.name" v-if="isEditing">
+      <!-- <el-form-item :label="fields.id.label" :prop="fields.id.name" v-if="isEditing">
         <el-col :lg="11" :md="16" :sm="24">
           <el-input :disabled="true" v-model="model[fields.id.name]" />
         </el-col>
-      </el-form-item>
-      <el-form-item
-        :label="fields.name.label"
-        :prop="fields.name.name"
-        :required="fields.name.required"
-      >
+      </el-form-item>-->
+      <el-form-item :prop="fields.name.name" :required="fields.name.required">
         <el-col :lg="11" :md="16" :sm="24">
-          <el-input ref="focus" v-model="model[fields.name.name]" />
+          <el-input :placeholder="fields.name.label" ref="focus" v-model="model[fields.name.name]" />
         </el-col>
       </el-form-item>
 
-      <el-form-item
-        :label="fields.unitPrice.label"
-        :prop="fields.unitPrice.name"
-        :required="fields.unitPrice.required"
-      >
+      <el-form-item :prop="fields.unitPrice.name" :required="fields.unitPrice.required">
         <el-col :lg="11" :md="16" :sm="24">
           <el-input-number
             :precision="fields.unitPrice.scale"
             :step="0.1"
+            placeholder="0.00"
             v-model="model[fields.unitPrice.name]"
           ></el-input-number>
         </el-col>
       </el-form-item>
-
-      <el-form-item
-        :label="fields.description.label"
-        :prop="fields.description.name"
-        :required="fields.description.required"
-      >
+      <el-form-item :prop="fields.image.name" :required="fields.image.required">
         <el-col :lg="11" :md="16" :sm="24">
-          <el-input :rows="4" type="textarea" v-model="model[fields.description.name]" />
+          <app-image-upload
+            :max="fields.image.max"
+            :path="fields.image.path"
+            :schema="fields.image.fileSchema"
+            v-model="model[fields.image.name]"
+          ></app-image-upload>
+        </el-col>
+      </el-form-item>
+      <el-form-item :prop="fields.description.name" :required="fields.description.required">
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input
+            :placeholder="fields.description.label"
+            :rows="4"
+            type="textarea"
+            v-model="model[fields.description.name]"
+          />
         </el-col>
       </el-form-item>
 
-      <el-form-item :label="fields.e1.label" :prop="fields.e1.name" :required="fields.e1.required">
+      <!-- <el-form-item :label="fields.e1.label" :prop="fields.e1.name" :required="fields.e1.required">
         <el-col :lg="11" :md="16" :sm="24">
           <el-input v-model="model[fields.e1.name]" />
         </el-col>
@@ -129,22 +132,8 @@
             v-model="model[fields.e9.name]"
           ></app-image-upload>
         </el-col>
-      </el-form-item>
+      </el-form-item>-->
 
-      <el-form-item
-        :label="fields.image.label"
-        :prop="fields.image.name"
-        :required="fields.image.required"
-      >
-        <el-col :lg="11" :md="16" :sm="24">
-          <app-image-upload
-            :max="fields.image.max"
-            :path="fields.image.path"
-            :schema="fields.image.fileSchema"
-            v-model="model[fields.image.name]"
-          ></app-image-upload>
-        </el-col>
-      </el-form-item>
       <el-form-item>
         <div class="form-buttons">
           <el-button
