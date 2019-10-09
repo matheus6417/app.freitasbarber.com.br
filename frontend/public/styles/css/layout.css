@@ -65,15 +65,16 @@ a {
 }
 
 .el-menu-item.active {
-  background-color: var(--color-primary-light-9);
+  /* background-color: var(--color-primary-light-9); */
   /* border-right: 2px var(--color-primary-light-2) solid; */
-  color: var(--color-primary-light-2);
+  /* color: var(--color-primary-light-2); */
   outline: none;
   font-weight: bold;
 }
 
-.el-menu-item.active i {
-  color: var(--color-primary-light-2);
+
+.el-menu-item.active svg{
+  fill: var(--color-primary-light-2);
 }
 
 .w-100 {
@@ -109,7 +110,7 @@ a {
   right: 0;
   padding: 0px 20px;
   z-index: 9;
-  padding-bottom: 40px;
+  padding-bottom: 4rem;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -120,7 +121,9 @@ a {
   margin-right: 8px !important;
   margin-bottom: 8px !important;
 }
-
+.el-dialog__wrapper .form-buttons {
+    padding-bottom: 0px;
+}
 .app-page-toolbar .el-button {
   margin-bottom: 8px !important;
 }

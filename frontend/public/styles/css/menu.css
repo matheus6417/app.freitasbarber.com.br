@@ -216,7 +216,6 @@
   vertical-align: middle;
 }
 .el-menu-item.is-active {
-  color: #faad14;
 }
 .el-menu-item.is-active i {
   color: inherit;
