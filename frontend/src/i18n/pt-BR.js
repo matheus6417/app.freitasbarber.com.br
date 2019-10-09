@@ -60,7 +60,7 @@ const ptBR = {
         adress: "Endereço",
         phone1: "Telefone/Whats",
         phone2: "Telefone 2",
-        relation: "Relação",
+        relation: "Relação com",
         relationDescription: "Tipo",
         e1: "E1",
         e2Range: "E2",
@@ -82,8 +82,8 @@ const ptBR = {
       },
       enumerators: {
         gender: {
-          male: "Male",
-          female: "Female"
+          male: "Masc",
+          female: "Fem"
         },
         e7: {
           a: "A",

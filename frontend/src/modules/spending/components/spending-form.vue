@@ -15,159 +15,123 @@
           <el-input :disabled="true" v-model="model[fields.id.name]" />
         </el-col>
       </el-form-item>
-              <el-form-item
-          :label="fields.name.label"
-          :prop="fields.name.name"
-          :required="fields.name.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input v-model="model[fields.name.name]" ref="focus" />
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.name.label"
+        :prop="fields.name.name"
+        :required="fields.name.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input ref="focus" v-model="model[fields.name.name]" />
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.date.label"
-          :prop="fields.date.name"
-          :required="fields.date.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-date-picker placeholder type="date" v-model="model[fields.date.name]"></el-date-picker>
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.date.label"
+        :prop="fields.date.name"
+        :required="fields.date.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-date-picker placeholder type="date" v-model="model[fields.date.name]"></el-date-picker>
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.value.label"
-          :prop="fields.value.name"
-          :required="fields.value.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input-number :precision="fields.value.scale" :step="0.1" v-model="model[fields.value.name]" ></el-input-number>
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.value.label"
+        :prop="fields.value.name"
+        :required="fields.value.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input-number
+            :precision="fields.value.scale"
+            :step="0.1"
+            v-model="model[fields.value.name]"
+          ></el-input-number>
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.e1.label"
-          :prop="fields.e1.name"
-          :required="fields.e1.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input v-model="model[fields.e1.name]" />
-          </el-col>
-        </el-form-item>
+      <el-form-item :label="fields.e1.label" :prop="fields.e1.name" :required="fields.e1.required">
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input v-model="model[fields.e1.name]" />
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.e2.label"
-          :prop="fields.e2.name"
-          :required="fields.e2.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input-number :precision="0" :step="1" v-model="model[fields.e2.name]" ></el-input-number>
-          </el-col>
-        </el-form-item>
+      <el-form-item :label="fields.e2.label" :prop="fields.e2.name" :required="fields.e2.required">
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input-number :precision="0" :step="1" v-model="model[fields.e2.name]"></el-input-number>
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.e3.label"
-          :prop="fields.e3.name"
-          :required="fields.e3.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input-number :precision="fields.e3.scale" :step="0.1" v-model="model[fields.e3.name]" ></el-input-number>
-          </el-col>
-        </el-form-item>
+      <el-form-item :label="fields.e3.label" :prop="fields.e3.name" :required="fields.e3.required">
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input-number :precision="fields.e3.scale" :step="0.1" v-model="model[fields.e3.name]"></el-input-number>
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.e4.label"
-          :prop="fields.e4.name"
-          :required="fields.e4.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-date-picker placeholder type="date" v-model="model[fields.e4.name]"></el-date-picker>
-          </el-col>
-        </el-form-item>
+      <el-form-item :label="fields.e4.label" :prop="fields.e4.name" :required="fields.e4.required">
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-date-picker placeholder type="date" v-model="model[fields.e4.name]"></el-date-picker>
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.e5.label"
-          :prop="fields.e5.name"
-          :required="fields.e5.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-date-picker placeholder type="datetime" v-model="model[fields.e5.name]"></el-date-picker>
-          </el-col>
-        </el-form-item>
+      <el-form-item :label="fields.e5.label" :prop="fields.e5.name" :required="fields.e5.required">
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-date-picker placeholder type="datetime" v-model="model[fields.e5.name]"></el-date-picker>
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.e6.label"
-          :prop="fields.e6.name"
-          :required="fields.e6.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-switch v-model="model[fields.e6.name]"></el-switch>
-          </el-col>
-        </el-form-item>
+      <el-form-item :label="fields.e6.label" :prop="fields.e6.name" :required="fields.e6.required">
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-switch v-model="model[fields.e6.name]"></el-switch>
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.e7.label"
-          :prop="fields.e7.name"
-          :required="fields.e7.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-select placeholder v-model="model[fields.e7.name]">
-              <el-option :value="undefined">--</el-option>
-              <el-option
-                :key="option.id"
-                :label="option.label"
-                :value="option.id"
-                v-for="option in fields.e7.options"
-              ></el-option>
-            </el-select>
-          </el-col>
-        </el-form-item>
+      <el-form-item :label="fields.e7.label" :prop="fields.e7.name" :required="fields.e7.required">
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-select placeholder v-model="model[fields.e7.name]">
+            <el-option :value="undefined">--</el-option>
+            <el-option
+              :key="option.id"
+              :label="option.label"
+              :value="option.id"
+              v-for="option in fields.e7.options"
+            ></el-option>
+          </el-select>
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.e8.label"
-          :prop="fields.e8.name"
-          :required="fields.e8.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <app-file-upload
-              :max="fields.e8.max"
-              :path="fields.e8.path"
-              :schema="fields.e8.fileSchema"
-              v-model="model[fields.e8.name]"
-            ></app-file-upload>
-          </el-col>
-        </el-form-item>
+      <el-form-item :label="fields.e8.label" :prop="fields.e8.name" :required="fields.e8.required">
+        <el-col :lg="11" :md="16" :sm="24">
+          <app-file-upload
+            :max="fields.e8.max"
+            :path="fields.e8.path"
+            :schema="fields.e8.fileSchema"
+            v-model="model[fields.e8.name]"
+          ></app-file-upload>
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.e9.label"
-          :prop="fields.e9.name"
-          :required="fields.e9.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <app-image-upload
-              :max="fields.e9.max"
-              :path="fields.e9.path"
-              :schema="fields.e9.fileSchema"
-              v-model="model[fields.e9.name]"
-            ></app-image-upload>
-          </el-col>
-        </el-form-item>
+      <el-form-item :label="fields.e9.label" :prop="fields.e9.name" :required="fields.e9.required">
+        <el-col :lg="11" :md="16" :sm="24">
+          <app-image-upload
+            :max="fields.e9.max"
+            :path="fields.e9.path"
+            :schema="fields.e9.fileSchema"
+            v-model="model[fields.e9.name]"
+          ></app-image-upload>
+        </el-col>
+      </el-form-item>
       <el-form-item>
         <div class="form-buttons">
           <el-button
             :disabled="saveLoading"
             @click="doSubmit"
             icon="el-icon-fa-floppy-o"
-            type="primary"
+            type="text"
           >
             <app-i18n code="common.save"></app-i18n>
           </el-button>
 
-          <el-button :disabled="saveLoading" @click="doReset" icon="el-icon-fa-undo">
-            <app-i18n code="common.reset"></app-i18n>
-          </el-button>
-
-          <el-button :disabled="saveLoading" @click="doCancel" icon="el-icon-fa-close">
+          <el-button :disabled="saveLoading" @click="doCancel" icon="el-icon-fa-close" type="text">
             <app-i18n code="common.cancel"></app-i18n>
           </el-button>
         </div>
