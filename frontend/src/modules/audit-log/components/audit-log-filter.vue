@@ -1,59 +1,61 @@
 <template>
-  <el-form
-    :label-position="labelPosition"
-    :label-width="labelWidthFilter"
-    :model="model"
-    :rules="rules"
-    @submit.native.prevent="doFilter"
-    class="filter"
-    ref="form"
-  >
-    <el-row>
-      <el-col style="margin-bottom: -0.41px;" :lg="12" :md="16" :sm="24">
-        <el-form-item :label="fields.timestampRange.label" :prop="fields.timestampRange.name">
-          <el-date-picker type="datetimerange" v-model="model[fields.timestampRange.name]"></el-date-picker>
-        </el-form-item>
-      </el-col>
-      <el-col :lg="12" :md="16" :sm="24">
-        <el-form-item :label="fields.entityNames.label" :prop="fields.entityNames.name">
-          <el-select
-            :no-data-text="i18n('auditLog.entityNamesHint')"
-            allow-create
-            default-first-option
-            filterable
-            multiple
-            placeholder
-            v-model="model[fields.entityNames.name]"
-          ></el-select>
-        </el-form-item>
-      </el-col>
-      <el-col :lg="12" :md="16" :sm="24">
-        <el-form-item :label="fields.createdByEmail.label" :prop="fields.createdByEmail.name">
-          <el-input v-model="model[fields.createdByEmail.name]"/>
-        </el-form-item>
-      </el-col>
-      <el-col :lg="12" :md="16" :sm="24">
-        <el-form-item :label="fields.entityId.label" :prop="fields.entityId.name">
-          <el-input v-model="model[fields.entityId.name]"/>
-        </el-form-item>
-      </el-col>
-      <el-col :lg="12" :md="16" :sm="24">
-        <el-form-item :label="fields.action.label" :prop="fields.action.name">
-          <el-input v-model="model[fields.action.name]"/>
-        </el-form-item>
-      </el-col>
-    </el-row>
+  <el-popover placement="bottom"  trigger="manual" v-model="visible">
+    <el-form
+      :label-position="labelPosition"
+      :label-width="labelWidthFilter"
+      :model="model"
+      :rules="rules"
+      @submit.native.prevent="doFilter"
+      class="filter"
+      ref="form"
+    >
+      <el-row>
+        <el-col :lg="12" :md="16" :sm="24" style="margin-bottom: -0.41px;">
+          <el-form-item :label="fields.timestampRange.label" :prop="fields.timestampRange.name">
+            <el-date-picker type="datetimerange" v-model="model[fields.timestampRange.name]"></el-date-picker>
+          </el-form-item>
+        </el-col>
+        <el-col :lg="12" :md="16" :sm="24">
+          <el-form-item :label="fields.entityNames.label" :prop="fields.entityNames.name">
+            <el-select
+              :no-data-text="i18n('auditLog.entityNamesHint')"
+              allow-create
+              default-first-option
+              filterable
+              multiple
+              placeholder
+              v-model="model[fields.entityNames.name]"
+            ></el-select>
+          </el-form-item>
+        </el-col>
+        <el-col :lg="12" :md="16" :sm="24">
+          <el-form-item :label="fields.createdByEmail.label" :prop="fields.createdByEmail.name">
+            <el-input v-model="model[fields.createdByEmail.name]" />
+          </el-form-item>
+        </el-col>
+        <el-col :lg="12" :md="16" :sm="24">
+          <el-form-item :label="fields.entityId.label" :prop="fields.entityId.name">
+            <el-input v-model="model[fields.entityId.name]" />
+          </el-form-item>
+        </el-col>
+        <el-col :lg="12" :md="16" :sm="24">
+          <el-form-item :label="fields.action.label" :prop="fields.action.name">
+            <el-input v-model="model[fields.action.name]" />
+          </el-form-item>
+        </el-col>
+      </el-row>
 
-    <div class="filter-buttons">
-      <el-button :disabled="loading" @click="doFilter" icon="el-icon-fa-search" type="primary">
-        <app-i18n code="common.search"></app-i18n>
-      </el-button>
+      <div class="filter-buttons">
+        <el-button :disabled="loading" @click="doFilter" icon="el-icon-fa-search" type="primary">
+          <app-i18n code="common.search"></app-i18n>
+        </el-button>
 
-      <el-button :disabled="loading" @click="doResetFilter" icon="el-icon-fa-undo">
-        <app-i18n code="common.reset"></app-i18n>
-      </el-button>
-    </div>
-  </el-form>
+        <el-button :disabled="loading" @click="doResetFilter" icon="el-icon-fa-undo">
+          <app-i18n code="common.reset"></app-i18n>
+        </el-button>
+      </div>
+    </el-form>
+  </el-popover>
 </template>
 
 <script>
@@ -77,6 +79,7 @@ export default {
 
   data() {
     return {
+      visible: false,
       rules: filterSchema.rules(),
       model: {},
     };
@@ -96,6 +99,9 @@ export default {
   },
 
   async mounted() {
+    this.$root.$on('toggleFilters', () => {
+      this.visible = !this.visible;
+    });
     this.model = filterSchema.initialValues(
       this.filter,
       this.$route.query,
@@ -116,7 +122,8 @@ export default {
       return this.doReset();
     },
 
-    async doFilter() {
+     async doFilter() {
+      this.$root.$emit('toggleFilters');
       try {
         await this.$refs.form.validate();
         this.$refs.form.clearValidate();

@@ -128,7 +128,8 @@ export default {
       return this.doReset();
     },
 
-    async doFilter() {
+     async doFilter() {
+      this.$root.$emit('toggleFilters');
       try {
         await this.$refs.form.validate();
         this.$refs.form.clearValidate();
