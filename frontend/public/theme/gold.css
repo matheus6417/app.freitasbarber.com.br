@@ -10152,6 +10152,7 @@
   background: 0 0;
   padding-left: 0;
   padding-right: 0;
+  width: 100%;
 }
 .el-button--text:focus,
 .el-button--text:hover {
