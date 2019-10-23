@@ -12,7 +12,7 @@ import DecimalField from '@/shared/fields/decimal-field';
 import BooleanField from '@/shared/fields/boolean-field';
 import DateField from '@/shared/fields/date-field';
 import DateRangeField from '@/shared/fields/date-range-field';
-import { UserField } from '@/modules/auth/user-field';
+import { CustomerField } from '@/modules/customer/customer-field';
 import FilesField from '@/shared/fields/files-field';
 import ImagesField from '@/shared/fields/images-field';
 
@@ -35,7 +35,7 @@ const fields = {
   adress: new StringField('adress', label('adress'), {}),
   phone1: new StringField('phone1', label('phone1'), {}),
   phone2: new StringField('phone2', label('phone2'), {}),
-  relation: UserField.relationToOne('relation', label('relation'), {}),
+  relation: CustomerField.relationToOne('relation', label('relation'), {}),
   relationDescription: new StringField('relationDescription', label('relationDescription'), {}),
   e1: new StringField('e1', label('e1'), {}),
   e2: new IntegerField('e2', label('e2'), {}),

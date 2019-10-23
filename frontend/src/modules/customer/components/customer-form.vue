@@ -71,13 +71,13 @@
         :required="fields.relation.required"
       >
         <el-col :lg="11" :md="16" :sm="24">
-          <app-iam-user-autocomplete-input
+          <app-customer-autocomplete-input
             :fetchFn="fields.relation.fetchFn"
             :mapperFn="fields.relation.mapperFn"
             :showCreate="!modal"
             mode="single"
             v-model="model[fields.relation.name]"
-          ></app-iam-user-autocomplete-input>
+          ></app-customer-autocomplete-input>
         </el-col>
       </el-form-item>
 

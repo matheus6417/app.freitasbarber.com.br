@@ -92,8 +92,7 @@ export class CustomerService {
             phone2
             relation {
               id
-              fullName
-              email
+              name
             }
             relationDescription
             e1
@@ -156,8 +155,7 @@ export class CustomerService {
               adress
               relation {
                 id
-                fullName
-                email
+                name
               }
               relationDescription
               active
