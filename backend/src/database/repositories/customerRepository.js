@@ -103,6 +103,13 @@ class CustomerRepository extends AbstractEntityRepository {
   }
 
   async destroyFromRelations(id, options) {
+    await this.destroyRelationToOne(
+      id,
+      'customer',
+      'relation',
+      options,
+    );
+
     await this.destroyRelationToMany(
       id,
       'order',
@@ -159,10 +166,6 @@ class CustomerRepository extends AbstractEntityRepository {
 
       if (filter.adress) {
         query.appendIlike('adress', filter.adress);
-      }
-
-      if (filter.relation) {
-        query.appendId('relation', filter.relation);
       }
 
       if (filter.relationDescription) {
@@ -226,7 +229,7 @@ class CustomerRepository extends AbstractEntityRepository {
     }
 
     record.relation = await this.findRelation(
-      'user',
+      'customer',
       record.relation,
     );
 

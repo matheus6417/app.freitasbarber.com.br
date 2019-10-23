@@ -7,7 +7,7 @@ const schema = `
     adress: String
     phone1: String
     phone2: String
-    relation: User
+    relation: Customer
     relationDescription: String
     e1: String
     e2: Int

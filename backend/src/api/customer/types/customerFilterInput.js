@@ -5,7 +5,6 @@ const schema = `
     birthdateRange: [ String ]
     gender: CustomerGenderEnum
     adress: String
-    relation: String
     relationDescription: String
     createdAtRange: [ DateTime ]
   }
