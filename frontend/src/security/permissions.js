@@ -45,8 +45,6 @@ class Permissions {
           roles.editor,
           roles.viewer,
 
-          roles.customerEditor,
-          roles.customerViewer,
           roles.orderEditor,
           roles.orderViewer,
         ],
