@@ -1,21 +1,21 @@
 <template>
   <div>
     <el-table
-      :border="true"
+      :border="false"
       :data="rows"
+      :show-header="false"
       @sort-change="doChangeSort"
       ref="table"
+      row-class-name="listy"
       row-key="id"
       v-loading="loading"
     >
-      <el-table-column type="selection" width="55"></el-table-column>
+      <!-- <el-table-column type="selection" width="55"></el-table-column> -->
 
-      <el-table-column
-        :label="fields.name.label"
-        :prop="fields.name.name"
-        sortable="custom"
-      >
-        <template slot-scope="scope">{{ presenter(scope.row, 'name') }}</template>
+      <el-table-column :label="fields.name.label" :prop="fields.name.name" sortable="custom">
+        <template slot-scope="scope">
+          <span class="name">{{ presenter(scope.row, 'name') }}</span>
+        </template>
       </el-table-column>
 
       <el-table-column
@@ -26,11 +26,7 @@
         <template slot-scope="scope">{{ presenter(scope.row, 'unitPrice') }}</template>
       </el-table-column>
 
-      <el-table-column
-        :label="fields.photo.label"
-        :prop="fields.photo.name"
-        align="center"
-      >
+      <el-table-column :label="fields.photo.label" :prop="fields.photo.name" align="center">
         <template slot-scope="scope">
           <app-list-item-image :value="presenter(scope.row, 'photo')"></app-list-item-image>
         </template>
@@ -49,13 +45,15 @@
           <div class="table-actions">
             <router-link :to="`/product/${scope.row.id}`">
               <el-button type="text">
-                <app-i18n code="common.view"></app-i18n>
+                <!-- <app-i18n code="common.view"></app-i18n> -->
+                v
               </el-button>
             </router-link>
 
             <router-link :to="`/product/${scope.row.id}/edit`" v-if="hasPermissionToEdit">
               <el-button type="text">
-                <app-i18n code="common.edit"></app-i18n>
+                <!-- <app-i18n code="common.edit"></app-i18n> -->
+                e
               </el-button>
             </router-link>
 
@@ -65,7 +63,7 @@
               type="text"
               v-if="hasPermissionToDestroy"
             >
-              <app-i18n code="common.destroy"></app-i18n>
+              <!-- <app-i18n code="common.destroy"></app-i18n> -->
             </el-button>
           </div>
         </template>
@@ -117,7 +115,8 @@ export default {
     },
 
     hasPermissionToDestroy() {
-      return new ProductPermissions(this.currentUser).destroy;
+      return new ProductPermissions(this.currentUser)
+        .destroy;
     },
 
     fields() {
@@ -161,5 +160,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+

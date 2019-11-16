@@ -1,5 +1,5 @@
 <template>
-  <el-popover placement="bottom"  trigger="manual" v-model="visible">
+  <el-popover placement="bottom" trigger="manual" v-model="visible">
     <el-form
       :label-position="labelPosition"
       :label-width="labelWidthFilter"
@@ -122,8 +122,10 @@ export default {
       return this.doReset();
     },
 
-     async doFilter() {
-      this.$root.$emit('toggleFilters');
+    async doFilter() {
+      if (this.visible) {
+        this.$root.$emit('toggleFilters');
+      }
       try {
         await this.$refs.form.validate();
         this.$refs.form.clearValidate();

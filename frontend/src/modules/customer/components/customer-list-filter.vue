@@ -1,5 +1,5 @@
 <template>
-  <el-popover placement="bottom"  trigger="manual" v-model="visible">
+  <el-popover placement="bottom" trigger="manual" v-model="visible">
     <el-form
       :label-position="labelPosition"
       :label-width="labelWidthFilter"
@@ -41,7 +41,7 @@
             <el-input v-model="model[fields.adress.name]" />
           </el-form-item>
         </el-col>
-
+        <!-- 
         <el-col :lg="12" :md="16" :sm="24">
           <el-form-item :label="fields.relation.label" :prop="fields.relation.name">
             <app-autocomplete-one-input
@@ -49,16 +49,16 @@
               v-model="model[fields.relation.name]"
             ></app-autocomplete-one-input>
           </el-form-item>
-        </el-col>
+        </el-col>-->
 
-        <el-col :lg="12" :md="16" :sm="24">
+        <!-- <el-col :lg="12" :md="16" :sm="24">
           <el-form-item
             :label="fields.relationDescription.label"
             :prop="fields.relationDescription.name"
           >
             <el-input v-model="model[fields.relationDescription.name]" />
           </el-form-item>
-        </el-col>
+        </el-col>-->
       </el-row>
 
       <div class="filter-buttons">
@@ -86,7 +86,6 @@ const filterSchema = new FilterSchema([
   fields.birthdateRange,
   fields.gender,
   fields.adress,
-  fields.relation,
   fields.relationDescription,
 ]);
 
@@ -138,8 +137,10 @@ export default {
       return this.doReset();
     },
 
-     async doFilter() {
-      this.$root.$emit('toggleFilters');
+    async doFilter() {
+      if (this.visible) {
+        this.$root.$emit('toggleFilters');
+      }
       try {
         await this.$refs.form.validate();
         this.$refs.form.clearValidate();

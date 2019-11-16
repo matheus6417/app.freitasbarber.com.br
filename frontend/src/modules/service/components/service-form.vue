@@ -21,7 +21,11 @@
         </el-col>
       </el-form-item>
 
-      <el-form-item :prop="fields.unitPrice.name" :required="fields.unitPrice.required">
+      <el-form-item
+        :label="fields.unitPrice.label"
+        :prop="fields.unitPrice.name"
+        :required="fields.unitPrice.required"
+      >
         <el-col :lg="11" :md="16" :sm="24">
           <el-input-number
             :precision="fields.unitPrice.scale"

@@ -17,7 +17,9 @@
       </el-form-item>-->
       <el-form-item :prop="fields.name.name" :required="fields.name.required">
         <el-col :lg="11" :md="16" :sm="24">
-          <el-input :placeholder="fields.name.label" ref="focus" v-model="model[fields.name.name]" />
+          <el-input :placeholder="fields.name.label" ref="focus" v-model="model[fields.name.name]">
+            <i class="el-input__icon el-icon-search" slot="prefix"></i>
+          </el-input>
         </el-col>
       </el-form-item>
 
@@ -25,6 +27,7 @@
         <el-col :lg="11" :md="16" :sm="24">
           <el-date-picker
             :placeholder="fields.date.label"
+            format="MM/dd/yyyy"
             type="date"
             v-model="model[fields.date.name]"
           ></el-date-picker>
@@ -34,11 +37,15 @@
       <el-form-item :prop="fields.value.name" :required="fields.value.required">
         <el-col :lg="11" :md="16" :sm="24">
           <el-input-number
-            :precision="fields.value.scale"
-            :step="0.1"
+            :precision="2"
+            :step="0.05"
+            controls-position="right"
             placeholder="0.00"
+            prefix-icon="el-icon-search"
             v-model="model[fields.value.name]"
-          ></el-input-number>
+          >
+            <i class="el-input__icon el-icon-search" slot="prefix"></i>
+          </el-input-number>
         </el-col>
       </el-form-item>
       <!-- 
