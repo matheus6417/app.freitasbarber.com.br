@@ -4,7 +4,7 @@
       <div class="content">
         <div class="logo">
           <h1>
-            <app-i18n code="app.title"></app-i18n>
+            <app-i18n code="auth.signin"></app-i18n>
           </h1>
         </div>
 
@@ -59,7 +59,7 @@
 
           <div class="app-divider" style="margin: 24px 0"></div>
 
-          <div class="social-buttons">
+          <!-- <div class="social-buttons">
             <el-tooltip content="Facebook" effect="dark" placement="top">
               <div
                 @click="doSigninSocial({ provider: 'facebook', rememberMe: model.rememberMe })"
@@ -83,7 +83,7 @@
                 style="color: #1DA1F2"
               ></div>
             </el-tooltip>
-          </div>
+          </div>-->
 
           <div class="other-actions">
             <router-link :to="{ path: '/auth/signup' }">

@@ -132,7 +132,7 @@ const ptBR = {
       fields: {
         id: "Id",
         name: "Nome",
-        description: "Descrição",
+        description: "Fornecedor",
         unitPriceRange: "Preço",
         unitPrice: "Preço",
         photo: "Imagem",
@@ -589,8 +589,8 @@ const ptBR = {
   },
 
   auditLog: {
-    menu: "Registros de Auditoria",
-    title: "Registros de Auditoria",
+    menu: "Histórico",
+    title: "Histórico",
     exporterFileName: "registros_autoria_exportados",
     entityNamesHint: "Separe múltiplas entidades por vírgula",
     fields: {

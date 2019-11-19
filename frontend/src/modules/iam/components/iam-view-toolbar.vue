@@ -1,7 +1,7 @@
 <template>
   <div class="app-page-toolbar">
     <router-link :to="{ path: `/iam/${record.id}/edit` }" v-if="record && hasPermissionToEdit">
-      <el-button icon="el-icon-fa-edit" type="primary">
+      <el-button icon="el-icon-fa-edit" type="text">
         <app-i18n code="common.edit"></app-i18n>
       </el-button>
     </router-link>
@@ -21,7 +21,7 @@
       :to="{ path: '/audit-logs', query: { entityId: record.id } }"
       v-if="record && hasPermissionToAuditLogs"
     >
-      <el-button icon="el-icon-fa-history">
+      <el-button icon="el-icon-fa-history" type="text">
         <app-i18n code="auditLog.menu"></app-i18n>
       </el-button>
     </router-link>

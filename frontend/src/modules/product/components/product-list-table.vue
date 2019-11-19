@@ -2,58 +2,61 @@
   <div>
     <el-table
       :border="false"
+      :cell-class-name="cellClass"
       :data="rows"
       :show-header="false"
+      @row-click="doRowClick"
       @sort-change="doChangeSort"
+      lazy
       ref="table"
-      row-class-name="listy"
+      row-class-name="listy products-grid-container "
       row-key="id"
       v-loading="loading"
     >
       <!-- <el-table-column type="selection" width="55"></el-table-column> -->
-
-      <el-table-column :label="fields.name.label" :prop="fields.name.name" sortable="custom">
-        <template slot-scope="scope">
-          <span class="name">{{ presenter(scope.row, 'name') }}</span>
-        </template>
-      </el-table-column>
-
-      <el-table-column
-        :label="fields.unitPrice.label"
-        :prop="fields.unitPrice.name"
-        sortable="custom"
-      >
-        <template slot-scope="scope">{{ presenter(scope.row, 'unitPrice') }}</template>
-      </el-table-column>
-
       <el-table-column :label="fields.photo.label" :prop="fields.photo.name" align="center">
         <template slot-scope="scope">
           <app-list-item-image :value="presenter(scope.row, 'photo')"></app-list-item-image>
         </template>
       </el-table-column>
-
+      <el-table-column :label="fields.name.label" :prop="fields.name.name" sortable="custom">
+        <template slot-scope="scope">
+          <span class="name">{{ presenter(scope.row, 'name') }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column :label="fields.description.label" :prop="fields.description.name">
+        <template slot-scope="scope">
+          <span>{{ presenter(scope.row, 'description') }}{{ scope.row.dateCheck }}</span>
+        </template>
+      </el-table-column>
       <el-table-column
+        :label="fields.unitPrice.label"
+        :prop="fields.unitPrice.name"
+        sortable="custom"
+      >
+        <template slot-scope="scope">R$ {{ presenter(scope.row, 'unitPrice') }}</template>
+      </el-table-column>
+
+      <!-- <el-table-column
         :label="fields.category.label"
         :prop="fields.category.name"
         sortable="custom"
       >
         <template slot-scope="scope">{{ presenter(scope.row, 'category') }}</template>
-      </el-table-column>
+      </el-table-column>-->
 
-      <el-table-column :fixed="isMobile? undefined : 'right'" align="center" width="180">
+      <!-- <el-table-column align="center">
         <template slot-scope="scope">
           <div class="table-actions">
             <router-link :to="`/product/${scope.row.id}`">
               <el-button type="text">
-                <!-- <app-i18n code="common.view"></app-i18n> -->
-                v
+                <app-i18n code="common.view"></app-i18n>
               </el-button>
             </router-link>
 
             <router-link :to="`/product/${scope.row.id}/edit`" v-if="hasPermissionToEdit">
               <el-button type="text">
-                <!-- <app-i18n code="common.edit"></app-i18n> -->
-                e
+                <app-i18n code="common.edit"></app-i18n>
               </el-button>
             </router-link>
 
@@ -63,11 +66,11 @@
               type="text"
               v-if="hasPermissionToDestroy"
             >
-              <!-- <app-i18n code="common.destroy"></app-i18n> -->
+              <app-i18n code="common.destroy"></app-i18n>
             </el-button>
           </div>
         </template>
-      </el-table-column>
+      </el-table-column>-->
     </el-table>
 
     <div class="el-pagination-wrapper">
@@ -125,6 +128,12 @@ export default {
   },
 
   methods: {
+    doRowClick(row, column, event) {
+      this.$router.push('/product/' + row.id);
+    },
+    cellClass({ row, column, rowIndex, columnIndex }) {
+      return column.property;
+    },
     ...mapActions({
       doChangeSort: 'product/list/doChangeSort',
       doChangePaginationCurrentPage:
@@ -159,5 +168,29 @@ export default {
   },
 };
 </script>
+<style>
+.products-grid-container {
+  display: grid !important;
+  grid-template-columns: 1fr 6fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 'photo name unitPrice' 'photo description unitPrice';
+}
+
+.photo {
+  grid-area: photo;
+}
+
+.name {
+  grid-area: name;
+}
+
+.description {
+  grid-area: description;
+}
+
+.unitPrice {
+  grid-area: unitPrice;
+}
+</style>
 
 

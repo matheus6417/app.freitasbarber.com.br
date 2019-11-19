@@ -10,12 +10,16 @@
       ref="form"
       v-if="model"
     >
-      <el-form-item :label="fields.id.label" :prop="fields.id.name" v-if="isEditing">
+      <!-- <el-form-item :label="fields.id.label" :prop="fields.id.name" v-if="isEditing">
         <el-col :lg="11" :md="16" :sm="24">
           <el-input :disabled="true" v-model="model[fields.id.name]" />
         </el-col>
-      </el-form-item>
-      <el-form-item :prop="fields.name.name" :required="fields.name.required">
+      </el-form-item>-->
+      <el-form-item
+        :label="fields.name.label"
+        :prop="fields.name.name"
+        :required="fields.name.required"
+      >
         <el-col :lg="11" :md="16" :sm="24">
           <el-input :placeholder="fields.name.label" ref="focus" v-model="model[fields.name.name]" />
         </el-col>
@@ -29,7 +33,7 @@
           <el-col :lg="11" :md="16" :sm="24">
             <el-input-number
               :precision="fields.costPrice.scale"
-              :step="0.1"
+              :step="0.05"
               placeholder="0.00"
               v-model="model[fields.costPrice.name]"
             ></el-input-number>
@@ -43,20 +47,38 @@
           <el-col :lg="11" :md="16" :sm="24">
             <el-input-number
               :precision="fields.unitPrice.scale"
-              :step="0.1"
+              :step="0.05"
               placeholder="0.00"
               v-model="model[fields.unitPrice.name]"
             ></el-input-number>
           </el-col>
         </el-form-item>
       </div>
-      <el-form-item :prop="fields.dateCheck.name" :required="fields.dateCheck.required">
+      <el-form-item
+        :label="fields.dateCheck.label"
+        :prop="fields.dateCheck.name"
+        :required="fields.dateCheck.required"
+      >
         <el-col :lg="11" :md="16" :sm="24">
           <el-date-picker
             :placeholder="fields.dateCheck.label"
             type="date"
             v-model="model[fields.dateCheck.name]"
           ></el-date-picker>
+        </el-col>
+      </el-form-item>
+
+      <el-form-item
+        :label="fields.description.label"
+        :prop="fields.description.name"
+        :required="fields.description.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input
+            :placeholder="fields.description.label"
+            :rows="4"
+            v-model="model[fields.description.name]"
+          />
         </el-col>
       </el-form-item>
       <el-form-item :prop="fields.photo.name" :required="fields.photo.required">
@@ -75,17 +97,6 @@
           <el-input :placeholder="fields.category.label" v-model="model[fields.category.name]" />
         </el-col>
       </el-form-item>-->
-
-      <el-form-item :prop="fields.description.name" :required="fields.description.required">
-        <el-col :lg="11" :md="16" :sm="24">
-          <el-input
-            :placeholder="fields.description.label"
-            :rows="4"
-            type="textarea"
-            v-model="model[fields.description.name]"
-          />
-        </el-col>
-      </el-form-item>
 
       <!-- 
       <el-form-item :label="fields.e1.label" :prop="fields.e1.name" :required="fields.e1.required">
@@ -160,11 +171,11 @@
         </el-col>
       </el-form-item>-->
 
-      <!-- <el-form-item :prop="fields.active.name" :required="fields.active.required">
+      <el-form-item :prop="fields.active.name" :required="fields.active.required">
         <el-col :lg="11" :md="16" :sm="24">
           <el-switch :active-text="fields.active.label" v-model="model[fields.active.name]"></el-switch>
         </el-col>
-      </el-form-item>-->
+      </el-form-item>
       <el-form-item>
         <div class="form-buttons">
           <el-button

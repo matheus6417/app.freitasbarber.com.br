@@ -4,7 +4,7 @@
       :to="{ path: '/audit-logs', query: { entityNames: 'settings' } }"
       v-if="hasPermissionToAuditLogs"
     >
-      <el-button icon="el-icon-fa-history">
+      <el-button icon="el-icon-fa-history" type="text">
         <app-i18n code="auditLog.menu"></app-i18n>
       </el-button>
     </router-link>

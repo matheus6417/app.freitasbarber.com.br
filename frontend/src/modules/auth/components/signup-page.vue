@@ -4,7 +4,7 @@
       <div class="content">
         <div class="logo">
           <h1>
-            <app-i18n code="app.title"></app-i18n>
+            <app-i18n code="auth.signup"></app-i18n>
           </h1>
         </div>
 
@@ -86,7 +86,8 @@ export default {
 
   methods: {
     ...mapActions({
-      doRegisterEmailAndPassword: 'auth/doRegisterEmailAndPassword',
+      doRegisterEmailAndPassword:
+        'auth/doRegisterEmailAndPassword',
     }),
 
     async doSubmit() {
@@ -97,10 +98,9 @@ export default {
       }
 
       await this.doRegisterEmailAndPassword({
-          email: this.model.email,
-          password: this.model.password,
-        },
-      );
+        email: this.model.email,
+        password: this.model.password,
+      });
     },
   },
 };

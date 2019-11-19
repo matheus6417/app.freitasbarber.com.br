@@ -15,17 +15,17 @@
             <el-input v-model="model[fields.name.name]" />
           </el-form-item>
         </el-col>
-
+        <!-- 
         <el-col :lg="12" :md="16" :sm="24">
           <el-form-item :label="fields.category.label" :prop="fields.category.name">
             <el-input v-model="model[fields.category.name]" />
           </el-form-item>
-        </el-col>
-        <el-col :lg="12" :md="16" :sm="24">
+        </el-col>-->
+        <!-- <el-col :lg="12" :md="16" :sm="24">
           <el-form-item :label="fields.unitPriceRange.label" :prop="fields.unitPriceRange.name">
             <app-number-range-input v-model="model[fields.unitPriceRange.name]" />
           </el-form-item>
-        </el-col>
+        </el-col>-->
       </el-row>
 
       <div class="filter-buttons">
@@ -102,8 +102,8 @@ export default {
       return this.doReset();
     },
 
-     async doFilter() { 
-if (this.visible) {
+    async doFilter() {
+      if (this.visible) {
         this.$root.$emit('toggleFilters');
       }
 

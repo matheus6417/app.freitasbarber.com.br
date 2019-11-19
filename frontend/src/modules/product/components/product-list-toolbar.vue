@@ -16,7 +16,7 @@
       </el-button>
     </router-link>
 
-    <el-tooltip
+    <!-- <el-tooltip
       :content="destroyButtonTooltip"
       :disabled="!destroyButtonTooltip"
       v-if="hasPermissionToDestroy"
@@ -31,14 +31,13 @@
           <app-i18n code="common.destroy"></app-i18n>
         </el-button>
       </span>
-    </el-tooltip>
+    </el-tooltip>-->
 
     <router-link
       :to="{ path: '/audit-logs', query: { entityNames: 'product' } }"
-      class="hidden sm:flex"
       v-if="hasPermissionToAuditLogs"
     >
-      <el-button icon="el-icon-fa-history">
+      <el-button icon="el-icon-fa-history" type="text">
         <app-i18n code="auditLog.menu"></app-i18n>
       </el-button>
     </router-link>

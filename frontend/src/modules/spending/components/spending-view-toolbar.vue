@@ -1,7 +1,7 @@
 <template>
   <div class="app-page-toolbar">
     <router-link :to="{ path: `/spending/${record.id}/edit` }" v-if="record && hasPermissionToEdit">
-      <el-button icon="el-icon-fa-edit" type="primary">
+      <el-button icon="el-icon-fa-edit" type="text">
         <app-i18n code="common.edit"></app-i18n>
       </el-button>
     </router-link>
@@ -9,8 +9,7 @@
     <el-button
       :disabled="destroyLoading"
       @click="doDestroyWithConfirm"
-      icon="el-icon-fa-trash"
-      type="primary"
+      icon="el-icon-fa-trash" type="text"
       v-if="record && hasPermissionToDestroy"
     >
       <app-i18n code="common.destroy"></app-i18n>
@@ -20,7 +19,7 @@
       :to="{ path: '/audit-logs', query: { entityId: record.id } }"
       v-if="record && hasPermissionToAuditLogs"
     >
-      <el-button icon="el-icon-fa-history">
+      <el-button icon="el-icon-fa-history" type="text">
         <app-i18n code="auditLog.menu"></app-i18n>
       </el-button>
     </router-link>
