@@ -171,7 +171,7 @@ export default {
 <style>
 .products-grid-container {
   display: grid !important;
-  grid-template-columns: 1fr 6fr 2fr;
+  grid-template-columns: 50px 1fr 90px;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: 'photo name unitPrice' 'photo description unitPrice';
 }
