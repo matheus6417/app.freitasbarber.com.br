@@ -1,50 +1,48 @@
 <template>
   <div>
     <el-table
-      :border="true"
+      :border="false"
+      :cell-class-name="cellClass"
       :data="rows"
+      :show-header="false"
+      @row-click="doRowClick"
       @sort-change="doChangeSort"
       ref="table"
+      row-class-name="listy services-grid-container "
       row-key="id"
       v-loading="loading"
     >
-      <el-table-column type="selection" width="55"></el-table-column>
+      <!-- <el-table-column type="selection" width="55"></el-table-column> -->
 
-      <el-table-column
-        :label="fields.name.label"
-        :prop="fields.name.name"
-        sortable="custom"
-      >
-        <template slot-scope="scope">{{ presenter(scope.row, 'name') }}</template>
-      </el-table-column>
-
-      <el-table-column
-        :label="fields.unitPrice.label"
-        :prop="fields.unitPrice.name"
-        sortable="custom"
-      >
-        <template slot-scope="scope">{{ presenter(scope.row, 'unitPrice') }}</template>
-      </el-table-column>
-
-      <el-table-column
-        :label="fields.description.label"
-        :prop="fields.description.name"
-        sortable="custom"
-      >
-        <template slot-scope="scope">{{ presenter(scope.row, 'description') }}</template>
-      </el-table-column>
-
-      <el-table-column
-        :label="fields.image.label"
-        :prop="fields.image.name"
-        align="center"
-      >
+      <el-table-column :label="fields.image.label" :prop="fields.image.name" align="center">
         <template slot-scope="scope">
           <app-list-item-image :value="presenter(scope.row, 'image')"></app-list-item-image>
         </template>
       </el-table-column>
 
-      <el-table-column :fixed="isMobile? undefined : 'right'" align="center" width="180">
+      <el-table-column :label="fields.name.label" :prop="fields.name.name" sortable="custom">
+        <template slot-scope="scope">
+          <span class="name">{{ presenter(scope.row, 'name') }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column
+        :label="fields.description.label"
+        :prop="fields.description.name"
+        sortable="custom"
+      >
+        <template slot-scope="scope">
+          <span>{{ presenter(scope.row, 'description') }}{{ scope.row.dateCheck }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column
+        :label="fields.unitPrice.label"
+        :prop="fields.unitPrice.name"
+        sortable="custom"
+      >
+        <template slot-scope="scope">R$ {{ presenter(scope.row, 'unitPrice') }}</template>
+      </el-table-column>
+
+      <!-- <el-table-column :fixed="isMobile? undefined : 'right'" align="center" width="180">
         <template slot-scope="scope">
           <div class="table-actions">
             <router-link :to="`/service/${scope.row.id}`">
@@ -69,7 +67,7 @@
             </el-button>
           </div>
         </template>
-      </el-table-column>
+      </el-table-column>-->
     </el-table>
 
     <div class="el-pagination-wrapper">
@@ -117,7 +115,8 @@ export default {
     },
 
     hasPermissionToDestroy() {
-      return new ServicePermissions(this.currentUser).destroy;
+      return new ServicePermissions(this.currentUser)
+        .destroy;
     },
 
     fields() {
@@ -126,6 +125,12 @@ export default {
   },
 
   methods: {
+    doRowClick(row, column, event) {
+      this.$router.push('/service/' + row.id);
+    },
+    cellClass({ row, column, rowIndex, columnIndex }) {
+      return column.property;
+    },
     ...mapActions({
       doChangeSort: 'service/list/doChangeSort',
       doChangePaginationCurrentPage:
@@ -162,4 +167,27 @@ export default {
 </script>
 
 <style>
+.services-grid-container {
+  display: grid !important;
+  grid-template-columns: 50px 1fr 90px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 'image name unitPrice' 'image description unitPrice';
+}
+
+.image {
+  grid-area: image;
+}
+
+.name {
+  grid-area: name;
+}
+
+.description {
+  grid-area: description;
+}
+
+.unitPrice {
+  grid-area: unitPrice;
+}
 </style>
+
