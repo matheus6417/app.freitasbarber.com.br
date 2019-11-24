@@ -1,39 +1,39 @@
 <template>
   <div>
     <el-table
-      :border="true"
+      :border="false"
+      :cell-class-name="cellClass"
       :data="rows"
+      :show-header="false"
+      @row-click="doRowClick"
       @sort-change="doChangeSort"
+      header-row-class-name="listy "
       ref="table"
+      row-class-name="listy spending-grid-container "
       row-key="id"
+      show-summary
       v-loading="loading"
     >
-      <el-table-column type="selection" width="55"></el-table-column>
+      <!-- <el-table-column type="selection" width="55"></el-table-column> -->
 
-      <el-table-column
-        :label="fields.name.label"
-        :prop="fields.name.name"
-        sortable="custom"
-      >
-        <template slot-scope="scope">{{ presenter(scope.row, 'name') }}</template>
+      <el-table-column :label="fields.name.label" :prop="fields.name.name" sortable="custom">
+        <template slot-scope="scope">
+          <span class="name">{{ presenter(scope.row, 'name') }}</span>
+        </template>
       </el-table-column>
 
-      <el-table-column
-        :label="fields.date.label"
-        :prop="fields.date.name"
-        sortable="custom"
-      >
-        <template slot-scope="scope">{{ presenter(scope.row, 'date') }}</template>
+      <el-table-column :label="fields.date.label" :prop="fields.date.name" sortable="custom">
+        <template slot-scope="scope">
+          <span class="date">{{ presenter(scope.row, 'date') }}</span>
+        </template>
       </el-table-column>
 
-      <el-table-column
-        :label="fields.value.label"
-        :prop="fields.value.name"
-        sortable="custom"
-      >
-        <template slot-scope="scope">{{ presenter(scope.row, 'value') }}</template>
+      <el-table-column :label="fields.value.label" :prop="fields.value.name" sortable="custom">
+        <template slot-scope="scope">
+          <span class="value">- R$ {{ presenter(scope.row, 'value') }}</span>
+        </template>
       </el-table-column>
-
+      <!-- 
       <el-table-column :fixed="isMobile? undefined : 'right'" align="center" width="180">
         <template slot-scope="scope">
           <div class="table-actions">
@@ -59,7 +59,7 @@
             </el-button>
           </div>
         </template>
-      </el-table-column>
+      </el-table-column>-->
     </el-table>
 
     <div class="el-pagination-wrapper">
@@ -107,7 +107,8 @@ export default {
     },
 
     hasPermissionToDestroy() {
-      return new SpendingPermissions(this.currentUser).destroy;
+      return new SpendingPermissions(this.currentUser)
+        .destroy;
     },
 
     fields() {
@@ -116,6 +117,12 @@ export default {
   },
 
   methods: {
+    doRowClick(row, column, event) {
+      this.$router.push('/service/' + row.id);
+    },
+    cellClass({ row, column, rowIndex, columnIndex }) {
+      return column.property;
+    },
     ...mapActions({
       doChangeSort: 'spending/list/doChangeSort',
       doChangePaginationCurrentPage:
@@ -152,4 +159,41 @@ export default {
 </script>
 
 <style>
+.spending-grid-container {
+  display: grid !important;
+  grid-template-columns: 1fr 90px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: ' name value' 'date value';
+}
+
+.name {
+  grid-area: name;
+}
+
+.date {
+  grid-area: date;
+}
+
+.value {
+  grid-area: value;
+}
+
+thead tr.listy {
+  position: absolute;
+  background: #d2d2d2;
+  /* height: 9rem; */
+  width: 100px;
+  z-index: 999;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  left: auto;
+  right: 0;
+  border-radius: 16px;
+}
+
+thead tr.listy th {
+  position: relative;
+  display: block;
+  border: none !important;
+  padding: 1px;
+}
 </style>

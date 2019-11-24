@@ -148,19 +148,10 @@ export class CustomerService {
           ) {
             count
             rows {
-              id
               name
-              birthdate
-              gender
+              phone1
+              phone2
               adress
-              relation {
-                id
-                name
-              }
-              relationDescription
-              active
-              updatedAt
-              createdAt
             }
           }
         }

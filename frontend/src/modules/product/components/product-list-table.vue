@@ -7,7 +7,6 @@
       :show-header="false"
       @row-click="doRowClick"
       @sort-change="doChangeSort"
-      lazy
       ref="table"
       row-class-name="listy products-grid-container "
       row-key="id"
