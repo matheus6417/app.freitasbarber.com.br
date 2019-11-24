@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="app-content-page">
-      <h1 class="app-content-title">
-        <app-i18n code="entities.product.view.title"></app-i18n>
-      </h1>
+      <h1 class="app-content-title">{{presenter(record, 'name')}}</h1>
 
       <div class="app-page-spinner" v-if="loading" v-loading="loading"></div>
 
@@ -17,16 +15,16 @@
         v-if="record"
       >
         <!-- <app-view-item-text :label="fields.id.label" :value="presenter(record, 'id')"></app-view-item-text> -->
+        <!-- 
+        <app-view-item-text :label="fields.name.label" :value="presenter(record, 'name')"></app-view-item-text>-->
 
-        <app-view-item-text :label="fields.name.label" :value="presenter(record, 'name')"></app-view-item-text>
-
+        <app-view-item-text :label="fields.costPrice.label" :value="presenter(record, 'costPrice')"></app-view-item-text>
+        <app-view-item-text :label="fields.unitPrice.label" :value="presenter(record, 'unitPrice')"></app-view-item-text>
+        <app-view-item-text :label="fields.dateCheck.label" :value="presenter(record, 'dateCheck')"></app-view-item-text>
         <app-view-item-text
           :label="fields.description.label"
           :value="presenter(record, 'description')"
         ></app-view-item-text>
-        <app-view-item-text :label="fields.costPrice.label" :value="presenter(record, 'costPrice')"></app-view-item-text>
-        <app-view-item-text :label="fields.unitPrice.label" :value="presenter(record, 'unitPrice')"></app-view-item-text>
-        <app-view-item-text :label="fields.dateCheck.label" :value="presenter(record, 'dateCheck')"></app-view-item-text>
         <app-view-item-image :label="fields.photo.label" :value="presenter(record, 'photo')"></app-view-item-image>
 
         <!-- 

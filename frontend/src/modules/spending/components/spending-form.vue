@@ -15,15 +15,21 @@
           <el-input :disabled="true" v-model="model[fields.id.name]" />
         </el-col>
       </el-form-item>-->
-      <el-form-item :prop="fields.name.name" :required="fields.name.required">
+      <el-form-item
+        :label="fields.name.label"
+        :prop="fields.name.name"
+        :required="fields.name.required"
+      >
         <el-col :lg="11" :md="16" :sm="24">
-          <el-input :placeholder="fields.name.label" ref="focus" v-model="model[fields.name.name]">
-            <i class="el-input__icon el-icon-search" slot="prefix"></i>
-          </el-input>
+          <el-input :placeholder="fields.name.label" ref="focus" v-model="model[fields.name.name]"></el-input>
         </el-col>
       </el-form-item>
 
-      <el-form-item :prop="fields.date.name" :required="fields.date.required">
+      <el-form-item
+        :label="fields.date.label"
+        :prop="fields.date.name"
+        :required="fields.date.required"
+      >
         <el-col :lg="11" :md="16" :sm="24">
           <el-date-picker
             :placeholder="fields.date.label"
@@ -34,12 +40,15 @@
         </el-col>
       </el-form-item>
 
-      <el-form-item :prop="fields.value.name" :required="fields.value.required">
+      <el-form-item
+        :label="fields.value.label"
+        :prop="fields.value.name"
+        :required="fields.value.required"
+      >
         <el-col :lg="11" :md="16" :sm="24">
           <el-input-number
-            :precision="2"
+            :precision="fields.value.scale"
             :step="0.05"
-            controls-position="right"
             placeholder="0.00"
             prefix-icon="el-icon-search"
             v-model="model[fields.value.name]"

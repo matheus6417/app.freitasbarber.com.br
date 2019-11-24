@@ -130,7 +130,7 @@ export default {
     doRowClick(row, column, event) {
       this.$router.push('/product/' + row.id);
     },
-    cellClass({ row, column, rowIndex, columnIndex }) {
+    cellClass({ column }) {
       return column.property;
     },
     ...mapActions({
@@ -167,27 +167,27 @@ export default {
   },
 };
 </script>
-<style>
-.products-grid-container {
+<style scoped>
+/deep/ .products-grid-container {
   display: grid !important;
   grid-template-columns: 50px 1fr 90px;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: 'photo name unitPrice' 'photo description unitPrice';
 }
 
-.photo {
+/deep/ .photo {
   grid-area: photo;
 }
 
-.name {
+/deep/ .name {
   grid-area: name;
 }
 
-.description {
+/deep/ .description {
   grid-area: description;
 }
 
-.unitPrice {
+/deep/ .unitPrice {
   grid-area: unitPrice;
 }
 </style>

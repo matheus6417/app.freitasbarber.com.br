@@ -1,23 +1,29 @@
 <template>
   <div>
     <el-table
-      :border="true"
+      :border="false"
+      :cell-class-name="cellClass"
       :data="rows"
+      :show-header="false"
+      @row-click="doRowClick"
       @sort-change="doChangeSort"
       ref="table"
+      row-class-name="listy orders-grid-container "
       row-key="id"
       v-loading="loading"
     >
-      <el-table-column type="selection" width="55"></el-table-column>
+      <!-- <el-table-column type="selection" width="55"></el-table-column> -->
 
       <el-table-column :label="fields.customer.label" :prop="fields.customer.name">
         <template slot-scope="scope">
-          <app-list-item-relation-to-many
-            :label="fields.customer.label"
-            :permission="fields.customer.readPermission"
-            :url="fields.customer.viewUrl"
-            :value="presenter(scope.row, 'customer')"
-          ></app-list-item-relation-to-many>
+          <span class="name">
+            <app-list-item-relation-to-many
+              :label="fields.customer.label"
+              :permission="fields.customer.readPermission"
+              :url="fields.customer.viewUrl"
+              :value="presenter(scope.row, 'customer')"
+            ></app-list-item-relation-to-many>
+          </span>
         </template>
       </el-table-column>
 
@@ -43,11 +49,15 @@
         </template>
       </el-table-column>
 
-      <el-table-column :label="fields.attachments.label" :prop="fields.attachments.name" align="center">
+      <!-- <el-table-column
+        :label="fields.attachments.label"
+        :prop="fields.attachments.name"
+        align="center"
+      >
         <template slot-scope="scope">
           <app-list-item-file :value="presenter(scope.row, 'attachments')"></app-list-item-file>
         </template>
-      </el-table-column>
+      </el-table-column>-->
 
       <el-table-column :label="fields.services.label" :prop="fields.services.name">
         <template slot-scope="scope">
@@ -59,32 +69,28 @@
           ></app-list-item-relation-to-many>
         </template>
       </el-table-column>
-
+      <!-- 
       <el-table-column
         :label="fields.description.label"
         :prop="fields.description.name"
         sortable="custom"
       >
         <template slot-scope="scope">{{ presenter(scope.row, 'description') }}</template>
-      </el-table-column>
+      </el-table-column>-->
 
-      <el-table-column
-        :label="fields.total.label"
-        :prop="fields.total.name"
-        sortable="custom"
-      >
+      <el-table-column :label="fields.total.label" :prop="fields.total.name" sortable="custom">
         <template slot-scope="scope">{{ presenter(scope.row, 'total') }}</template>
       </el-table-column>
 
-      <el-table-column
+      <!-- <el-table-column
         :label="fields.valueAlt.label"
         :prop="fields.valueAlt.name"
         sortable="custom"
       >
         <template slot-scope="scope">{{ presenter(scope.row, 'valueAlt') }}</template>
-      </el-table-column>
+      </el-table-column>-->
 
-      <el-table-column :fixed="isMobile? undefined : 'right'" align="center" width="180">
+      <!-- <el-table-column :fixed="isMobile? undefined : 'right'" align="center" width="180">
         <template slot-scope="scope">
           <div class="table-actions">
             <router-link :to="`/order/${scope.row.id}`">
@@ -109,7 +115,7 @@
             </el-button>
           </div>
         </template>
-      </el-table-column>
+      </el-table-column>-->
     </el-table>
 
     <div class="el-pagination-wrapper">
@@ -166,6 +172,12 @@ export default {
   },
 
   methods: {
+    doRowClick(row, column, event) {
+      this.$router.push('/order/' + row.id);
+    },
+    cellClass({ column }) {
+      return column.property;
+    },
     ...mapActions({
       doChangeSort: 'order/list/doChangeSort',
       doChangePaginationCurrentPage:
@@ -201,5 +213,32 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+/deep/ .orders-grid-container {
+  display: grid !important;
+  grid-template-columns: 1fr 90px;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 'customer date' 'services total' 'products total';
+}
+
+/deep/ .customer {
+  grid-area: customer;
+}
+
+/deep/ .date {
+  grid-area: date;
+}
+
+/deep/ .services {
+  grid-area: services;
+}
+
+/deep/ .products {
+  grid-area: products;
+}
+/deep/ tr.el-table__row.listy {
+  height: auto;
+}
 </style>
+
+

@@ -128,7 +128,7 @@ export default {
     doRowClick(row, column, event) {
       this.$router.push('/service/' + row.id);
     },
-    cellClass({ row, column, rowIndex, columnIndex }) {
+    cellClass({ column }) {
       return column.property;
     },
     ...mapActions({
@@ -166,27 +166,27 @@ export default {
 };
 </script>
 
-<style>
-.services-grid-container {
+<style scoped>
+/deep/ .services-grid-container {
   display: grid !important;
   grid-template-columns: 50px 1fr 90px;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: 'image name unitPrice' 'image description unitPrice';
 }
 
-.image {
+/deep/ .image {
   grid-area: image;
 }
 
-.name {
+/deep/ .name {
   grid-area: name;
 }
 
-.description {
+/deep/ .description {
   grid-area: description;
 }
 
-.unitPrice {
+/deep/ .unitPrice {
   grid-area: unitPrice;
 }
 </style>

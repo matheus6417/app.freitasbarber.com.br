@@ -2414,7 +2414,7 @@
   cursor: pointer;
 }
 .el-date-editor .el-range__icon {
-  font-size: 14px;
+  font-size: 22px;
   margin-left: -5px;
   color: #c0c4cc;
   float: left;
@@ -2449,9 +2449,10 @@
 }
 .el-date-editor .el-range-separator {
   padding: 0 5px;
-  line-height: 32px;
+  line-height: 70px;
   width: 5%;
   color: #303133;
+  font-size: 22px;
 }
 .el-date-editor .el-range__close-icon {
   font-size: 14px;
@@ -2468,10 +2469,13 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 3px 10px;
+  padding: 0 1.5rem;
+  width: 100%;
 }
 .el-range-editor .el-range-input {
   line-height: 1;
+  background: transparent;
+  font-size: 20px;
 }
 .el-range-editor.is-active,
 .el-range-editor.is-active:hover {
@@ -3249,7 +3253,7 @@
 .el-form-item__content {
   line-height: 40px;
   position: relative;
-  font-size: 14px;
+  font-size: 22px;
 }
 .el-form-item__content::after,
 .el-form-item__content::before {
@@ -4395,7 +4399,7 @@
   background: inherit;
   color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  font-size: 2em;
+  font-size: 1.5em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9530,10 +9534,10 @@
 }
 .el-input__inner {
   -webkit-appearance: none;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(0, 0, 0, 0.058);
   background-image: none;
-  border-radius: 0;
-  border: NONE;
+  border-radius: 10px;
+  border: none;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* border-bottom: 1px solid #0000001c; */
@@ -9543,7 +9547,7 @@
   height: 70px;
   line-height: 35px;
   outline: 0;
-  padding: 0 15px;
+  padding: 0 1.5rem;
   -webkit-transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
   transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
   width: 100%;
@@ -9573,7 +9577,7 @@
 .el-input__inner:focus {
   border-color: #faad14;
   outline: 0;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(250, 173, 20, 0.4);
 }
 .el-input__suffix {
   right: 5px;
@@ -10858,7 +10862,7 @@ tr.el-table__row.listy {
   margin: 0 4vw 0.8rem 4vw;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.08);
-  height:4.5rem
+  height:4.5rem;
 }
 tr.el-table__row.listy td {
   border: none;
@@ -10890,12 +10894,19 @@ td.description {
 }
 
 .app-content-page .form{
+  margin: auto;
   margin-bottom: 9rem;
+  max-width: 90%;
 }
 
 @media only screen and (min-width: 640px) {
   .app-content-page,.app-page-toolbar {
     padding-left: 95px;
   }
-  
+  tr.el-table__row.listy{
+    width: calc(92vw - 96px);
+  }
+}
+table.el-table__footer * {
+  text-align: center;
 }

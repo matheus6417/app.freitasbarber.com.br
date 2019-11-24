@@ -148,6 +148,7 @@ export class CustomerService {
           ) {
             count
             rows {
+              id
               name
               phone1
               phone2

@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="app-content-page">
-      <h1 class="app-content-title">
-        <app-i18n code="entities.service.view.title"></app-i18n>
-      </h1>
+      <h1 class="app-content-title">{{presenter(record, 'name')}}</h1>
 
       <div class="app-page-spinner" v-if="loading" v-loading="loading"></div>
 
@@ -16,9 +14,7 @@
         class="form"
         v-if="record"
       >
-        <app-view-item-text :label="fields.id.label" :value="presenter(record, 'id')"></app-view-item-text>
-
-        <app-view-item-text :label="fields.name.label" :value="presenter(record, 'name')"></app-view-item-text>
+        <!-- <app-view-item-text :label="fields.id.label" :value="presenter(record, 'id')"></app-view-item-text> -->
 
         <app-view-item-text :label="fields.unitPrice.label" :value="presenter(record, 'unitPrice')"></app-view-item-text>
 
@@ -26,26 +22,6 @@
           :label="fields.description.label"
           :value="presenter(record, 'description')"
         ></app-view-item-text>
-
-        <app-view-item-text :label="fields.e1.label" :value="presenter(record, 'e1')"></app-view-item-text>
-
-        <app-view-item-text :label="fields.e2.label" :value="presenter(record, 'e2')"></app-view-item-text>
-
-        <app-view-item-text :label="fields.e3.label" :value="presenter(record, 'e3')"></app-view-item-text>
-
-        <app-view-item-text :label="fields.e4.label" :value="presenter(record, 'e4')"></app-view-item-text>
-
-        <app-view-item-text :label="fields.e5.label" :value="presenter(record, 'e5')"></app-view-item-text>
-
-        <app-view-item-text :label="fields.e6.label" :value="presenter(record, 'e6')"></app-view-item-text>
-
-        <app-view-item-text :label="fields.isActive.label" :value="presenter(record, 'isActive')"></app-view-item-text>
-
-        <app-view-item-text :label="fields.e7.label" :value="presenter(record, 'e7')"></app-view-item-text>
-
-        <app-view-item-file :label="fields.e8.label" :value="presenter(record, 'e8')"></app-view-item-file>
-
-        <app-view-item-image :label="fields.e9.label" :value="presenter(record, 'e9')"></app-view-item-image>
 
         <app-view-item-image :label="fields.image.label" :value="presenter(record, 'image')"></app-view-item-image>
 

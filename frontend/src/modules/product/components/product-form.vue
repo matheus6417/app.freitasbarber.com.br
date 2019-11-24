@@ -24,36 +24,34 @@
           <el-input :placeholder="fields.name.label" ref="focus" v-model="model[fields.name.name]" />
         </el-col>
       </el-form-item>
-      <div class="flex">
-        <el-form-item
-          :label="fields.costPrice.label"
-          :prop="fields.costPrice.name"
-          :required="fields.costPrice.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input-number
-              :precision="fields.costPrice.scale"
-              :step="0.05"
-              placeholder="0.00"
-              v-model="model[fields.costPrice.name]"
-            ></el-input-number>
-          </el-col>
-        </el-form-item>
-        <el-form-item
-          :label="fields.unitPrice.label"
-          :prop="fields.unitPrice.name"
-          :required="fields.unitPrice.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input-number
-              :precision="fields.unitPrice.scale"
-              :step="0.05"
-              placeholder="0.00"
-              v-model="model[fields.unitPrice.name]"
-            ></el-input-number>
-          </el-col>
-        </el-form-item>
-      </div>
+      <el-form-item
+        :label="fields.costPrice.label"
+        :prop="fields.costPrice.name"
+        :required="fields.costPrice.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input-number
+            :precision="fields.costPrice.scale"
+            :step="0.05"
+            placeholder="0.00"
+            v-model="model[fields.costPrice.name]"
+          ></el-input-number>
+        </el-col>
+      </el-form-item>
+      <el-form-item
+        :label="fields.unitPrice.label"
+        :prop="fields.unitPrice.name"
+        :required="fields.unitPrice.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input-number
+            :precision="fields.unitPrice.scale"
+            :step="0.05"
+            placeholder="0.00"
+            v-model="model[fields.unitPrice.name]"
+          ></el-input-number>
+        </el-col>
+      </el-form-item>
       <el-form-item
         :label="fields.dateCheck.label"
         :prop="fields.dateCheck.name"

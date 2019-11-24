@@ -1,9 +1,14 @@
 <template>
   <div>
     <el-table
-      :border="true"
+      :border="false"
+      :cell-class-name="cellClass"
       :data="rows"
+      :show-header="false"
+      @row-click="doRowClick"
       @sort-change="doChangeSort"
+      ref="table"
+      row-class-name="listy services-grid-container "
       row-key="id"
       v-loading="loading"
     >
@@ -19,7 +24,9 @@
         :prop="fields.createdByEmail.name"
         sortable="custom"
       >
-        <template slot-scope="scope">{{ presenter(scope.row, 'createdByEmail') }}</template>
+        <template slot-scope="scope">
+          <span class="name">{{ presenter(scope.row, 'createdByEmail') }}</span>
+        </template>
       </el-table-column>
       <el-table-column
         :label="fields.entityName.label"
@@ -39,13 +46,13 @@
         <template slot-scope="scope">{{ presenter(scope.row, 'entityId') }}</template>
       </el-table-column>
 
-      <el-table-column :fixed="isMobile? undefined : 'right'" align="center" width="120">
+      <!-- <el-table-column :fixed="isMobile? undefined : 'right'" align="center" width="120">
         <template slot-scope="scope">
           <el-button @click="view(scope.row[fields.values.name])" type="text">
             <app-i18n code="common.view"></app-i18n>
           </el-button>
         </template>
-      </el-table-column>
+      </el-table-column>-->
     </el-table>
 
     <div class="el-pagination-wrapper">
@@ -86,6 +93,13 @@ export default {
   },
 
   methods: {
+    doRowClick(row, column, event) {
+      this.view(row[fields.values.name]);
+    },
+    cellClass({ column }) {
+      return column.property;
+    },
+
     ...mapActions({
       doChangeSort: 'auditLog/doChangeSort',
       doChangePaginationCurrentPage:
@@ -111,5 +125,28 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+/deep/ .services-grid-container {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: ' createdByEmail createdByEmail timestamp' 'action entityName entityId';
+}
+
+/deep/ .timestamp {
+  grid-area: timestamp;
+}
+
+/deep/ .createdByEmail {
+  grid-area: createdByEmail;
+}
+/deep/ .entityName {
+  grid-area: entityName;
+}
+/deep/ .action {
+  grid-area: action;
+}
+/deep/ .entityId {
+  grid-area: entityId;
+}
 </style>

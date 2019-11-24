@@ -1,7 +1,13 @@
 <template>
   <div style="display: flex; justify-content: space-between">
     <el-input :value="startValue" @input="handleInputStart" style="width: 100%"></el-input>
-    <span style="margin-left: 8px; margin-right: 8px">-</span>
+    <span
+      style=" padding: 0 5px;
+    line-height: 70px;
+    width: 5%;
+    color: #303133;
+    font-size: 22px;"
+    >-</span>
     <el-input :value="endValue" @input="handleInputEnd" style="width: 100%"></el-input>
   </div>
 </template>

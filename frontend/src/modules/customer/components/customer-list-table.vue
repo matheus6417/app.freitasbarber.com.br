@@ -159,9 +159,11 @@ export default {
 
   methods: {
     doRowClick(row, column, event) {
+      console.log(row);
       this.$router.push('/customer/' + row.id);
+      
     },
-    cellClass({ row, column, rowIndex, columnIndex }) {
+    cellClass({ column }) {
       return column.property;
     },
     ...mapActions({
@@ -199,26 +201,26 @@ export default {
 };
 </script>
 
-<style>
-.services-grid-container {
+<style scoped>
+/deep/ .services-grid-container {
   display: grid !important;
   grid-template-columns: 1fr 1fr 40px 50px;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: 'name name call whats' 'adress adress call whats';
 }
 
-.name {
+/deep/ .name {
   grid-area: name;
 }
 
-.adress {
+/deep/ .adress {
   grid-area: adress;
 }
 
-.call {
+/deep/ .call {
   grid-area: call;
 }
-.whats {
+/deep/ .whats {
   grid-area: whats;
 }
 </style>

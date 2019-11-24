@@ -134,7 +134,7 @@ const ptBR = {
         name: "Nome",
         description: "Fornecedor",
         unitPriceRange: "Preço",
-        unitPrice: "Preço",
+        unitPrice: "Preço de venda",
         photo: "Imagem",
         costPriceRange: "Custo",
         costPrice: "Custo",

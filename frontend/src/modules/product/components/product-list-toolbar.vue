@@ -6,11 +6,7 @@
       </el-button>
     </router-link>
 
-    <router-link
-      :to="{ path: '/product/import' }"
-      class="hidden sm:flex"
-      v-if="hasPermissionToImport"
-    >
+    <router-link :to="{ path: '/product/import' }" class="hidden" v-if="hasPermissionToImport">
       <el-button icon="el-icon-fa-upload" type="text">
         <app-i18n code="common.import"></app-i18n>
       </el-button>
@@ -42,11 +38,7 @@
       </el-button>
     </router-link>
 
-    <el-tooltip
-      :content="exportButtonTooltip"
-      :disabled="!exportButtonTooltip"
-      class="hidden sm:flex"
-    >
+    <el-tooltip :content="exportButtonTooltip" :disabled="!exportButtonTooltip" class="hidden">
       <span>
         <el-button
           :disabled="exportButtonDisabled"

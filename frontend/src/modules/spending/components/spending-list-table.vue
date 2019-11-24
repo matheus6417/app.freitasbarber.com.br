@@ -30,7 +30,7 @@
 
       <el-table-column :label="fields.value.label" :prop="fields.value.name" sortable="custom">
         <template slot-scope="scope">
-          <span class="value">- R$ {{ presenter(scope.row, 'value') }}</span>
+          <span class="value">R$ {{ presenter(scope.row, 'value') }}</span>
         </template>
       </el-table-column>
       <!-- 
@@ -118,9 +118,9 @@ export default {
 
   methods: {
     doRowClick(row, column, event) {
-      this.$router.push('/service/' + row.id);
+      this.$router.push('/spending/' + row.id + '/edit');
     },
-    cellClass({ row, column, rowIndex, columnIndex }) {
+    cellClass({ column }) {
       return column.property;
     },
     ...mapActions({
@@ -158,27 +158,28 @@ export default {
 };
 </script>
 
-<style>
-.spending-grid-container {
+<style scoped>
+/deep/ .spending-grid-container {
   display: grid !important;
   grid-template-columns: 1fr 90px;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: ' name value' 'date value';
 }
 
-.name {
+/deep/ .name {
   grid-area: name;
 }
 
-.date {
+/deep/ .date {
   grid-area: date;
 }
 
-.value {
+/deep/ .value {
   grid-area: value;
 }
 
-thead tr.listy {
+/* TESTE DE FILTROS  */
+/deep/ thead tr.listy {
   position: absolute;
   background: #d2d2d2;
   /* height: 9rem; */
@@ -190,7 +191,7 @@ thead tr.listy {
   border-radius: 16px;
 }
 
-thead tr.listy th {
+/deep/ thead tr.listy th {
   position: relative;
   display: block;
   border: none !important;
