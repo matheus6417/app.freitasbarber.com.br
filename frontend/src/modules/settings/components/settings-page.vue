@@ -8,7 +8,9 @@
       <app-settings-toolbar></app-settings-toolbar>
 
       <div class="app-page-spinner" v-if="findLoading" v-loading="findLoading"></div>
-
+      <el-button :disabled="saveLoading" @click="doSignout" icon="el-icon-fa-sign-out" type="text">
+        <app-i18n code="auth.signout"></app-i18n>
+      </el-button>
       <el-form
         :label-position="labelPosition"
         :label-width="labelWidthForm"
@@ -40,25 +42,25 @@
         </el-form-item>
 
         <el-form-item>
-          <div class="form-buttons">
+          <div class="form-buttons flex">
             <el-button
               :disabled="saveLoading"
               @click="doSubmit"
               icon="el-icon-fa-floppy-o"
-              type="primary"
+              type="text"
             >
               <app-i18n code="common.save"></app-i18n>
             </el-button>
 
-            <el-button :disabled="saveLoading" @click="doReset" icon="el-icon-fa-undo">
+            <!-- <el-button :disabled="saveLoading" @click="doReset" icon="el-icon-fa-undo" type="text">
               <app-i18n code="common.reset"></app-i18n>
-            </el-button>
+            </el-button>-->
 
-            <router-link :to="{ path: '/' }">
-              <el-button :disabled="saveLoading" icon="el-icon-fa-close">
+            <el-button :disabled="saveLoading" icon="el-icon-fa-close" type="text">
+              <router-link :to="{ path: '/' }">
                 <app-i18n code="common.cancel"></app-i18n>
-              </el-button>
-            </router-link>
+              </router-link>
+            </el-button>
           </div>
         </el-form-item>
       </el-form>
@@ -96,6 +98,10 @@ export default {
       settings: 'settings/settings',
       findLoading: 'settings/findLoading',
       saveLoading: 'settings/saveLoading',
+      currentUserNameOrEmailPrefix:
+        'auth/currentUserNameOrEmailPrefix',
+      currentUserAvatar: 'auth/currentUserAvatar',
+      isMobile: 'layout/isMobile',
     }),
 
     fields() {
@@ -112,6 +118,8 @@ export default {
     ...mapActions({
       doFind: 'settings/doFind',
       doSave: 'settings/doSave',
+      doSignout: 'auth/doSignout',
+      toggleMenu: 'layout/toggleMenu',
     }),
 
     doReset() {

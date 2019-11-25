@@ -16,7 +16,7 @@
         class="form"
         v-if="record"
       >
-        <app-view-item-text :label="fields.id.label" :value="presenter(record, 'id')"></app-view-item-text>
+        <!-- <app-view-item-text :label="fields.id.label" :value="presenter(record, 'id')"></app-view-item-text> -->
 
         <app-view-item-relation-to-many
           :label="fields.customer.label"
@@ -31,7 +31,7 @@
           :url="fields.products.viewUrl"
           :value="presenter(record, 'products')"
         ></app-view-item-relation-to-many>
-
+        <!-- 
         <app-view-item-relation-to-one
           :label="fields.employee.label"
           :permission="fields.employee.readPermission"
@@ -39,7 +39,7 @@
           :value="presenter(record, 'employee')"
         ></app-view-item-relation-to-one>
 
-        <app-view-item-text :label="fields.delivered.label" :value="presenter(record, 'delivered')"></app-view-item-text>
+        <app-view-item-text :label="fields.delivered.label" :value="presenter(record, 'delivered')"></app-view-item-text>-->
 
         <app-view-item-file
           :label="fields.attachments.label"
@@ -66,7 +66,7 @@
 
         <app-view-item-text :label="fields.valueAlt.label" :value="presenter(record, 'valueAlt')"></app-view-item-text>
 
-        <app-view-item-text :label="fields.e1.label" :value="presenter(record, 'e1')"></app-view-item-text>
+        <!-- <app-view-item-text :label="fields.e1.label" :value="presenter(record, 'e1')"></app-view-item-text>
 
         <app-view-item-text :label="fields.e2.label" :value="presenter(record, 'e2')"></app-view-item-text>
 
@@ -82,7 +82,7 @@
 
         <app-view-item-file :label="fields.e8.label" :value="presenter(record, 'e8')"></app-view-item-file>
 
-        <app-view-item-image :label="fields.e9.label" :value="presenter(record, 'e9')"></app-view-item-image>
+        <app-view-item-image :label="fields.e9.label" :value="presenter(record, 'e9')"></app-view-item-image>-->
 
         <app-view-item-text :label="fields.createdAt.label" :value="presenter(record, 'createdAt')"></app-view-item-text>
 

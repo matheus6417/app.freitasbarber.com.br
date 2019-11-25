@@ -196,7 +196,7 @@
         </template>
       </el-menu-item>
 
-      <el-menu-item :class="classFor('/', true)" :route="{ path: '/' }" index="/">
+      <el-menu-item :class="classFor('/', true)" :route="{ path: '/' }" disabled index="/">
         <template slot="title">
           <svg
             class="menu-icon feather feather-activity"

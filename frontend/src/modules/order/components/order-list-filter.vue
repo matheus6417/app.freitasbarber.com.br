@@ -10,14 +10,14 @@
       ref="form"
     >
       <el-row>
-        <el-col :lg="12" :md="16" :sm="24">
+        <!-- <el-col :lg="12" :md="16" :sm="24">
           <el-form-item :label="fields.employee.label" :prop="fields.employee.name">
             <app-autocomplete-one-input
               :fetchFn="fields.employee.fetchFn"
               v-model="model[fields.employee.name]"
             ></app-autocomplete-one-input>
           </el-form-item>
-        </el-col>
+        </el-col>-->
 
         <el-col :lg="12" :md="16" :sm="24">
           <el-form-item :label="fields.description.label" :prop="fields.description.name">
@@ -36,6 +36,7 @@
             <app-number-range-input v-model="model[fields.valueAltRange.name]" />
           </el-form-item>
         </el-col>
+        {{fields}}
       </el-row>
 
       <div class="filter-buttons">

@@ -616,22 +616,22 @@ const ptBR = {
       theme: "Tema"
     },
     colors: {
-      default: "Padrão",
-      cyan: "Ciano",
-      "geek-blue": "Azul escuro",
+      // default: "Padrão",
+      // cyan: "Ciano",
+      // "geek-blue": "Azul escuro",
       gold: "Ouro",
-      lime: "Limão",
-      magenta: "Magenta",
-      orange: "Laranja",
-      "polar-green": "Verde polar",
-      purple: "Roxo",
-      red: "Vermelho",
-      volcano: "Vúlcão",
-      yellow: "Amarelo"
+      // lime: "Limão",
+      // magenta: "Magenta",
+      // orange: "Laranja",
+      // "polar-green": "Verde polar",
+      // purple: "Roxo",
+      // red: "Vermelho",
+      // volcano: "Vúlcão",
+      // yellow: "Amarelo"
     }
   },
   home: {
-    menu: "INIC",
+    menu: "DASH",
     message: `Esta página usa dados falsos apenas para fins de demonstração. Você pode editá-la em frontend/src/modules/home/components/home-page.vue.`,
     charts: {
       day: "Dia",
