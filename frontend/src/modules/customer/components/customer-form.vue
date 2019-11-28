@@ -38,11 +38,11 @@
       <el-form-item :prop="fields.gender.name" :required="fields.gender.required">
         <el-col :lg="11" :md="16" :sm="24">
           <el-radio-group v-model="model[fields.gender.name]">
-            <el-radio
+            <el-radio-button
               :key="option.id"
               :label="option.id"
               v-for="option of fields.gender.options"
-            >{{option.label}}</el-radio>
+            >{{option.label}}</el-radio-button>
           </el-radio-group>
         </el-col>
       </el-form-item>

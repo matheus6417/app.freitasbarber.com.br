@@ -6,7 +6,6 @@
       <div class="app-page-spinner" v-if="loading" v-loading="loading"></div>
 
       <app-service-view-toolbar v-if="record"></app-service-view-toolbar>
-
       <el-form
         :label-position="labelPosition"
         :label-width="labelWidthForm"

@@ -49,7 +49,6 @@ export default {
       if (!item) {
         return null;
       }
-
       return item.label;
     },
   },

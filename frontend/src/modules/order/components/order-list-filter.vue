@@ -30,13 +30,16 @@
             <app-number-range-input v-model="model[fields.totalRange.name]" />
           </el-form-item>
         </el-col>
-
         <el-col :lg="12" :md="16" :sm="24">
+          <el-form-item :label="fields.date.label" :prop="fields.date.name">
+            <app-number-range-input v-model="model[fields.date.name]" />
+          </el-form-item>
+        </el-col>
+        <!-- <el-col :lg="12" :md="16" :sm="24">
           <el-form-item :label="fields.valueAltRange.label" :prop="fields.valueAltRange.name">
             <app-number-range-input v-model="model[fields.valueAltRange.name]" />
           </el-form-item>
-        </el-col>
-        {{fields}}
+        </el-col>-->
       </el-row>
 
       <div class="filter-buttons">
@@ -60,7 +63,6 @@ import { OrderModel } from '@/modules/order/order-model';
 const { fields } = OrderModel;
 
 const filterSchema = new FilterSchema([
-  fields.employee,
   fields.description,
   fields.totalRange,
   fields.valueAltRange,

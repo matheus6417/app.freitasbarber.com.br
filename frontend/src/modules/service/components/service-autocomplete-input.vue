@@ -5,7 +5,6 @@
     <el-button
       @click="doOpenModal()"
       icon="el-icon-plus"
-      style="margin-left: 16px"
       type="primary"
       v-if="hasPermissionToCreate && showCreate"
     ></el-button>

@@ -195,6 +195,7 @@ export class OrderService {
               services {
                 id
               }
+              date
               description
               total
               valueAlt

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-dialog :title="title" :visible.sync="dialogVisible" width="80%">
+    <el-dialog :title="title" :visible.sync="dialogVisible">
       <app-customer-form
         :modal="true"
         :record="record"

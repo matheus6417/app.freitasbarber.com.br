@@ -26,7 +26,7 @@ function enumeratorLabel(name, value) {
 const fields = {
   id: new IdField('id', label('id')),
   name: new StringField('name', label('name'), {}),
-  unitPrice: new DecimalField('unitPrice', label('unitPrice'), {}),
+  unitPrice: new DecimalField('unitPrice', label('unitPrice'), { scale: 2 }),
   description: new StringField('description', label('description'), {}),
   e1: new StringField('e1', label('e1'), {}),
   e2: new IntegerField('e2', label('e2'), {}),
@@ -39,10 +39,10 @@ const fields = {
     { id: 'a', label: enumeratorLabel('e7', 'a') },
     { id: 'b', label: enumeratorLabel('e7', 'b') },
     { id: 'c', label: enumeratorLabel('e7', 'c') },
-  ],{}),
-  e8: new FilesField('e8', label('e8'), 'service/e8',{}),
-  e9: new ImagesField('e9', label('e9'), 'service/e9',{}),
-  image: new ImagesField('image', label('image'), 'service/image',{}),
+  ], {}),
+  e8: new FilesField('e8', label('e8'), 'service/e8', {}),
+  e9: new ImagesField('e9', label('e9'), 'service/e9', {}),
+  image: new ImagesField('image', label('image'), 'service/image', {}),
   createdAt: new DateTimeField(
     'createdAt',
     label('createdAt'),

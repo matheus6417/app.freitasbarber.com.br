@@ -10,11 +10,11 @@
       ref="form"
       v-if="model"
     >
-      <el-form-item :label="fields.id.label" :prop="fields.id.name" v-if="isEditing">
+      <!-- <el-form-item :label="fields.id.label" :prop="fields.id.name" v-if="isEditing">
         <el-col :lg="11" :md="16" :sm="24">
           <el-input :disabled="true" v-model="model[fields.id.name]" />
         </el-col>
-      </el-form-item>
+      </el-form-item>-->
       <el-form-item
         :label="fields.customer.label"
         :prop="fields.customer.name"
@@ -63,7 +63,11 @@
         </el-col>
       </el-form-item>
 
-      <el-form-item :prop="fields.date.name" :required="fields.date.required">
+      <el-form-item
+        :label="fields.date.label"
+        :prop="fields.date.name"
+        :required="fields.date.required"
+      >
         <el-col :lg="11" :md="16" :sm="24">
           <el-date-picker
             :placeholder="fields.date.label"
@@ -73,7 +77,11 @@
         </el-col>
       </el-form-item>
 
-      <el-form-item :prop="fields.photos.name" :required="fields.photos.required">
+      <el-form-item
+        :label="fields.photos.label"
+        :prop="fields.photos.name"
+        :required="fields.photos.required"
+      >
         <el-col :lg="11" :md="16" :sm="24">
           <app-image-upload
             :max="fields.photos.max"
@@ -84,7 +92,11 @@
         </el-col>
       </el-form-item>
 
-      <el-form-item :prop="fields.description.name" :required="fields.description.required">
+      <el-form-item
+        :label="fields.description.name"
+        :prop="fields.description.name"
+        :required="fields.description.required"
+      >
         <el-col :lg="11" :md="16" :sm="24">
           <el-input
             :placeholder="fields.description.label"
@@ -95,36 +107,23 @@
         </el-col>
       </el-form-item>
 
-      <div class="flex">
-        <el-form-item
-          :label="fields.total.label"
-          :prop="fields.total.name"
-          :required="fields.total.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input-number
-              :precision="fields.total.scale"
-              :step="0.1"
-              v-model="model[fields.total.name]"
-            ></el-input-number>
-          </el-col>
-        </el-form-item>
+      <el-form-item
+        :label="fields.valueAlt.label"
+        :prop="fields.valueAlt.name"
+        :required="fields.valueAlt.required"
+      >
+        <el-col :lg="11" :md="16" :sm="24">
+          <el-input-number
+            :precision="fields.valueAlt.scale"
+            :step="0.50"
+            v-model="model[fields.valueAlt.name]"
+          ></el-input-number>
+        </el-col>
+      </el-form-item>
 
-        <el-form-item
-          :label="fields.valueAlt.label"
-          :prop="fields.valueAlt.name"
-          :required="fields.valueAlt.required"
-        >
-          <el-col :lg="11" :md="16" :sm="24">
-            <el-input-number
-              :precision="fields.valueAlt.scale"
-              :step="0.1"
-              v-model="model[fields.valueAlt.name]"
-            ></el-input-number>
-          </el-col>
-        </el-form-item>
-      </div>
-
+      <el-form-item :label="fields.total.label" :prop="fields.total.name" disabled>
+        <el-input class="bg-transparent" disabled v-model="model[fields.total.name]" />
+      </el-form-item>
       <!-- <el-form-item
         :label="fields.attachments.label"
         :prop="fields.attachments.name"
@@ -296,6 +295,7 @@ export default {
     return {
       rules: formSchema.rules(),
       model: null,
+      total: this.model,
     };
   },
 
@@ -303,6 +303,7 @@ export default {
     this.model = formSchema.initialValues(
       this.record || {},
     );
+    console.log(this.total);
   },
 
   computed: {
