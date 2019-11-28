@@ -20,10 +20,7 @@
       v-for="initialOption of initialOptions"
     ></el-option>
     <el-option :key="record.id" :label="record.label" :value="record" v-for="record in dataSource">
-      <div
-        style="display:flex;align-items:center;isplay: flex;
-    justify-content: space-between;"
-      >
+      <div style="display:flex;align-items:center;justify-content: space-between;">
         <span style="margin-right:2ch">{{record.label}}</span>
         <span style="color: #8492a6; font-size: 0.6em">{{ label2}}</span>
       </div>

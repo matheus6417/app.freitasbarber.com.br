@@ -190,6 +190,7 @@ export class ProductService {
           productAutocomplete(query: $query, limit: $limit) {
             id
             label
+            unitPrice
           }
         }
       `,

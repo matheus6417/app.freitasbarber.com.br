@@ -40,6 +40,7 @@ export class ProductField {
         return {
           id: record.id,
           label: record.name,
+          unitPrice: record.unitPrice,
         };
       },
       options,
