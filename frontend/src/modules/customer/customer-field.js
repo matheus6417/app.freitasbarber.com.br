@@ -38,6 +38,7 @@ export class CustomerField {
         }
 
         return {
+          // TODO: CONT]INUA
           id: record.id,
           label: record.name,
         };

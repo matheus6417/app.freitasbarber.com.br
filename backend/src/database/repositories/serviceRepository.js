@@ -124,12 +124,12 @@ class ServiceRepository extends AbstractEntityRepository {
       offset,
       orderBy,
     } = {
-      requestedAttributes: null,
-      filter: null,
-      limit: 0,
-      offset: 0,
-      orderBy: null,
-    },
+        requestedAttributes: null,
+        filter: null,
+        limit: 0,
+        offset: 0,
+        orderBy: null,
+      },
   ) {
     const query = FirebaseQuery.forList({
       limit,
@@ -180,12 +180,12 @@ class ServiceRepository extends AbstractEntityRepository {
   async findAllAutocomplete(search, limit) {
     const query = FirebaseQuery.forAutocomplete({
       limit,
-      orderBy: 'id_ASC',
+      orderBy: 'name_ASC',
     });
 
     if (search) {
       query.appendId('id', search);
-
+      query.appendIlike('name', search);
     }
 
     const collection = await admin
@@ -198,7 +198,7 @@ class ServiceRepository extends AbstractEntityRepository {
 
     return rows.map((record) => ({
       id: record.id,
-      label: record['id'],
+      label: record['name'],
     }));
   }
 

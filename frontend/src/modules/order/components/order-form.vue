@@ -123,7 +123,21 @@
 
       <el-form-item :label="fields.total.label" :prop="fields.total.name" disabled>
         <el-input class="bg-transparent" disabled v-model="model[fields.total.name]" />
-      </el-form-item>
+      </el-form-item>products
+      <br />
+      {{model.products}}
+      <br />
+      <br />services
+      <br />
+      {{model.services}}
+      <br />
+      <br />customer
+      <br />
+      {{model.customer}}
+      <br />
+      <br />total
+      <br />
+      {{model.total}}
       <!-- <el-form-item
         :label="fields.attachments.label"
         :prop="fields.attachments.name"

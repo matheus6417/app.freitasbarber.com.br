@@ -5,7 +5,6 @@
     :remote-method="handleSearch"
     :value="value"
     @change="onChange"
-    clearable
     default-first-option
     filterable
     multiple
@@ -20,7 +19,15 @@
       :value="initialOption"
       v-for="initialOption of initialOptions"
     ></el-option>
-    <el-option :key="record.id" :label="record.label" :value="record" v-for="record in dataSource"></el-option>
+    <el-option :key="record.id" :label="record.label" :value="record" v-for="record in dataSource">
+      <div
+        style="display:flex;align-items:center;isplay: flex;
+    justify-content: space-between;"
+      >
+        <span style="margin-right:2ch">{{record.label}}</span>
+        <span style="color: #8492a6; font-size: 0.6em">{{ label2}}</span>
+      </div>
+    </el-option>
   </el-select>
 </template>
 
@@ -38,6 +45,9 @@ export default {
     },
     fetchFn: {
       type: Function,
+    },
+    label2: {
+      type: String,
     },
     inMemoryFilter: {
       type: Boolean,

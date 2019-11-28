@@ -171,6 +171,8 @@ export class CustomerService {
 
   static async listAutocomplete(query, limit) {
     const response = await graphqlClient.query({
+      // TODO: CONTINUAR
+
       query: gql`
         query CUSTOMER_AUTOCOMPLETE(
           $query: String
@@ -179,6 +181,7 @@ export class CustomerService {
           customerAutocomplete(query: $query, limit: $limit) {
             id
             label
+            
           }
         }
       `,

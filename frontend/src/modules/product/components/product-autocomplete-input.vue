@@ -1,7 +1,12 @@
 <template>
   <div style="display: flex">
     <app-autocomplete-one-input :fetchFn="fetchFn" v-if="mode !== 'multiple'" v-model="model"></app-autocomplete-one-input>
-    <app-autocomplete-many-input :fetchFn="fetchFn" v-if="mode === 'multiple'" v-model="model"></app-autocomplete-many-input>
+    <app-autocomplete-many-input
+      :fetchFn="fetchFn"
+      :label2="value[0]"
+      v-if="mode === 'multiple'"
+      v-model="model"
+    ></app-autocomplete-many-input>
     <el-button
       @click="doOpenModal()"
       icon="el-icon-plus"

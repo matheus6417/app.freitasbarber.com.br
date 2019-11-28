@@ -119,12 +119,12 @@ class SpendingRepository extends AbstractEntityRepository {
       offset,
       orderBy,
     } = {
-      requestedAttributes: null,
-      filter: null,
-      limit: 0,
-      offset: 0,
-      orderBy: null,
-    },
+        requestedAttributes: null,
+        filter: null,
+        limit: 0,
+        offset: 0,
+        orderBy: null,
+      },
   ) {
     const query = FirebaseQuery.forList({
       limit,
@@ -196,7 +196,7 @@ class SpendingRepository extends AbstractEntityRepository {
 
     return rows.map((record) => ({
       id: record.id,
-      label: record['id'],
+      label: record['name'],
     }));
   }
 

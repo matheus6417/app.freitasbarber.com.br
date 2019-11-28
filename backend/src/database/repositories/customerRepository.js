@@ -131,12 +131,12 @@ class CustomerRepository extends AbstractEntityRepository {
       offset,
       orderBy,
     } = {
-      requestedAttributes: null,
-      filter: null,
-      limit: 0,
-      offset: 0,
-      orderBy: null,
-    },
+        requestedAttributes: null,
+        filter: null,
+        limit: 0,
+        offset: 0,
+        orderBy: null,
+      },
   ) {
     const query = FirebaseQuery.forList({
       limit,
@@ -212,6 +212,7 @@ class CustomerRepository extends AbstractEntityRepository {
     const rows = query.rows(all);
 
     return rows.map((record) => ({
+      // TODO:COMEÇAR AQUI
       id: record.id,
       label: record['name'],
     }));
