@@ -2,6 +2,7 @@ const schema = `
   type AutocompleteOption {
     id: String!
     label: String!
+    unitPrice: Float!
   }
 `;
 

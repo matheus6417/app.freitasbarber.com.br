@@ -18,7 +18,8 @@ export class ServiceField {
 
         return {
           id: record.id,
-          label: record.id,
+          label: record.label,
+          unitPrice: record.unitPrice,
         };
       },
       options,
@@ -39,7 +40,8 @@ export class ServiceField {
 
         return {
           id: record.id,
-          label: record.id,
+          label: record.label,
+          unitPrice: record.unitPrice
         };
       },
       options,

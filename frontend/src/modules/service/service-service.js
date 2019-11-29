@@ -186,6 +186,7 @@ export class ServiceService {
           serviceAutocomplete(query: $query, limit: $limit) {
             id
             label
+            
           }
         }
       `,

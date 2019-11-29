@@ -113,3 +113,68 @@
 [debug] [2019-11-28T20:56:18.761Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
 [debug] [2019-11-28T20:56:18.762Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
  <request body omitted>
+[debug] [2019-11-28T22:26:27.554Z] ----------------------------------------------------------------------
+[debug] [2019-11-28T22:26:27.556Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\cezar\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only functions
+[debug] [2019-11-28T22:26:27.556Z] CLI Version:   7.4.0
+[debug] [2019-11-28T22:26:27.556Z] Platform:      win32
+[debug] [2019-11-28T22:26:27.556Z] Node Version:  v11.13.0
+[debug] [2019-11-28T22:26:27.557Z] Time:          Thu Nov 28 2019 20:26:27 GMT-0200 (GMT-02:00)
+[debug] [2019-11-28T22:26:27.557Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-11-28T22:26:27.564Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-11-28T22:26:27.564Z] > authorizing via signed-in user
+[debug] [2019-11-28T22:26:27.564Z] [iam] checking project meunoovapp for permissions ["firebase.projects.get"]
+[debug] [2019-11-28T22:26:27.565Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-11-28T22:26:27.565Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-11-28T22:26:27.864Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-28T22:26:27.870Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/meunoovapp:testIamPermissions  
+
+[debug] [2019-11-28T22:26:28.960Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-28T22:26:28.960Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/meunoovapp  
+ 
+[debug] [2019-11-28T22:26:30.445Z] <<< HTTP RESPONSE 200
+[warn] !  Your requested "node" version "8" doesn't match your global version "11"
+[info] +  functions: Emulator started at http://localhost:5000
+[info] i  functions: Watching "C:\GTH\barber-flash\backend" for Cloud Functions...
+[debug] [2019-11-28T22:26:31.048Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\GTH\\barber-flash\\backend","node_version":"11.13.0"}
+[debug] [2019-11-28T22:26:31.048Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-28T22:26:31.051Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"7.0.0","resolution":"C:\\GTH\\barber-flash\\backend\\node_modules\\firebase-admin\\lib\\index.js"}
+[warn] !  The Cloud Functions emulator requires the module "firebase-admin" to be version >8.0.0 so your version is too old. You can probably fix this by running "npm install firebase-admin@latest" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2019-11-29T00:36:51.795Z] File C:\GTH\barber-flash\backend\src\api\shared\types\autocompleteOption.js changed, reloading triggers
+[debug] [2019-11-29T00:36:53.225Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\GTH\\barber-flash\\backend","node_version":"11.13.0"}
+[debug] [2019-11-29T00:36:53.225Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-29T00:36:53.230Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"7.0.0","resolution":"C:\\GTH\\barber-flash\\backend\\node_modules\\firebase-admin\\lib\\index.js"}
+[warn] !  The Cloud Functions emulator requires the module "firebase-admin" to be version >8.0.0 so your version is too old. You can probably fix this by running "npm install firebase-admin@latest" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2019-11-29T00:37:11.430Z] File C:\GTH\barber-flash\backend\src\api\shared\types\autocompleteOption.js changed, reloading triggers
+[debug] [2019-11-29T00:37:12.839Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\GTH\\barber-flash\\backend","node_version":"11.13.0"}
+[debug] [2019-11-29T00:37:12.839Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-29T00:37:12.845Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"7.0.0","resolution":"C:\\GTH\\barber-flash\\backend\\node_modules\\firebase-admin\\lib\\index.js"}
+[warn] !  The Cloud Functions emulator requires the module "firebase-admin" to be version >8.0.0 so your version is too old. You can probably fix this by running "npm install firebase-admin@latest" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2019-11-29T00:39:07.391Z] File C:\GTH\barber-flash\backend\src\api\shared\types\autocompleteOption.js changed, reloading triggers
+[debug] [2019-11-29T00:39:08.807Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\GTH\\barber-flash\\backend","node_version":"11.13.0"}
+[debug] [2019-11-29T00:39:08.807Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-29T00:39:08.812Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"7.0.0","resolution":"C:\\GTH\\barber-flash\\backend\\node_modules\\firebase-admin\\lib\\index.js"}
+[warn] !  The Cloud Functions emulator requires the module "firebase-admin" to be version >8.0.0 so your version is too old. You can probably fix this by running "npm install firebase-admin@latest" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2019-11-29T00:53:17.468Z] File C:\GTH\barber-flash\backend\src\api\shared\types\autocompleteOption.js changed, reloading triggers
+[debug] [2019-11-29T00:53:18.760Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\GTH\\barber-flash\\backend","node_version":"11.13.0"}
+[debug] [2019-11-29T00:53:18.761Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-29T00:53:18.765Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"7.0.0","resolution":"C:\\GTH\\barber-flash\\backend\\node_modules\\firebase-admin\\lib\\index.js"}
+[warn] !  The Cloud Functions emulator requires the module "firebase-admin" to be version >8.0.0 so your version is too old. You can probably fix this by running "npm install firebase-admin@latest" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2019-11-29T00:57:13.580Z] File C:\GTH\barber-flash\backend\src\api\shared\types\autocompleteOption.js changed, reloading triggers
+[debug] [2019-11-29T00:57:14.883Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\GTH\\barber-flash\\backend","node_version":"11.13.0"}
+[debug] [2019-11-29T00:57:14.884Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-29T00:57:14.887Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"7.0.0","resolution":"C:\\GTH\\barber-flash\\backend\\node_modules\\firebase-admin\\lib\\index.js"}
+[warn] !  The Cloud Functions emulator requires the module "firebase-admin" to be version >8.0.0 so your version is too old. You can probably fix this by running "npm install firebase-admin@latest" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2019-11-29T00:57:16.721Z] File C:\GTH\barber-flash\backend\src\api\shared\types\autocompleteOption.js changed, reloading triggers
+[debug] [2019-11-29T00:57:18.019Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\GTH\\barber-flash\\backend","node_version":"11.13.0"}
+[debug] [2019-11-29T00:57:18.019Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-29T00:57:18.022Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"7.0.0","resolution":"C:\\GTH\\barber-flash\\backend\\node_modules\\firebase-admin\\lib\\index.js"}
+[warn] !  The Cloud Functions emulator requires the module "firebase-admin" to be version >8.0.0 so your version is too old. You can probably fix this by running "npm install firebase-admin@latest" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
