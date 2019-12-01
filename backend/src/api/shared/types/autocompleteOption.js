@@ -3,6 +3,7 @@ const schema = `
     id: String!
     label: String!
     unitPrice: Float!
+    phone1: String!
   }
 `;
 

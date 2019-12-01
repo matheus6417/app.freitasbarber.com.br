@@ -115,7 +115,7 @@
         <el-col :lg="11" :md="16" :sm="24">
           <el-input-number
             :precision="fields.valueAlt.scale"
-            :step="0.50"
+            :step="0.05"
             v-model="model[fields.valueAlt.name]"
           ></el-input-number>
         </el-col>
@@ -322,12 +322,19 @@ export default {
   watch: {
     model: {
       handler() {
-        var sum = 0;
-        var arr = this.model.products;
-        for (var i = 0; i < arr.length; i++) {
-          console.log(arr[i]);
-          if (arr[i]['unitPrice']) {
-            sum = sum + arr[i]['unitPrice'];
+        let sum = 0;
+        let prds = this.model.products;
+        let svcs = this.model.services;
+        for (var i = 0; i < prds.length; i++) {
+          if (prds[i]['unitPrice']) {
+            sum = sum + prds[i]['unitPrice'];
+          }
+        }
+
+        for (var i = 0; i < svcs.length; i++) {
+          console.log(svcs[i]);
+          if (svcs[i]['unitPrice']) {
+            sum = sum + svcs[i]['unitPrice'];
           }
         }
 

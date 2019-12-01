@@ -212,9 +212,10 @@ class CustomerRepository extends AbstractEntityRepository {
     const rows = query.rows(all);
 
     return rows.map((record) => ({
-      // TODO:COMEÇAR AQUI
       id: record.id,
       label: record['name'],
+      phone1: record['phone1'],
+
     }));
   }
 

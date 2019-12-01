@@ -181,6 +181,7 @@ export class CustomerService {
           customerAutocomplete(query: $query, limit: $limit) {
             id
             label
+          phone1
             
           }
         }

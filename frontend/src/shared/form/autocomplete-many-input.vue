@@ -26,11 +26,15 @@
       v-for="record in dataSource"
     >
       <div style="display:flex;align-items:center;justify-content: space-between;">
+        <span style="margin-right:2ch">{{record.label}}</span>
         <span
-          style="color: #8492a6; font-size: 0.6em;min-width:10ch"
+          style="color: #8492a6; font-size: 0.8em;min-width:10ch"
           v-if="record.unitPrice"
         >R$ {{record.unitPrice}}</span>
-        <span style="margin-right:2ch">{{record}}</span>
+        <span
+          style="color: #8492a6; font-size: 0.8em;min-width:10ch"
+          v-if="record.phone1"
+        >{{record.phone1}}</span>
       </div>
     </el-option>
   </el-select>

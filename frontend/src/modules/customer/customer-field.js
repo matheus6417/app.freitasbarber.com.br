@@ -19,6 +19,8 @@ export class CustomerField {
         return {
           id: record.id,
           label: record.name,
+          phone1: record.phone1,
+
         };
       },
       options,
@@ -38,9 +40,10 @@ export class CustomerField {
         }
 
         return {
-          // TODO: CONT]INUA
           id: record.id,
           label: record.name,
+          phone1: record.phone1,
+
         };
       },
       options,
