@@ -199,6 +199,7 @@ class ServiceRepository extends AbstractEntityRepository {
     return rows.map((record) => ({
       id: record.id,
       label: record['name'],
+      unitPrice: record['unitPrice'],
     }));
   }
 
