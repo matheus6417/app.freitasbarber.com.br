@@ -128,7 +128,7 @@
       </el-table-column>-->
 
       <el-table-column :label="fields.total.label" :prop="fields.total.name" sortable="custom">
-        <template slot-scope="scope">{{ presenter(scope.row, 'total') }}</template>
+        <template slot-scope="scope">R$ {{ presenter(scope.row, 'total') }}</template>
       </el-table-column>
 
       <el-table-column :label="fields.date.label" :prop="fields.date.name" sortable="custom">
@@ -315,6 +315,8 @@ export default {
 }
 /deep/ .total {
   grid-area: total;
+  font-weight: 600;
+  font-size: 1.125rem;
 }
 /deep/ .employee {
   display: none;

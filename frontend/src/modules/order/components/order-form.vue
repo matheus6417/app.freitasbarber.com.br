@@ -322,26 +322,7 @@ export default {
   watch: {
     model: {
       handler() {
-        let sum = 0;
-        let prds = this.model.products;
-        let svcs = this.model.services;
-        for (var i = 0; i < prds.length; i++) {
-          if (prds[i]['unitPrice']) {
-            sum = sum + prds[i]['unitPrice'];
-          }
-        }
-
-        for (var i = 0; i < svcs.length; i++) {
-          console.log(svcs[i]);
-          if (svcs[i]['unitPrice']) {
-            sum = sum + svcs[i]['unitPrice'];
-          }
-        }
-
-        sum =
-          sum +
-          (this.model.valueAlt ? this.model.valueAlt : 0);
-        this.model.total = sum ? sum : 0.0;
+        this.doUpdateTotal();
       },
       deep: true,
       immediate: true,
@@ -367,6 +348,28 @@ export default {
       this.$emit('cancel');
     },
 
+    doUpdateTotal() {
+      let sum = 0;
+      let prds = this.model.products;
+      let svcs = this.model.services;
+      for (var i = 0; i < prds.length; i++) {
+        if (prds[i]['unitPrice']) {
+          sum = sum + prds[i]['unitPrice'];
+        }
+      }
+
+      for (var i = 0; i < svcs.length; i++) {
+        console.log(svcs[i]);
+        if (svcs[i]['unitPrice']) {
+          sum = sum + svcs[i]['unitPrice'];
+        }
+      }
+
+      sum =
+        sum +
+        (this.model.valueAlt ? this.model.valueAlt : 0);
+      this.model.total = sum ? sum : 0.0;
+    },
     async doSubmit() {
       try {
         await this.$refs.form.validate();

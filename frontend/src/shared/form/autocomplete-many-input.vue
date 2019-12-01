@@ -21,7 +21,7 @@
     ></el-option>
     <el-option
       :key="record.id"
-      :label="record.label  + (record.unitPrice ? (' (R$ '+record.unitPrice+ ')'): '🔴' ) "
+      :label="record.label  + (record.unitPrice ? (' (R$ '+record.unitPrice+ ')'): '' ) + (record.phone1 ? ' ' +  record.phone1 : '' )"
       :value="record"
       v-for="record in dataSource"
     >
