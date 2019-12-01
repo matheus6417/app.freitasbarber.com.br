@@ -19,10 +19,18 @@
       :value="initialOption"
       v-for="initialOption of initialOptions"
     ></el-option>
-    <el-option :key="record.id" :label="record.label" :value="record" v-for="record in dataSource">
+    <el-option
+      :key="record.id"
+      :label="record.label  + (record.unitPrice ? (' (R$ '+record.unitPrice+ ')'): '🔴' ) "
+      :value="record"
+      v-for="record in dataSource"
+    >
       <div style="display:flex;align-items:center;justify-content: space-between;">
-        <span style="margin-right:2ch">{{record.label}}</span>
-        <span style="color: #8492a6; font-size: 0.6em">{{ label2}}</span>
+        <span
+          style="color: #8492a6; font-size: 0.6em;min-width:10ch"
+          v-if="record.unitPrice"
+        >R$ {{record.unitPrice}}</span>
+        <span style="margin-right:2ch">{{record}}</span>
       </div>
     </el-option>
   </el-select>
@@ -43,9 +51,7 @@ export default {
     fetchFn: {
       type: Function,
     },
-    label2: {
-      type: String,
-    },
+
     inMemoryFilter: {
       type: Boolean,
       default: true,

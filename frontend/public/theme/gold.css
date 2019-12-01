@@ -1323,7 +1323,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   color: #606266;
-  height: 45px;
+  height: auto;
   line-height: 45px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -10959,4 +10959,8 @@ table.el-table__footer * {
 }
 input.bg-transparent {
   background: transparent!important;
+}
+.el-select-dropdown__item > div > span {
+    white-space: normal;
+    height: auto!important;
 }

@@ -123,7 +123,8 @@
 
       <el-form-item :label="fields.total.label" :prop="fields.total.name" disabled>
         <el-input class="bg-transparent" disabled v-model="model[fields.total.name]" />
-      </el-form-item>products
+      </el-form-item>
+      <br />products
       <br />
       {{model.products}}
       <br />
@@ -309,7 +310,6 @@ export default {
     return {
       rules: formSchema.rules(),
       model: null,
-      total: this.model,
     };
   },
 
@@ -319,7 +319,27 @@ export default {
     );
     console.log(this.total);
   },
+  watch: {
+    model: {
+      handler() {
+        var sum = 0;
+        var arr = this.model.products;
+        for (var i = 0; i < arr.length; i++) {
+          console.log(arr[i]);
+          if (arr[i]['unitPrice']) {
+            sum = sum + arr[i]['unitPrice'];
+          }
+        }
 
+        sum =
+          sum +
+          (this.model.valueAlt ? this.model.valueAlt : 0);
+        this.model.total = sum ? sum : 0.0;
+      },
+      deep: true,
+      immediate: true,
+    },
+  },
   computed: {
     ...mapGetters({
       labelPosition: 'layout/labelPosition',

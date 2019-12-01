@@ -178,3 +178,9 @@
 [debug] [2019-11-29T00:57:18.022Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"7.0.0","resolution":"C:\\GTH\\barber-flash\\backend\\node_modules\\firebase-admin\\lib\\index.js"}
 [warn] !  The Cloud Functions emulator requires the module "firebase-admin" to be version >8.0.0 so your version is too old. You can probably fix this by running "npm install firebase-admin@latest" in your functions directory.
 [info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2019-11-29T13:07:41.099Z] File C:\GTH\barber-flash\backend\src\api\shared\types\autocompleteOption.js changed, reloading triggers
+[debug] [2019-11-29T13:07:42.438Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\GTH\\barber-flash\\backend","node_version":"11.13.0"}
+[debug] [2019-11-29T13:07:42.439Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-11-29T13:07:42.443Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"7.0.0","resolution":"C:\\GTH\\barber-flash\\backend\\node_modules\\firebase-admin\\lib\\index.js"}
+[warn] !  The Cloud Functions emulator requires the module "firebase-admin" to be version >8.0.0 so your version is too old. You can probably fix this by running "npm install firebase-admin@latest" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
