@@ -159,9 +159,7 @@ export default {
 
   methods: {
     doRowClick(row, column, event) {
-      console.log(row);
       this.$router.push('/customer/' + row.id);
-      
     },
     cellClass({ column }) {
       return column.property;

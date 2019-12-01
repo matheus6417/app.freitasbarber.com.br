@@ -317,7 +317,6 @@ export default {
     this.model = formSchema.initialValues(
       this.record || {},
     );
-    console.log(this.total);
   },
   watch: {
     model: {
@@ -359,7 +358,6 @@ export default {
       }
 
       for (var i = 0; i < svcs.length; i++) {
-        console.log(svcs[i]);
         if (svcs[i]['unitPrice']) {
           sum = sum + svcs[i]['unitPrice'];
         }
