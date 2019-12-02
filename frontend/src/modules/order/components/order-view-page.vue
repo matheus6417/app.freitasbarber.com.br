@@ -40,18 +40,16 @@
         ></app-view-item-relation-to-one>
 
         <app-view-item-text :label="fields.delivered.label" :value="presenter(record, 'delivered')"></app-view-item-text>-->
-
-        <app-view-item-file
-          :label="fields.attachments.label"
-          :value="presenter(record, 'attachments')"
-        ></app-view-item-file>
-
         <app-view-item-relation-to-many
           :label="fields.services.label"
           :permission="fields.services.readPermission"
           :url="fields.services.viewUrl"
           :value="presenter(record, 'services')"
         ></app-view-item-relation-to-many>
+        <app-view-item-file
+          :label="fields.attachments.label"
+          :value="presenter(record, 'attachments')"
+        ></app-view-item-file>
 
         <app-view-item-text :label="fields.date.label" :value="presenter(record, 'date')"></app-view-item-text>
 
@@ -131,6 +129,7 @@ export default {
     }),
 
     presenter(record, fieldName) {
+      // return OrderModel.presenter(record, fieldName);
       return OrderModel.presenter(record, fieldName);
     },
   },

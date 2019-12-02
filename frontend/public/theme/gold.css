@@ -1845,6 +1845,8 @@
 .el-table__header {
   table-layout: fixed;
   border-collapse: separate;
+  display: block;
+  width: 100%;
 }
 .el-table__footer-wrapper,
 .el-table__header-wrapper {
@@ -10936,15 +10938,19 @@ td.description {
 }
 
 @media only screen and (min-width: 640px) {
-  .app-content-page,.app-page-toolbar {
+  .app-content-page,.app-page-toolbar{
     padding-left: 95px;
   }
   tr.el-table__row.listy{
-    width: calc(92vw - 96px);
+    width: 100%;
+    flex-grow: 1;
+    margin-left: 0;
   }
 }
 table.el-table__footer * {
   text-align: center;
+  display:flex;
+  width:100%
 }
 .el-select ~ .el-button.el-button--primary {
   position: absolute;
