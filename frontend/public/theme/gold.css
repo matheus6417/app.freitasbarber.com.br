@@ -3230,6 +3230,8 @@
 }
 .el-form-item {
   margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
 }
 .el-form-item::after,
 .el-form-item::before {
@@ -3269,7 +3271,7 @@
 }
 .el-form-item__label {
   text-align: right;
-  float: left;
+  float: none;
   font-size: 12px;
   color: #606266;
   font-weight: 700;
@@ -3284,6 +3286,7 @@
   line-height: 40px;
   position: relative;
   font-size: 22px;
+  margin: 0!important;
 }
 .el-form-item__content::after,
 .el-form-item__content::before {
@@ -10945,6 +10948,13 @@ td.description {
     width: 100%;
     flex-grow: 1;
     margin-left: 0;
+  }
+  .el-form-item__label{
+    /* background:red; */
+    /* height: 4em; */
+    /* line-height: 4em; */
+    width: 100%!important;
+    text-align: left;
   }
 }
 table.el-table__footer * {
