@@ -27,7 +27,7 @@
           </router-link>
         </span>
       </h1>
-      <el-row :gutter="16">
+      <!-- <el-row :gutter="16">
         <el-col :lg="8" :md="12" :sm="24">
           <app-home-chart :config="bar" />
         </el-col>
@@ -52,7 +52,7 @@
         <el-col :lg="8" :md="12" :sm="24">
           <app-home-chart :config="line" />
         </el-col>
-      </el-row>
+      </el-row>-->
     </div>
   </div>
 </template>

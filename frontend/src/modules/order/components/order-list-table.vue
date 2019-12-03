@@ -336,6 +336,9 @@ export default {
   max-width: 17ch;
   margin-left: 1ch;
 }
+/deep/ .customer > div > span > div > div {
+  margin-right: 1ch;
+}
 /deep/ .services > div > div,
 /deep/ .products > div > div {
   max-width: calc(100% - 2ch);
@@ -345,7 +348,12 @@ export default {
 /deep/ .products > div > div > div:after {
   content: ',';
 }
-
+/deep/ .customer > div > span > div > div:after {
+  content: ',';
+}
+/deep/ .customer > div > span > div > div:last-child:after {
+  content: '';
+}
 /deep/ .products > div > div > div:last-child:after,
 /deep/ .services > div > div > div:last-child:after {
   content: '';

@@ -227,6 +227,7 @@ export class OrderService {
           orderAutocomplete(query: $query, limit: $limit) {
             id
             label
+            unitPrice
           }
         }
       `,

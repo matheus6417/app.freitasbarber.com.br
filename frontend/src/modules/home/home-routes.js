@@ -1,7 +1,8 @@
 import Layout from '@/modules/layout/components/layout';
 
 const HomePage = () =>
-  import('@/modules/home/components/home-page.vue');
+  import('@/modules/order/components/order-list-page.vue');
+// import('@/modules/home/components/home-page.vue');
 
 export default [
   {

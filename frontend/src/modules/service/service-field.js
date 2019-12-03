@@ -15,10 +15,9 @@ export class ServiceField {
         if (!record) {
           return null;
         }
-
         return {
           id: record.id,
-          label: record.label,
+          label: record.name,
           unitPrice: record.unitPrice,
         };
       },
@@ -37,10 +36,9 @@ export class ServiceField {
         if (!record) {
           return null;
         }
-
         return {
           id: record.id,
-          label: record.label,
+          label: record,
           unitPrice: record.unitPrice
         };
       },

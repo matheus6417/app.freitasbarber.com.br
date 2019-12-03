@@ -13,9 +13,7 @@
 <script>
 export default {
   name: 'app-list-item-relation-to-many',
-
   props: ['value', 'url', 'permission'],
-
   computed: {
     isBlank() {
       return !this.value || !this.value.length;
