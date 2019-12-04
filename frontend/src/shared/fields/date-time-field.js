@@ -12,7 +12,7 @@ export default class DateTimeField extends GenericField {
 
   forPresenter(value) {
     return value
-      ? moment(value).format('YYYY-MM-DD HH:mm')
+      ? moment(value).format('DD-MM-YYYY HH:mm')
       : null;
   }
 
@@ -62,9 +62,9 @@ export default class DateTimeField extends GenericField {
       .transform((value, originalValue) =>
         originalValue
           ? moment(
-              originalValue,
-              'YYYY-MM-DD HH:mm',
-            ).toISOString()
+            originalValue,
+            'DD-MM-YYYY HH:mm',
+          ).toISOString()
           : null,
       );
 

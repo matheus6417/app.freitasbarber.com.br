@@ -10,41 +10,33 @@
     </el-col>
   </el-form-item>
 </template>
-
 <script>
 import { mapGetters } from 'vuex';
 import PermissionChecker from '@/modules/iam/permission-checker';
 
 export default {
   name: 'app-view-item-relation-to-many',
-
   props: ['label', 'value', 'url', 'permission'],
-
   computed: {
     ...mapGetters({
       currentUser: 'auth/currentUser',
     }),
-
     hasPermissionToRead() {
       return new PermissionChecker(this.currentUser).match(
         this.permission,
       );
     },
-
     isBlank() {
       return !this.value || !this.value.length;
     },
   },
-
   methods: {
     urlWithId(item) {
       if (!item) {
         return null;
       }
-
       return `${this.url}/${item.id}`;
     },
-
     display(item) {
       if (!item) {
         return null;
@@ -54,6 +46,5 @@ export default {
   },
 };
 </script>
-
 <style>
 </style>

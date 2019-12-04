@@ -4,7 +4,7 @@ export default {
   name: 'formatDatetime',
   implementation(value) {
     if (value) {
-      return moment(value).format('YYYY-MM-DD HH:mm');
+      return moment(value).format('DD-MM-YYYY HH:mm');
     }
 
     return null;
