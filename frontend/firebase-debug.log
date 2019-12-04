@@ -1,0 +1,53 @@
+[debug] [2019-12-04T01:39:18.410Z] ----------------------------------------------------------------------
+[debug] [2019-12-04T01:39:18.412Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\cezar\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting,storage
+[debug] [2019-12-04T01:39:18.412Z] CLI Version:   7.4.0
+[debug] [2019-12-04T01:39:18.412Z] Platform:      win32
+[debug] [2019-12-04T01:39:18.412Z] Node Version:  v11.13.0
+[debug] [2019-12-04T01:39:18.413Z] Time:          Tue Dec 03 2019 23:39:18 GMT-0200 (GMT-02:00)
+[debug] [2019-12-04T01:39:18.413Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-12-04T01:39:18.420Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-12-04T01:39:18.421Z] > authorizing via signed-in user
+[debug] [2019-12-04T01:39:18.421Z] [iam] checking project meunoovapp for permissions ["firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2019-12-04T01:39:18.422Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/meunoovapp:testIamPermissions  
+
+[debug] [2019-12-04T01:39:19.500Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-04T01:39:19.501Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/meunoovapp  
+ 
+[debug] [2019-12-04T01:39:21.043Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'meunoovapp'...
+[info] 
+[info] i  deploying storage, hosting
+[debug] [2019-12-04T01:39:22.907Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/meunoovapp  
+ 
+[debug] [2019-12-04T01:39:24.496Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2019-12-04T01:39:24.507Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/meunoovapp:test  
+
+[debug] [2019-12-04T01:39:26.035Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[debug] [2019-12-04T01:39:26.037Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/meunoovapp/versions  
+
+[debug] [2019-12-04T01:39:28.392Z] <<< HTTP RESPONSE 200
+[info] i  storage: uploading rules storage.rules...
+[debug] [2019-12-04T01:39:28.393Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/meunoovapp/rulesets  
+
+[debug] [2019-12-04T01:39:29.962Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-04T01:39:29.963Z] [rules] created ruleset projects/meunoovapp/rulesets/d7483a1d-42bf-443a-97da-b62297d23b98
+[info] i  hosting[meunoovapp]: beginning deploy...
+[info] i  hosting[meunoovapp]: found 94 files in frontend/dist
+[debug] [2019-12-04T01:39:29.998Z] [hosting] hash cache [ZnJvbnRlbmRcZGlzdA] load error: lines is not defined
+[debug] [2019-12-04T01:39:31.022Z] [hosting] hash cache [ZnJvbnRlbmRcZGlzdA] stored for 94 files
+[debug] [2019-12-04T01:39:31.023Z] [hosting][hash queue][FINAL]
+[debug] [2019-12-04T01:39:31.023Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/meunoovapp/versions/78863cd650e9f762:populateFiles  
+ <request body omitted>
+[debug] [2019-12-04T01:39:33.467Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-04T01:39:33.479Z] [hosting][populate queue][FINAL]
+[debug] [2019-12-04T01:39:33.479Z] [hosting] uploads queued: 36
+[debug] [2019-12-04T01:40:22.942Z] [hosting][upload queue][FINAL]
+[info] +  hosting[meunoovapp]: file upload complete
+[debug] [2019-12-04T01:40:22.943Z] [hosting] deploy completed after 52980ms
+[debug] [2019-12-04T01:40:22.944Z] [rules] releasing firebase.storage/meunoovapp.appspot.com with ruleset projects/meunoovapp/rulesets/d7483a1d-42bf-443a-97da-b62297d23b98
+[debug] [2019-12-04T01:40:22.945Z] >>> HTTP REQUEST PATCH https://firebaserules.googleapis.com/v1/projects/meunoovapp/releases/firebase.storage/meunoovapp.appspot.com  
+
