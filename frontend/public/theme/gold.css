@@ -555,7 +555,7 @@
   }
 }
 .el-dialog {
-  position: fixed;
+  position: relative;
   margin: 0;
   border-radius: 0;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
@@ -565,6 +565,8 @@
   margin: 0!important;
   overflow: auto;
   height: 100%;
+  max-width: 650px;
+  margin: auto!important;
 }
 .el-dialog.is-fullscreen {
   width: 100%;
@@ -9662,9 +9664,10 @@ form.el-form.filter .el-row > div {
   pointer-events: none;
 }
 .el-input.is-disabled .el-input__inner {
-  background-color: #f5f7fa;
+  background-color: transparent;
   border-color: #e4e7ed;
-  color: #c0c4cc;
+  color: #737373;
+  font-weight: 600;
   cursor: not-allowed;
 }
 .el-input.is-disabled .el-input__inner::-webkit-input-placeholder {
@@ -10949,7 +10952,7 @@ td.description {
 }
 
 @media only screen and (min-width: 640px) {
-  .app-content-page,.app-page-toolbar{
+  .app-content-page, .app-page-toolbar,.form-buttons{
     padding-left: 95px;
     padding-bottom: 0;
   }

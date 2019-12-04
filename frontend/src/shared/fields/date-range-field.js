@@ -22,7 +22,7 @@ export default class DateRangeField extends GenericField {
       }
 
       return originalValue.map((value) => {
-        return value ? moment(value).format('DD-MM-YYYY') : null;
+        return value ? moment(value).format('DD/MM/YY') : null;
       });
     });
   }

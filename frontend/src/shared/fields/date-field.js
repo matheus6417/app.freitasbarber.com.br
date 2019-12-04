@@ -45,7 +45,7 @@ export default class DateField extends GenericField {
   }
 
   forFormInitialValue(value) {
-    return value ? moment(value, 'DD-MM-YYYY') : null;
+    return value ? moment(value, 'DD/MM/YY') : null;
   }
 
   forFormCast() {
@@ -54,7 +54,7 @@ export default class DateField extends GenericField {
       .nullable(true)
       .label(this.label)
       .transform((value) =>
-        value ? moment(value).format('DD-MM-YYYY') : null,
+        value ? moment(value).format('DD/MM/YY') : null,
       );
 
     return yupChain;
@@ -77,7 +77,7 @@ export default class DateField extends GenericField {
             return true;
           }
 
-          return moment(value, 'DD-MM-YYYY').isValid();
+          return moment(value, 'DD/MM/YY').isValid();
         },
       );
 
