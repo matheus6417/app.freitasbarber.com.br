@@ -213,9 +213,6 @@ class ServiceRepository extends AbstractEntityRepository {
     if (!record) {
       return record;
     }
-
-
-
     return record;
   }
 

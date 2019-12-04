@@ -184,3 +184,32 @@
 [debug] [2019-11-29T13:07:42.443Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"7.0.0","resolution":"C:\\GTH\\barber-flash\\backend\\node_modules\\firebase-admin\\lib\\index.js"}
 [warn] !  The Cloud Functions emulator requires the module "firebase-admin" to be version >8.0.0 so your version is too old. You can probably fix this by running "npm install firebase-admin@latest" in your functions directory.
 [info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2019-12-04T01:37:02.253Z] ----------------------------------------------------------------------
+[debug] [2019-12-04T01:37:02.255Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\cezar\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only functions
+[debug] [2019-12-04T01:37:02.255Z] CLI Version:   7.4.0
+[debug] [2019-12-04T01:37:02.255Z] Platform:      win32
+[debug] [2019-12-04T01:37:02.255Z] Node Version:  v11.13.0
+[debug] [2019-12-04T01:37:02.256Z] Time:          Tue Dec 03 2019 23:37:02 GMT-0200 (GMT-02:00)
+[debug] [2019-12-04T01:37:02.256Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-12-04T01:37:02.268Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-12-04T01:37:02.268Z] > authorizing via signed-in user
+[debug] [2019-12-04T01:37:02.268Z] [iam] checking project meunoovapp for permissions ["firebase.projects.get"]
+[debug] [2019-12-04T01:37:02.270Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-12-04T01:37:02.270Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-12-04T01:37:02.580Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-04T01:37:02.584Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/meunoovapp:testIamPermissions  
+
+[debug] [2019-12-04T01:37:03.938Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-04T01:37:03.939Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/meunoovapp  
+ 
+[debug] [2019-12-04T01:37:05.521Z] <<< HTTP RESPONSE 200
+[warn] !  Your requested "node" version "8" doesn't match your global version "11"
+[info] +  functions: Emulator started at http://localhost:5000
+[info] i  functions: Watching "C:\GTH\barber-flash\backend" for Cloud Functions...
+[debug] [2019-12-04T01:37:06.166Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\GTH\\barber-flash\\backend","node_version":"11.13.0"}
+[debug] [2019-12-04T01:37:06.166Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-12-04T01:37:06.168Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"7.0.0","resolution":"C:\\GTH\\barber-flash\\backend\\node_modules\\firebase-admin\\lib\\index.js"}
+[warn] !  The Cloud Functions emulator requires the module "firebase-admin" to be version >8.0.0 so your version is too old. You can probably fix this by running "npm install firebase-admin@latest" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
